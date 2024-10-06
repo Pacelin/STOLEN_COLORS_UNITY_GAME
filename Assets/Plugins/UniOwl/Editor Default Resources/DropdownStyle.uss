@@ -1,0 +1,12 @@
+.dropdown
+{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.unity-foldout--depth-0 > .unity-foldout__toggle > .unity-foldout__input
+{
+    min-width: 120px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}

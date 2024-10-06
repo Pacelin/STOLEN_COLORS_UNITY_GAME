@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 425658153f6542019e62021778203303
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _dropdownStyleSheet: {fileID: 7433441132597879392, guid: 2814e26cf70af3c47b0da265f64945ae, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
