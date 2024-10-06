@@ -74,6 +74,62 @@ MonoBehaviour:
     m_Localized: Main menu
     m_Metadata:
       m_Items: []
+  - m_Id: 45353250050048
+    m_Localized: UniOwl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45384300482560
+    m_Localized: Pacelin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45417229963264
+    m_Localized: Tryam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45442999767040
+    m_Localized: MotiSU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45509924081664
+    m_Localized: BulbaKruk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45295708393472
+    m_Localized: Birifine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45336770629632
+    m_Localized: 2D Artist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45430433632256
+    m_Localized: 2D Artist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45456044052480
+    m_Localized: 2D Artist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45526328004608
+    m_Localized: Sound & Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45399597109248
+    m_Localized: Unity Developer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45370908069888
+    m_Localized: Game Designer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47079860457472
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47081160691712
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -71,6 +71,62 @@ MonoBehaviour:
     m_Key: pause.replay
     m_Metadata:
       m_Items: []
+  - m_Id: 45295708393472
+    m_Key: birifine.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45336770629632
+    m_Key: birifine.role
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45353250050048
+    m_Key: uni.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45370908069888
+    m_Key: uni.role
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45384300482560
+    m_Key: pacelin.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45399597109248
+    m_Key: pacelin.role
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45417229963264
+    m_Key: tryam.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45430433632256
+    m_Key: tryam.role
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45442999767040
+    m_Key: motisu.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45456044052480
+    m_Key: motisu.role
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45509924081664
+    m_Key: bulba.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45526328004608
+    m_Key: bulba.role
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47079860457472
+    m_Key: credits.button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47081160691712
+    m_Key: credits.title
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
