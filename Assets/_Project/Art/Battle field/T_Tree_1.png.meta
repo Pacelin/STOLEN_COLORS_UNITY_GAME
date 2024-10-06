@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0c3993ea57c50c14884073e5a5e4025d
+guid: 80a8371a3a7d01b44af3c91f37bb2ded
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -924042500931074803
-    second: T_Enemy_Flag_0
+      213: -3601612472651574687
+    second: T_Tree_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: T_Enemy_Flag_0
+      name: T_Tree_1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 552
-        height: 879
+        x: 1
+        y: 2
+        width: 759
+        height: 1044
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d05c3aebd342d23f0800000000000000
-      internalID: -924042500931074803
+      spriteID: 1629cfcc980840ec0800000000000000
+      internalID: -3601612472651574687
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      T_Enemy_Flag_0: -924042500931074803
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
