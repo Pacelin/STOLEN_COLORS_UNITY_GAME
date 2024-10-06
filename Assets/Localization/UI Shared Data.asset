@@ -51,6 +51,26 @@ MonoBehaviour:
     m_Key: language.title
     m_Metadata:
       m_Items: []
+  - m_Id: 12171620372480
+    m_Key: pause.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12205950750720
+    m_Key: pause.menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12225752059904
+    m_Key: pause.resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12240293711872
+    m_Key: pause.settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12255162519552
+    m_Key: pause.replay
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
