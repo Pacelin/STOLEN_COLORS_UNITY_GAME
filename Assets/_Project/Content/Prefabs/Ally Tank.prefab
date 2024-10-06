@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4389482728101150954, guid: 67105e97a0f3cc846b41b43626daf529, type: 3}
       propertyPath: _baseData.AttackDistance
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6819193263685079622, guid: 67105e97a0f3cc846b41b43626daf529, type: 3}
       propertyPath: m_Height

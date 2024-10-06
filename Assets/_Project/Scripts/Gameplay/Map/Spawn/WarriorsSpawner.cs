@@ -65,6 +65,8 @@ namespace Gameplay.Map.Spawn
         public void SpawnEnemy(EWarriorClass @class, UnitModifiers modifiers = default, bool release = true)
         {
             var castle = _castles.GetCastle(EBattleSide.Enemy);
+            if (_castles.CapturingCastle && _castles.CapturingCastle.Owner == EBattleSide.Enemy)
+                castle = _castles.CapturingCastle;
             var position = castle.GetWarriorSpawnPosition(EBattleSide.Enemy, @class);
             var enemy = _container.InstantiatePrefabForComponent<Warrior>(_warriorsConfig.GetEnemy(@class),
                 position, Quaternion.identity, null, new object[] { modifiers });
@@ -78,6 +80,8 @@ namespace Gameplay.Map.Spawn
         public void SpawnAlly(EWarriorClass @class, UnitModifiers modifiers = default, bool release = true)
         {
             var castle = _castles.GetCastle(EBattleSide.Ally);
+            if (_castles.CapturingCastle && _castles.CapturingCastle.Owner == EBattleSide.Ally)
+                castle = _castles.CapturingCastle;
             var position = castle.GetWarriorSpawnPosition(EBattleSide.Ally, @class);
             var ally = _container.InstantiatePrefabForComponent<Warrior>(_warriorsConfig.GetAlly(@class),
                 position, Quaternion.identity, null, new object[] { modifiers });
