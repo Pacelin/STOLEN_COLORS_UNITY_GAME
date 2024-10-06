@@ -12,9 +12,16 @@ namespace UniOwl.UI
             if (Application.platform == RuntimePlatform.WebGLPlayer)
                 quitButton.gameObject.SetActive(false);
             else
-                quitButton.onClick.AddListener(Application.Quit);
-            
-            Destroy(this);
+                quitButton.onClick.AddListener(Quit);
+        }
+
+        private void Quit()
+        {
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.ExitPlaymode();
+            #else
+            Application.Quit();
+            #endif
         }
     }
 }
