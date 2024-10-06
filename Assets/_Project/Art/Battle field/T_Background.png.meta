@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b7f3088b0b0e3664ca165e7546d5ba76
+guid: aa64324156a64ee408ec091d5f2f5c36
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -115,12 +115,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 196
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -726,7 +726,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -735,7 +735,31 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_Background_0: 2882239138987916031
+      T_Background_1: 3239957737379542413
+      T_Background_10: 9213550591506185020
+      T_Background_11: 2975980249950316138
+      T_Background_12: -689744712776312227
+      T_Background_13: 8216338159584513362
+      T_Background_14: 528883541221903730
+      T_Background_15: -6034883966574039102
+      T_Background_16: 3425811644953006677
+      T_Background_17: -5549986915925302382
+      T_Background_18: -2161945782324358478
+      T_Background_19: 768873766181157405
+      T_Background_2: 2228815904588674439
+      T_Background_20: 1217590405930650868
+      T_Background_21: 2736604639352707101
+      T_Background_22: 8579773583211307991
+      T_Background_23: -6478361376753790522
+      T_Background_3: 5709639636053234794
+      T_Background_4: 5395167229280961367
+      T_Background_5: 5580171473896104813
+      T_Background_6: 8821967904705356060
+      T_Background_7: 661908873081459583
+      T_Background_8: -4877349433816536051
+      T_Background_9: -426192246058642449
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
