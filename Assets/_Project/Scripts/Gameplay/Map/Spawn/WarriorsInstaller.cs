@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Gameplay.Map.Allies;
+using UnityEngine;
 using Zenject;
 
 namespace Gameplay.Map.Spawn
@@ -15,6 +16,8 @@ namespace Gameplay.Map.Spawn
             Container.Bind<WarriorsSpawner>()
                 .AsSingle();
             Container.BindInterfacesAndSelfTo<WarriorsCollection>()
+                .AsSingle();
+            Container.Bind<AlliesSpawner>()
                 .AsSingle();
             Container.Bind<WaveManager>()
                 .AsSingle();

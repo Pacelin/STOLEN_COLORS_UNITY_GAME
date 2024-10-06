@@ -1,4 +1,5 @@
 ﻿using System;
+using Gameplay.Map.Allies;
 using Gameplay.Map.Enemies;
 using UniRx;
 using UnityEngine;
@@ -62,7 +63,7 @@ namespace Gameplay.Map.Spawn
             _disposables = null;
         }
         
-        public void SpawnEnemy(EWarriorClass @class, UnitModifiers modifiers = default, bool release = true)
+        public void SpawnEnemy(EWarriorClass @class, SpawnModifiers modifiers = default, bool release = true)
         {
             var castle = _castles.GetCastle(EBattleSide.Enemy);
             if (_castles.CapturingCastle && _castles.CapturingCastle.Owner == EBattleSide.Enemy)
@@ -77,7 +78,7 @@ namespace Gameplay.Map.Spawn
             _onSpawnEnemy.Execute(enemy);
         }
 
-        public void SpawnAlly(EWarriorClass @class, UnitModifiers modifiers = default, bool release = true)
+        public void SpawnAlly(EWarriorClass @class, SpawnModifiers modifiers = default, bool release = true)
         {
             var castle = _castles.GetCastle(EBattleSide.Ally);
             if (_castles.CapturingCastle && _castles.CapturingCastle.Owner == EBattleSide.Ally)

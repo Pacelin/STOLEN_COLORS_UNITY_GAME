@@ -39,6 +39,8 @@ namespace Audio.Gameplay.PointsGrid
 
         public void AddActivation()
         {
+            if (_activationsCount >= 3)
+                return;
             if (_activeMarkers.ContainsKey(_activationsCount))
                 _activeMarkers[_activationsCount].SetActive(false);
             _activationsCount++;

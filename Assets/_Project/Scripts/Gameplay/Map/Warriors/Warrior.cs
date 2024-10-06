@@ -5,12 +5,9 @@ namespace Gameplay.Map
 {
     public class Warrior : Unit
     {
-        public EWarriorClass Class => _class;
         public Vector3 SnapPosition => _snapPosition;
         public Unit AttackTarget => _attackTarget;
         
-        [SerializeField] private EWarriorClass _class;
-
         private WarriorStateMachine _stateMachine;
         private Unit _attackTarget;
         private Vector3 _snapPosition;
