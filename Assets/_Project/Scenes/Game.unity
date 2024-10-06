@@ -1269,6 +1269,10 @@ MonoBehaviour:
   _applyButton: {fileID: 949986824}
   _connectionPrefab: {fileID: 998424689201099591, guid: 2cce455d97c72954a87fb18fa714b944, type: 3}
   _maxConnections: 4
+  _errorDuration: 0.1
+  _errorLoops: 6
+  _defaultLineColor: {r: 1, g: 1, b: 1, a: 1}
+  _errorLineColor: {r: 0.94716984, g: 0.51290137, b: 0.51290137, a: 1}
 --- !u!4 &1626825065
 Transform:
   m_ObjectHideFlags: 0
