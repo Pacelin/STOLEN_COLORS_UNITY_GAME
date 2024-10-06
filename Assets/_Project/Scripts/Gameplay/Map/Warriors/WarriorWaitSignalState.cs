@@ -2,9 +2,9 @@
 {
     public class WarriorWaitSignalState : WarriorState
     {
-        
         public override void Enter()
         {
+            _warrior.Agent.stoppingDistance = 0;
             _warrior.Agent.SetDestination(_warrior.SnapPosition);
         }
 

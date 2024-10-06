@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Gameplay.Map.Enemies;
+using UnityEngine;
 using Zenject;
 
 namespace Gameplay.Map.Spawn
@@ -7,14 +8,12 @@ namespace Gameplay.Map.Spawn
     {
         [Inject] private WarriorsSpawner _spawner;
         [Inject] private CastlesCollection _castles;
+        [Inject] private WaveManager _waveManager;
         
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.R))
-            {
-                _castles.GetCastle(EBattleSide.Ally).ReleaseUnits();
-                _castles.GetCastle(EBattleSide.Enemy).ReleaseUnits();
-            }
+                _waveManager.StartWave();
             else if (Input.GetKeyDown(KeyCode.Z))
                 _spawner.SpawnAlly(EWarriorClass.Tank);
             else if (Input.GetKeyDown(KeyCode.X))

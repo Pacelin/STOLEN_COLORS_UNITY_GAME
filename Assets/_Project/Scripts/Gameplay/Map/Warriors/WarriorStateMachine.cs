@@ -17,8 +17,8 @@ namespace Gameplay.Map
             {
                 { typeof(WarriorWaitSignalState), container.Instantiate<WarriorWaitSignalState>(args) },
                 { typeof(WarriorWalkToCastleState), container.Instantiate<WarriorWalkToCastleState>(args) },
-                { typeof(WarriorWalkToEnemyState), container.Instantiate<WarriorWalkToEnemyState>(args) },
                 { typeof(WarriorAttackEnemyState), container.Instantiate<WarriorAttackEnemyState>(args) },
+                { typeof(WarriorWinState), container.Instantiate<WarriorWinState>(args) }
             };
             _isRun = false;
         }
@@ -46,6 +46,18 @@ namespace Gameplay.Map
             _currentState?.Exit();
             _currentState = _states[typeof(T)];
             _currentState.Enter();
+        }
+
+        public void Update()
+        {
+            if (_isRun)
+                _currentState?.Update();
+        }
+
+        public void FixedUpdate()
+        {
+            if (_isRun)
+                _currentState?.FixedUpdate();
         }
     }
 }

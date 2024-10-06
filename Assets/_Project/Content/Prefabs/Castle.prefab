@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9b418964884ff898a8926866f6ec3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemies: {fileID: 11400000, guid: c75f39a4e0856924bb75eac50929c226, type: 2}
   _warriorsDestination: {fileID: 2854724162563986520}
   _owner: 0
   _offset: {x: -0.25, y: 0, z: -1.85}

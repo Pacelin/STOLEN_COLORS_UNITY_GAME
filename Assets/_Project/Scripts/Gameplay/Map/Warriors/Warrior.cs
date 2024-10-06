@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
 
 namespace Gameplay.Map
@@ -8,12 +7,12 @@ namespace Gameplay.Map
     {
         public EWarriorClass Class => _class;
         public Vector3 SnapPosition => _snapPosition;
-        public Warrior AttackTarget => _attackTarget;
+        public Unit AttackTarget => _attackTarget;
         
         [SerializeField] private EWarriorClass _class;
 
         private WarriorStateMachine _stateMachine;
-        private Warrior _attackTarget;
+        private Unit _attackTarget;
         private Vector3 _snapPosition;
 
         [Inject]
@@ -31,12 +30,25 @@ namespace Gameplay.Map
             _stateMachine.SwitchState<WarriorWaitSignalState>();
         }
 
-        public void SetAttack(Warrior warrior)
+        public void SetAttack(Unit warrior)
         {
             _attackTarget = warrior;
             _stateMachine.SwitchState<WarriorAttackEnemyState>();
         }
-        
+
+        public void ApplyAttack(Unit warrior)
+        {
+            warrior.Model.TakeDamage(Model.Damage);
+        }
+
+        public void SetWinner()
+        {
+            _stateMachine.SwitchState<WarriorWinState>();
+        }
+
+        private void Update() => _stateMachine.Update();
+        private void FixedUpdate() => _stateMachine.FixedUpdate();
+
         private void OnEnable() =>
             _stateMachine.Run();
         private void OnDisable() => 
