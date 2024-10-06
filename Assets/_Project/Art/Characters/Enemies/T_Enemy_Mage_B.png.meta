@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 833430152affdb34782f30ff0f79421a
+guid: 38d74ca29924e5842b4326892a2a0769
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 460240592984231405
-    second: UI_Heal_0
+      213: 6952303915867516852
+    second: T_Enemy_Mage_B_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Heal_0
+      name: T_Enemy_Mage_B_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 155
-        height: 147
+        x: 179
+        y: 30
+        width: 1701
+        height: 2821
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ded4a00816a136600800000000000000
-      internalID: 460240592984231405
+      spriteID: 4bf27db939b8b7060800000000000000
+      internalID: 6952303915867516852
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      UI_Heal_0: 460240592984231405
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

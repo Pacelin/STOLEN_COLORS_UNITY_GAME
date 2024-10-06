@@ -4,8 +4,11 @@ using UnityEngine;
 public class DesaturationMaskController : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer _background, _mask;
+    private SpriteRenderer _background, _mask, _glow;
 
+    [SerializeField]
+    private Color _glowStartColor;
+    
     [SerializeField]
     private Transform _target;
     
@@ -13,6 +16,8 @@ public class DesaturationMaskController : MonoBehaviour
     private float _finalMaskScale = 200f;
     [SerializeField]
     private float _scaleTime = 1f;
+    [SerializeField]
+    private float _glowFadeTime = .4f;
     [SerializeField]
     private float _expandDelay = 1f;
 
@@ -67,9 +72,13 @@ public class DesaturationMaskController : MonoBehaviour
 
         _mask.transform.position = _target.position;
         _mask.transform.localScale = Vector3.zero;
+        _glow.color = _glowStartColor;
+        
         _tween = DOTween.
                  Sequence().
                  AppendInterval(_expandDelay).
-                 Append(_mask.transform.DOScale(Vector3.one * _finalMaskScale, _scaleTime));
+                 Append(_mask.transform.DOScale(Vector3.one * _finalMaskScale, _scaleTime)).
+                 Join(_glow.DOColor(Color.clear, _glowFadeTime)).
+                 SetEase(Ease.OutFlash);
     }
 }

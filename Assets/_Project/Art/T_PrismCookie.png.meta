@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 833430152affdb34782f30ff0f79421a
+guid: c74ea330a429fe640ace86e8a61d257b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 460240592984231405
-    second: UI_Heal_0
+      213: -8060032861403313021
+    second: T_PrismCookie_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Heal_0
+      name: T_PrismCookie_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 155
-        height: 147
+        width: 1171
+        height: 1167
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ded4a00816a136600800000000000000
-      internalID: 460240592984231405
+      spriteID: 38c841201d2052090800000000000000
+      internalID: -8060032861403313021
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Heal_0: 460240592984231405
+      T_PrismCookie_0: -8060032861403313021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

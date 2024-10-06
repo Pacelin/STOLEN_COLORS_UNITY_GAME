@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 833430152affdb34782f30ff0f79421a
+guid: 2d464fed24c79f540a75e6e114bddedd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 460240592984231405
-    second: UI_Heal_0
+      213: 4718493901928548499
+    second: T_Ally_Warrior_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Heal_0
+      name: T_Ally_Warrior_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 155
-        height: 147
+        x: 31
+        y: 29
+        width: 1468
+        height: 1403
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ded4a00816a136600800000000000000
-      internalID: 460240592984231405
+      spriteID: 3984c4344357b7140800000000000000
+      internalID: 4718493901928548499
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      UI_Heal_0: 460240592984231405
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
