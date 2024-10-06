@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
+using Gameplay.Map.Enemies;
 using UnityEngine;
 
 namespace Gameplay.Map
@@ -7,7 +9,9 @@ namespace Gameplay.Map
     public class Castle : MonoBehaviour
     {
         public EBattleSide Owner => _owner;
+        public CastleEnemies Enemies => _enemies;
         
+        [SerializeField] private CastleEnemies _enemies;
         [SerializeField] private Transform _warriorsDestination;
         [SerializeField] private EBattleSide _owner;
         [SerializeField] private Vector3 _offset;
@@ -15,7 +19,7 @@ namespace Gameplay.Map
 
         private Dictionary<EWarriorClass, List<Warrior>> _snapped = new();
         private bool _isReleased;
-        
+
         public void SetOwner(EBattleSide side)
         {
             _owner = side;
@@ -25,7 +29,7 @@ namespace Gameplay.Map
             new Vector3(_warriorsDestination.position.x, 0, warrior.Position.z);
         public Vector3 GetWarriorSpawnPosition(EBattleSide side, EWarriorClass @class) =>
             GetPositionFor(side, @class, GetIndex(@class));
-
+        
         public void AddUnit(Warrior unit)
         {
             if (_isReleased)
@@ -34,6 +38,24 @@ namespace Gameplay.Map
             {
                 unit.Snap(GetWarriorSpawnPosition(unit.Side, unit.Class));
                 AddWarrior(unit);
+            }
+        }
+
+        public void AddUnitWithoutRelease(Warrior unit)
+        {
+            unit.Snap(GetWarriorSpawnPosition(unit.Side, unit.Class));
+            AddWarrior(unit);
+        }
+
+        public void ReleaseIfNeed()
+        {
+            if (!_isReleased)
+                return;
+            foreach (var snap in _snapped)
+            {
+                foreach (var warrior in snap.Value)
+                    warrior.Release();
+                snap.Value.Clear();
             }
         }
         

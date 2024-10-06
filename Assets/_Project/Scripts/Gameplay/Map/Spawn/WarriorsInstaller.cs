@@ -16,6 +16,8 @@ namespace Gameplay.Map.Spawn
                 .AsSingle();
             Container.BindInterfacesAndSelfTo<WarriorsCollection>()
                 .AsSingle();
+            Container.Bind<WaveManager>()
+                .AsSingle();
         }
     }
 }

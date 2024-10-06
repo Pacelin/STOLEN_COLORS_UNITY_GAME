@@ -14,6 +14,7 @@ namespace Gameplay.Map
         
         public IReadOnlyReactiveProperty<float> Health => _health;
         public IReadOnlyReactiveProperty<float> NormalizedHealth => _normalizedHealth;
+        public IReadOnlyReactiveProperty<bool> Alive => _alive;
         public IObservable<float> OnTakeDamage => _onTakeDamage;
         public IObservable<UniRx.Unit> OnDie => _alive.Where(a => !a).AsUnitObservable();
 

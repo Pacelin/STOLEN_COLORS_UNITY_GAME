@@ -1,6 +1,6 @@
 ﻿namespace Gameplay.Map
 {
-    public class WarriorWalkToEnemyState : WarriorState
+    public class WarriorWinState : WarriorState
     {
         public override void Enter()
         {

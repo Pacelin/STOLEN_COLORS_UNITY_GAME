@@ -7,6 +7,8 @@ namespace Gameplay.Map
         [Inject] protected Warrior _warrior;
         
         public abstract void Enter();
+        public virtual void FixedUpdate() { }
+        public virtual void Update() { }
         public abstract void Exit();
     }
 }

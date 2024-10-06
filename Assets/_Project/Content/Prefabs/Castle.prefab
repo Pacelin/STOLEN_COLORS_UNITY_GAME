@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3356787135930497078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: 0}
+  m_LocalPosition: {x: 0, y: -2.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60,7 +60,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -6, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2854724162563986520}
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1918789767968151035, guid: 2899ae42fe24dad4a9142c5c1b1ffd53, type: 3}
   m_Color: {r: 0.8867924, g: 0.5538269, b: 0.5538269, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9b418964884ff898a8926866f6ec3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemies: {fileID: 11400000, guid: c75f39a4e0856924bb75eac50929c226, type: 2}
   _warriorsDestination: {fileID: 2854724162563986520}
   _owner: 0
   _offset: {x: -0.25, y: 0, z: -1.85}
