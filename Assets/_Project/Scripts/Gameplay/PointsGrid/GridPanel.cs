@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DG.Tweening;
+using Gameplay.Map.Allies;
 using UniRx;
 using UnityEngine;
 using Zenject;
@@ -9,6 +9,8 @@ namespace Audio.Gameplay.PointsGrid
 {
     public class GridPanel : MonoBehaviour
     {
+        public GridLayout Grid => _grid;
+        
         [SerializeField] private Camera _camera;
         [SerializeField] private GridLayout _grid;
         [SerializeField] private SpriteButton _clearButton;
@@ -27,10 +29,15 @@ namespace Audio.Gameplay.PointsGrid
         private CompositeDisposable _disposables;
         private GridPointsConnection _mouseConnection;
         private Tween _errorTween;
+
+        private AlliesSpawner _spawner;
         
         [Inject]
-        private void Construct() =>
+        private void Construct(AlliesSpawner spawner)
+        {
             _grid.Regenerate();
+            _spawner = spawner;
+        }
         
         private void OnEnable()
         {
@@ -51,8 +58,12 @@ namespace Audio.Gameplay.PointsGrid
 
         private void ApplyGrid()
         {
-            ClearGrid();
-            _grid.Regenerate();
+            if (_connections.Count > 0)
+            {
+                _spawner.Spawn();
+                ClearGrid();
+                _grid.Regenerate();
+            }
         }
 
         private void ClearGrid()
@@ -73,6 +84,8 @@ namespace Audio.Gameplay.PointsGrid
 
         private void OnClickPoint(GridPoint point)
         {
+            if (_connections.Count >= _maxConnections)
+                return;
             _errorTween?.Kill(true);
             if (_lastClickedGridPoint == null && point.Model.CanConnectThrough)
             {
@@ -92,6 +105,9 @@ namespace Audio.Gameplay.PointsGrid
                     _connections.Add(newConnection);
                     newConnection.Connect(_lastClickedGridPoint, point);
                     _lastClickedGridPoint = point;
+                    
+                    if (_connections.Count >= _maxConnections)
+                        Destroy(_mouseConnection.gameObject);
                 }
                 else
                 {

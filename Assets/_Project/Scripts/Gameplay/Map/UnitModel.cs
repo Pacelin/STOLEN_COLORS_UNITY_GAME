@@ -1,4 +1,5 @@
 ﻿using System;
+using Gameplay.Map.Allies;
 using UniRx;
 using UnityEngine;
 
@@ -28,13 +29,16 @@ namespace Gameplay.Map
         private readonly ReactiveCommand<float> _onTakeDamage;
         private readonly ReactiveProperty<bool> _alive;
 
-        public UnitModel(UnitData data, UnitModifiers modifiers)
+        public UnitModel(UnitData data, SpawnModifiers modifiers, EWarriorClass @class)
         {
-            _speed = data.Speed + modifiers.AdditiveSpeed;
-            _damage = data.Damage + modifiers.AdditiveDamage;
-            _maxHealth = data.Health + modifiers.AdditiveHealth;
-            _attackSpeed = data.AttackSpeed + modifiers.AdditiveAttackSpeed;
-            _attackDistance = data.AttackDistance + modifiers.AdditiveAttackDistance;
+            _speed = data.Speed + modifiers.WalkSpeed;
+            _damage = data.Damage * modifiers.DamageMultiplier;
+            _maxHealth = data.Health * modifiers.HealthMultiplier;
+            _attackSpeed = data.AttackSpeed * modifiers.AttackSpeedMultiplier;
+            if (@class == EWarriorClass.Mage)
+                _attackDistance = data.AttackDistance + modifiers.MagesAttackRange;
+            else
+                _attackDistance = data.AttackDistance;
             _health = new(_maxHealth);
             _normalizedHealth = _health.Select(h => h / _maxHealth).ToReactiveProperty();
             _onTakeDamage = new();
@@ -50,6 +54,12 @@ namespace Gameplay.Map
                     _alive.Value = false;
                 _onTakeDamage.Execute(damage);
             }
+        }
+
+        public void Heal(float heal)
+        {
+            if (_alive.Value)
+                _health.Value = Mathf.Min(_maxHealth, _health.Value + heal);
         }
     }
 }

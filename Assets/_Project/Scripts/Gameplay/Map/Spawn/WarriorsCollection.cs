@@ -9,7 +9,9 @@ namespace Gameplay.Map.Spawn
     public class WarriorsCollection : IInitializable, IDisposable
     {
         public bool HasEnemies => _enemies.Count > 0;
-        
+
+        public IReadOnlyList<Warrior> Allies => _allies;
+
         private readonly WarriorsSpawner _spawner;
         private readonly List<Warrior> _enemies;
         private readonly List<Warrior> _allies;

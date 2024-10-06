@@ -1,10 +1,12 @@
-﻿namespace Gameplay.Map.Enemies
+﻿using Gameplay.Map.Allies;
+
+namespace Gameplay.Map.Enemies
 {
     [System.Serializable]
     public struct WarriorComposition
     {
         public EWarriorClass Class;
-        public UnitModifiers Modifiers;
+        public SpawnModifiers Modifiers;
         public int Count;
     }
 }

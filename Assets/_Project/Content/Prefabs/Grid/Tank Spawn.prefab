@@ -57,8 +57,44 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: ac80d32ce23b486498c3562a7582b2fb, type: 3}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: _action
+      value: 1494537713868341338
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: _canConnectThrough
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: 'managedReferences[1494537713868341338]'
+      value: Assembly-CSharp Audio.Gameplay.PointsGrid.SpawnWarriorAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537713868341338]._class
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537713868341338]._description.m_FallbackState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537713868341338]._description.m_WaitForCompletion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537713868341338]._description.m_LocalVariables.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537713868341338]._description.m_TableEntryReference.m_Key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537713868341338]._description.m_TableEntryReference.m_KeyId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537713868341338]._description.m_TableReference.m_TableCollectionName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

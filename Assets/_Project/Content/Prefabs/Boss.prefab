@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 8136590541689414957}
   _side: 1
+  _class: 2
   _baseData:
     Health: 100
     Damage: 1

@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 6513896889377129369}
   - component: {fileID: 8317290860535561436}
   m_Layer: 7
-  m_Name: GridPoint
+  m_Name: Grid Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,6 +334,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canConnectThrough: 1
+  _actions:
+  - rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!135 &8317290860535561436
 SphereCollider:
   m_ObjectHideFlags: 0
