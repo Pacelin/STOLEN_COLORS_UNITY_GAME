@@ -16,13 +16,14 @@ namespace UniOwl.UI
         public void OnPointerEnter(PointerEventData eventData)
         {
             if (_selectable != null && !_selectable.interactable) return;
-            //AudioSFXSystem.PlayCue2D(_hoverAudio);
+            
+            _audioSystem.PlaySound(ESoundKey.UIHover);
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
             if (_selectable != null && !_selectable.interactable) return;
-            //AudioSFXSystem.PlayCue2D(_clickAudio);
+            _audioSystem.PlaySound(ESoundKey.UIClick);
         }
     }
 }
