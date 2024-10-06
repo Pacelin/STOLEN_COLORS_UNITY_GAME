@@ -392,6 +392,7 @@ MonoBehaviour:
   - {fileID: 8341938950121770530}
   - {fileID: -4263105359319187685}
   - {fileID: 6572970747413959559}
+  - {fileID: 3294655360077603094}
 --- !u!114 &583690790000079398
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -432,6 +433,22 @@ MonoBehaviour:
   maxNits:
     m_OverrideState: 1
     m_Value: 1000
+--- !u!114 &3294655360077603094
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd368b2e298cea04989a090d420aa755, type: 3}
+  m_Name: TestInvertFXVolumeComponent
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &3784456638124320704
 MonoBehaviour:
   m_ObjectHideFlags: 3

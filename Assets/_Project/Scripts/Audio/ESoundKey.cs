@@ -2,6 +2,7 @@
 {
     public enum ESoundKey
     {
-        
+        UIHover,
+        UIClick,
     }
 }
