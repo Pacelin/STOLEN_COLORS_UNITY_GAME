@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9aa538b839e634792387c65b014bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _masterVolume: Master_Volume
+  _masterVolumeProperty: Master_Volume
   _mixer: {fileID: 24100000, guid: a76a594f4433d5046b1cfa4b2a703cc5, type: 2}
   _audioSources:
     _serializedList:
@@ -318,3 +318,11 @@ MonoBehaviour:
       Value: Sound_Volume
     - Key: 1
       Value: Music_Volume
+  _sounds:
+    _serializedList: []
+  _music:
+    _serializedList: []
+  _fadeOffDuration: 0
+  _fadeOffEase: 0
+  _fadeOnDuration: 0
+  _fadeOnEase: 0
