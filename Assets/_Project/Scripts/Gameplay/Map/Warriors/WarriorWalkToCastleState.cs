@@ -21,6 +21,8 @@ namespace Gameplay.Map
         {
             _disposables = new();
             var attackCastle = _castles.GetCastle(1 - _warrior.Side);
+            if (_castles.CapturingCastle && _castles.CapturingCastle.Owner == _warrior.Side)
+                attackCastle = _castles.CapturingCastle;
             if (!attackCastle)
             {
                 if (_warrior.Side == EBattleSide.Ally && _boss.BossIsAlive)

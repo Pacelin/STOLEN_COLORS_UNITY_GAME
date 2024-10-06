@@ -20,6 +20,7 @@
         public void CaptureCastle(Castle castle, Warrior warrior)
         {
             castle.SetOwner(warrior.Side);
+            _castles.SetCapturingCastle(castle);
             _castles.SnapCastles();
             _warriors.StopWave();
         }

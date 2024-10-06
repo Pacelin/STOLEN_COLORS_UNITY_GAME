@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using Gameplay.Map.Enemies;
+﻿using System.Linq;
 using UnityEngine;
 using Zenject;
 
@@ -8,10 +6,13 @@ namespace Gameplay.Map
 {
     public class CastlesCollection : MonoBehaviour
     {
+        public Castle CapturingCastle => _capturingCastle;
+        
         [SerializeField] private Castle[] _castles;
 
         private Castle _allyCastle;
         private Castle _enemyCastle;
+        private Castle _capturingCastle;
 
         [Inject]
         private void Construct()
@@ -20,6 +21,8 @@ namespace Gameplay.Map
             _enemyCastle = _castles.FirstOrDefault(c => c.Owner == EBattleSide.Enemy);
         }
 
+        public void SetCapturingCastle(Castle castle) => _capturingCastle = castle;
+        
         public Castle GetCastle(EBattleSide side)
         {
             if (side == EBattleSide.Ally)
@@ -29,14 +32,13 @@ namespace Gameplay.Map
         
         public void SnapCastles()
         {
-            _allyCastle = _castles.LastOrDefault(c => c.Owner == EBattleSide.Ally);
-            _enemyCastle = _castles.FirstOrDefault(c => c.Owner == EBattleSide.Enemy);
             foreach (var castle in _castles)
                 castle.SnapUnits();
         }
 
         public void ReleaseCastles()
         {
+            _capturingCastle = null;
             _allyCastle = _castles.LastOrDefault(c => c.Owner == EBattleSide.Ally);
             _enemyCastle = _castles.FirstOrDefault(c => c.Owner == EBattleSide.Enemy);
             if (_allyCastle)
