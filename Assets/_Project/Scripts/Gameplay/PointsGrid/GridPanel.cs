@@ -51,6 +51,8 @@ namespace Audio.Gameplay.PointsGrid
 
         private void ApplyGrid()
         {
+            ClearGrid();
+            _grid.Regenerate();
         }
 
         private void ClearGrid()
@@ -72,10 +74,11 @@ namespace Audio.Gameplay.PointsGrid
         private void OnClickPoint(GridPoint point)
         {
             _errorTween?.Kill(true);
-            if (_lastClickedGridPoint == null)
+            if (_lastClickedGridPoint == null && point.Model.CanConnectThrough)
             {
                 _lastClickedGridPoint = point;
                 _mouseConnection = Instantiate(_connectionPrefab, transform);
+                _mouseConnection.Line.maskInteraction = SpriteMaskInteraction.None;
                 Update();
                 point.AddActivation();
             }
