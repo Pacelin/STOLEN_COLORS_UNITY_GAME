@@ -20,21 +20,21 @@ using UnityEngine.Rendering.Universal;
 // * The 'IPostProcessComponent' interface adds the 'IsActive()' method, which is currently not strictly necessary and is for your own convenience
 // * It is recommended to only expose fields that are expected to change. Fields which are constant such as shaders, materials or LUT textures
 //   should likely be in AssetBundles or referenced by serialized fields of your custom ScriptableRendererFeatures on used renderers so they would not get stripped during builds
-[VolumeComponentMenu("Post-processing Custom/TestInvertFX")]
-[VolumeRequiresRendererFeatures(typeof(TestInvertFXRendererFeature))]
+[VolumeComponentMenu("Post-processing Custom/Desaturation")]
+[VolumeRequiresRendererFeatures(typeof(DesaturationRendererFeature))]
 [SupportedOnRenderPipeline(typeof(UniversalRenderPipelineAsset))]
-public sealed class TestInvertFXVolumeComponent : VolumeComponent, IPostProcessComponent
+public sealed class DesaturationVolumeComponent : VolumeComponent, IPostProcessComponent
 {
-    public TestInvertFXVolumeComponent()
+    public DesaturationVolumeComponent()
     {
-        displayName = "TestInvertFX";
+        displayName = "Desaturation";
     }
 
     [Tooltip("Enter the description for the property that is shown when hovered")]
-    public ClampedFloatParameter intensity = new ClampedFloatParameter(1f, 0f, 1f);
+    public ClampedFloatParameter intensity = new ClampedFloatParameter(0f, 0f, 1f);
 
     public bool IsActive()
     {
-        return intensity.GetValue<float>() > 0.0f;
+        return active && intensity.GetValue<float>() > 0.0f;
     }
 }

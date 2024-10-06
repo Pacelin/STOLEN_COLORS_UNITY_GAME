@@ -9,7 +9,7 @@ using UnityEngine.Rendering.Universal;
 //
 // For a general guide on how to create custom ScriptableRendererFeatures see the following URP documentation page:
 // https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest/index.html?subfolder=/manual/renderer-features/create-custom-renderer-feature.html
-public sealed class TestInvertFXRendererFeature : ScriptableRendererFeature
+public sealed class DesaturationRendererFeature : ScriptableRendererFeature
 {
     #region FEATURE_FIELDS
 
@@ -67,7 +67,7 @@ public sealed class TestInvertFXRendererFeature : ScriptableRendererFeature
         //
         // N.B. if your volume component type is actually defined in C# it is unlikely that VolumeManager would return a "null" instance of it as
         // GlobalSettings should always contain an instance of all VolumeComponents in the project even if if they're not overriden in the scene
-        TestInvertFXVolumeComponent myVolume = VolumeManager.instance.stack?.GetComponent<TestInvertFXVolumeComponent>();
+        DesaturationVolumeComponent myVolume = VolumeManager.instance.stack?.GetComponent<DesaturationVolumeComponent>();
         if (myVolume == null || !myVolume.IsActive())
             return;
 
@@ -168,10 +168,13 @@ public sealed class TestInvertFXRendererFeature : ScriptableRendererFeature
             //
             // To control the rendering of your effect using a custom VolumeComponent you can set the material's properties
             // based on the blended values of your VolumeComponent by querying them with the core VolumeManager API e.g.:
-            TestInvertFXVolumeComponent myVolume = VolumeManager.instance.stack?.GetComponent<TestInvertFXVolumeComponent>();
+            DesaturationVolumeComponent myVolume = VolumeManager.instance.stack?.GetComponent<DesaturationVolumeComponent>();
             if (myVolume != null)
                 s_SharedPropertyBlock.SetFloat("_Intensity", myVolume.intensity.value);
 
+            if (myVolume == null || !myVolume.IsActive())
+                return;
+            
             cmd.DrawProcedural(Matrix4x4.identity, material, 0, MeshTopology.Triangles, 3, 1, s_SharedPropertyBlock);
         }
 
@@ -286,8 +289,7 @@ public sealed class TestInvertFXRendererFeature : ScriptableRendererFeature
         {
             UniversalResourceData resourcesData = frameData.Get<UniversalResourceData>();
             UniversalCameraData cameraData = frameData.Get<UniversalCameraData>();
-
-            UniversalRenderer renderer = (UniversalRenderer) cameraData.renderer;
+            
             var colorCopyDescriptor = GetCopyPassTextureDescriptor(cameraData.cameraTargetDescriptor);
             TextureHandle copiedColor = TextureHandle.nullHandle;
 
