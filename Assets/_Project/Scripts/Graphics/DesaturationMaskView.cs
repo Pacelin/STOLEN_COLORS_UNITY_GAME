@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DesaturationMaskView : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class DesaturationMaskView : MonoBehaviour
     private float _expandDelay = 1f;
     [SerializeField]
     private Vector3 _maskRotationSpeed = new Vector3(0f, 30f, 0);
+
+    [SerializeField]
+    private int _initialSaturationlevel;
+    [SerializeField]
+    private int _nextLevelBuildIndex;
     
     private Tween _tween;
 
@@ -39,6 +45,8 @@ public class DesaturationMaskView : MonoBehaviour
         Color maskColor = _mask.color;
         maskColor.a = _maskIdleAlpha + 1e-3f;
         _mask.color = maskColor;
+        
+        ApplyDefaultLevel(_initialSaturationlevel);
     }
 
     private void OnDestroy()
@@ -70,10 +78,17 @@ public class DesaturationMaskView : MonoBehaviour
         _mask.transform.localScale = Vector3.one * _finalMaskScale;
         _tween = _mask.transform.DOScale(Vector3.zero, _scaleTime);
     }
+
+    private bool expanded;
     
     [ContextMenu("Expand")]
     public void ExpandPrism()
     {
+        if (expanded)
+            return;
+
+        expanded = true;
+        
         _tween?.Kill();
 
         _mask.transform.position = _target.position;
@@ -95,6 +110,13 @@ public class DesaturationMaskView : MonoBehaviour
                  Join(_glow.DOColor(Color.clear, _glowFadeTime)).
                  Join(_mask.DOColor(finalMaskColor, _glowFadeTime)).
                  Join(_orb.DOColor(Color.clear, _glowFadeTime)).
+                 AppendInterval(3f).
+                 AppendCallback(AfterAnimationCallback).
                  SetEase(Ease.OutFlash);
+    }
+
+    private void AfterAnimationCallback()
+    {
+        SceneManager.LoadScene(_nextLevelBuildIndex);
     }
 }
