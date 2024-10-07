@@ -809,6 +809,11 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3032931153672409744, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
   m_PrefabInstance: {fileID: 292859789}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &385704188 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8196501666257542618, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+  m_PrefabInstance: {fileID: 292859789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &399043529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,7 +1565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 741100199}
   _start: {fileID: 4218579554836504560}
-  _goal: {fileID: 0}
+  _goal: {fileID: 385704188}
   _initialMoveSpeed: 25
   _cameraGoalStopDelay: 3
   _lerpSpeed: 1
