@@ -90,5 +90,12 @@ namespace Gameplay.Map.Bosses
             Activate();
             base.TakeDamage(damage);
         }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            foreach (var radius in _attacksRadiuses)
+                Gizmos.DrawWireSphere(transform.position, radius);
+        }
     }
 }

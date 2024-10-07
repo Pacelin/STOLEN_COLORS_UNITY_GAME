@@ -8306,8 +8306,8 @@ MonoBehaviour:
     Speed: 1
   _bossAnimation: {fileID: 8136590539927262333}
   _attacksCooldown:
-  - 5
-  - 5
+  - 0.8
+  - 0.5
   _attacksRadiuses:
   - 3
   - 5

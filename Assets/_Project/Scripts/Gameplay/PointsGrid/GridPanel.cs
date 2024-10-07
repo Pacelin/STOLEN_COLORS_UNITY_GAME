@@ -31,7 +31,9 @@ namespace Audio.Gameplay.PointsGrid
         [SerializeField] private float _firstX;
         [SerializeField] private float _secondX;
         [SerializeField] private float _duration;
-        
+
+        public IReadOnlyReactiveProperty<bool> IsInProgress => _isInProgress;
+
         private List<GridPointsConnection> _connections = new();
         private GridPoint _lastClickedGridPoint;
         private CompositeDisposable _disposables;
@@ -42,12 +44,14 @@ namespace Audio.Gameplay.PointsGrid
         private WaveManager _wave;
         private IDisposable _descriptionDisposable;
         private Tween _tween;
+        private ReactiveProperty<bool> _isInProgress = new();
 
         [Inject] private AudioSystem _audio;
         
         [Inject]
         private void Construct(AlliesSpawner spawner, WaveManager wave)
         {
+            _isInProgress.Value = false;
             _grid.Regenerate();
             _wave = wave;
             var transform1 = transform;
@@ -125,6 +129,7 @@ namespace Audio.Gameplay.PointsGrid
             foreach (var point in _grid)
                 point.ResetActivation();
 
+            _isInProgress.Value = false;
             _connections.Clear();
             _lastClickedGridPoint = null;
             _mouseConnection = null;
@@ -155,7 +160,8 @@ namespace Audio.Gameplay.PointsGrid
                 _mouseConnection.Line.maskInteraction = SpriteMaskInteraction.None;
                 Update();
                 point.AddActivation();
-                _audio.PlaySound(ESoundKey.GridPointClick);
+                _audio.PlaySound(ESoundKey.GridPointClick);            
+                _isInProgress.Value = true;
             }
             else
             {
