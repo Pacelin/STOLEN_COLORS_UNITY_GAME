@@ -385,7 +385,10 @@ MonoBehaviour:
         Category: 0
         VolumeMultiplier: 1
     - Key: 8
-      Value: []
+      Value:
+      - Clip: {fileID: 8300000, guid: 1ce8a1f9fd3dd8e4fb4149bb5ec03c9c, type: 3}
+        Category: 0
+        VolumeMultiplier: 0.5
     - Key: 9
       Value: []
     - Key: 10
