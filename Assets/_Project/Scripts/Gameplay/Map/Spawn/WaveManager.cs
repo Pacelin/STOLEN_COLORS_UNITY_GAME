@@ -4,22 +4,25 @@ namespace Gameplay.Map.Spawn
 {
     public class WaveManager
     {
-        public IReadOnlyReactiveProperty<bool> WaveIsInProgress => _waveIsInProgress;
+        public IReadOnlyReactiveProperty<bool> WaveIsInProgress => 
+            _waveIsInProgress.Select(b => _bossFight || b).ToReactiveProperty();
 
         private readonly WarriorsSpawner _warriors;
         private readonly CastlesCollection _castles;
         private readonly ReactiveProperty<bool> _waveIsInProgress;
+        private bool _bossFight;
 
         public WaveManager(WarriorsSpawner warriors, CastlesCollection castles)
         {
             _warriors = warriors;
             _castles = castles;
             _waveIsInProgress = new(false);
+            _bossFight = false;
         }
 
         public void SetBossFight()
         {
-            _waveIsInProgress.Value = true;
+            _bossFight = true;
         }
         
         public void StartWave()
