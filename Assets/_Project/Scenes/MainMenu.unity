@@ -355,8 +355,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.6500244, y: 123.52999}
-  m_SizeDelta: {x: 1080, y: 250}
+  m_AnchoredPosition: {x: 7.600006, y: 130.53}
+  m_SizeDelta: {x: 706.0013, y: 250}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &302909456
 MonoBehaviour:
@@ -378,7 +378,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stolen Colors
+  m_text: 'Stolen
+
+    Colors'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd9750da8cf4312439c28fac7c7272d3, type: 2}
   m_sharedMaterial: {fileID: -6267782289578274414, guid: bd9750da8cf4312439c28fac7c7272d3, type: 2}
@@ -415,9 +417,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -14.01
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -914,8 +916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.050048828, y: 120.23999}
-  m_SizeDelta: {x: 1080, y: 250}
+  m_AnchoredPosition: {x: 1.0152893, y: 127.23999}
+  m_SizeDelta: {x: 706.0013, y: 250}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &521844286
 MonoBehaviour:
@@ -937,7 +939,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stolen Colors
+  m_text: 'Stolen
+
+    Colors'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd9750da8cf4312439c28fac7c7272d3, type: 2}
   m_sharedMaterial: {fileID: -6267782289578274414, guid: bd9750da8cf4312439c28fac7c7272d3, type: 2}
@@ -974,9 +978,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -14.01
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -986,7 +990,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -1050,8 +1054,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.1499634, y: 119.82999}
-  m_SizeDelta: {x: 1080, y: 250}
+  m_AnchoredPosition: {x: -5.980011, y: 122.45}
+  m_SizeDelta: {x: 706.0013, y: 250}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &593479992
 MonoBehaviour:
@@ -1073,7 +1077,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stolen Colors
+  m_text: 'Stolen
+
+    Colors'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd9750da8cf4312439c28fac7c7272d3, type: 2}
   m_sharedMaterial: {fileID: -6267782289578274414, guid: bd9750da8cf4312439c28fac7c7272d3, type: 2}
@@ -1110,9 +1116,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -14.01
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1285,8 +1291,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 25.400024, y: 0}
-  m_SizeDelta: {x: 1090.3, y: 255.53003}
+  m_AnchoredPosition: {x: -50, y: -25}
+  m_SizeDelta: {x: 724.5878, y: 255.53}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &835936203
 GameObject:
@@ -1724,8 +1730,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.1500244, y: 118}
-  m_SizeDelta: {x: 1080, y: 250}
+  m_AnchoredPosition: {x: 7.6700134, y: 125}
+  m_SizeDelta: {x: 706.0013, y: 250}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1615576812
 MonoBehaviour:
@@ -1747,7 +1753,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stolen Colors
+  m_text: 'Stolen
+
+    Colors'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd9750da8cf4312439c28fac7c7272d3, type: 2}
   m_sharedMaterial: {fileID: -6267782289578274414, guid: bd9750da8cf4312439c28fac7c7272d3, type: 2}
@@ -1784,9 +1792,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -14.01
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

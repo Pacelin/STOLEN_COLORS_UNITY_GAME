@@ -74,6 +74,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _baseData.Damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _baseData.Health
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _baseData.AttackSpeed
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 4330352822543222233, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: m_Name
       value: Boss Level 3

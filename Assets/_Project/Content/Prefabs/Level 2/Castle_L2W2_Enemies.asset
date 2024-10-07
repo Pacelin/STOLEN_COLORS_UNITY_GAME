@@ -16,36 +16,59 @@ MonoBehaviour:
   - Composition:
     - Class: 1
       Modifiers:
-        AdditiveHealth: 0
-        AdditiveDamage: 0
-        AdditiveAttackSpeed: 0
-        AdditiveAttackDistance: 0
-        AdditiveSpeed: 0
+        AttackSpeedMultiplier: 1.4
+        MagesAttackRange: 0
+        DamageMultiplier: 1.7
+        HealthMultiplier: 2
+        WalkSpeed: 1
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
       Count: 1
     - Class: 2
       Modifiers:
-        AdditiveHealth: 0
-        AdditiveDamage: 0
-        AdditiveAttackSpeed: 0
-        AdditiveAttackDistance: 0
-        AdditiveSpeed: 0
-      Count: 3
+        AttackSpeedMultiplier: 2
+        MagesAttackRange: 0
+        DamageMultiplier: 2
+        HealthMultiplier: 1.5
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 4
     - Class: 3
       Modifiers:
-        AdditiveHealth: 0
-        AdditiveDamage: 0
-        AdditiveAttackSpeed: 0
-        AdditiveAttackDistance: 0
-        AdditiveSpeed: 0
-      Count: 5
+        AttackSpeedMultiplier: 1.5
+        MagesAttackRange: 5
+        DamageMultiplier: 2
+        HealthMultiplier: 1
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 1
   _reinforcementWaves:
   - Composition:
     - Class: 2
       Modifiers:
-        AdditiveHealth: 0
-        AdditiveDamage: 0
-        AdditiveAttackSpeed: 0
-        AdditiveAttackDistance: 0
-        AdditiveSpeed: 0
+        AttackSpeedMultiplier: 0
+        MagesAttackRange: 0
+        DamageMultiplier: 0
+        HealthMultiplier: 0
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 2
+    - Class: 2
+      Modifiers:
+        AttackSpeedMultiplier: 1.5
+        MagesAttackRange: 0
+        DamageMultiplier: 2
+        HealthMultiplier: 1
+        WalkSpeed: 3
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
       Count: 2
   _waveCooldown: 10
