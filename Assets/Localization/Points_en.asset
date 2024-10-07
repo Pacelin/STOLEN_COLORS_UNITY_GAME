@@ -19,19 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 54120550400
-    m_Localized: +Mages Attack Range
+    m_Localized: + Mages attack range
     m_Metadata:
       m_Items: []
   - m_Id: 192507416576
-    m_Localized: +Attack Speed
+    m_Localized: + Attack speed
     m_Metadata:
       m_Items: []
   - m_Id: 269544198144
-    m_Localized: +Attack Damage
+    m_Localized: + Damage
     m_Metadata:
       m_Items: []
   - m_Id: 341078052864
-    m_Localized: +Health
+    m_Localized: + Health
     m_Metadata:
       m_Items: []
   - m_Id: 438297825280
@@ -39,23 +39,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 536159326208
-    m_Localized: Spawn Mage
+    m_Localized: Spawns Mage
     m_Metadata:
       m_Items: []
   - m_Id: 651905339392
-    m_Localized: Spawn Warrior
+    m_Localized: Spawns Warrior
     m_Metadata:
       m_Items: []
   - m_Id: 748881842176
-    m_Localized: Spawn Tank
+    m_Localized: Spawns Tank
     m_Metadata:
       m_Items: []
   - m_Id: 823464955904
-    m_Localized: +Walk Speed
+    m_Localized: + Walk speed
     m_Metadata:
       m_Items: []
   - m_Id: 58353662693376
-    m_Localized: Heal
+    m_Localized: Heals creatures
     m_Metadata:
       m_Items: []
   references:
