@@ -7,6 +7,7 @@ namespace Gameplay.Map
     public class CastlesCollection : MonoBehaviour
     {
         public Castle CapturingCastle => _capturingCastle;
+        public bool HasAllyCastle => _castles.Any(c => c.Owner == EBattleSide.Ally);
         
         [SerializeField] private Castle[] _castles;
 
