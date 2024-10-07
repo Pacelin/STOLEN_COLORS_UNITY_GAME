@@ -71,15 +71,4 @@ MonoBehaviour:
         SoldiersCount: 0
         TanksCount: 0
       Count: 1
-    - Class: 1
-      Modifiers:
-        AttackSpeedMultiplier: 1
-        MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 1.2
-        WalkSpeed: 0
-        MagesCount: 0
-        SoldiersCount: 0
-        TanksCount: 0
-      Count: 1
-  _waveCooldown: 12
+  _waveCooldown: 20
