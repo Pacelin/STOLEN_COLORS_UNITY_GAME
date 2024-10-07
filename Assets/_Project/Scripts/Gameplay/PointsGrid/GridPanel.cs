@@ -165,6 +165,11 @@ namespace Audio.Gameplay.PointsGrid
             }
             else
             {
+                if (!point.Model.CanConnectThrough)
+                {
+                    TweenError();
+                    return;
+                }
                 var connections = _lastClickedGridPoint.GetConnectionsWith(point);
                 if (connections.CanConnect())
                 {
