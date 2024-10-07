@@ -1,7 +1,12 @@
+using System;
+using UniRx;
 using UnityEngine;
 
 public class WarriorAnimationController : MonoBehaviour
 {
+    public IObservable<Unit> OnEmitAttack => _onEmitAttack;
+    public IObservable<Unit> OnEmitDie => _onEmitDie;
+
     private static readonly int s_damageId = Animator.StringToHash("DAMAGE");
     private static readonly int s_attackId = Animator.StringToHash("ATTACK");
     private static readonly int s_deathId = Animator.StringToHash("DEATH");
@@ -14,7 +19,10 @@ public class WarriorAnimationController : MonoBehaviour
 
     [SerializeField]
     private float _attackSpeedFactor = 1f, _moveSpeedFactor = 1f;
-    
+
+    private ReactiveCommand<Unit> _onEmitAttack = new();
+    private ReactiveCommand<Unit> _onEmitDie = new();
+
     public void SetIdle()
     {
         _animator.SetBool(s_moveId, false);
@@ -30,7 +38,7 @@ public class WarriorAnimationController : MonoBehaviour
         _animator.SetTrigger(s_attackId);
     }
 
-    public void TakeDamage()
+    public void SetTakeDamage()
     {
         _animator.SetTrigger(s_damageId);
     }
@@ -57,11 +65,13 @@ public class WarriorAnimationController : MonoBehaviour
     
     public void EmitAttack()
     {
+        _onEmitAttack.Execute(Unit.Default);
         // Play attack sound
     }
     
     public void EmitDie()
     {
+        _onEmitDie.Execute(Unit.Default);
         // Play die sound
     }
 }

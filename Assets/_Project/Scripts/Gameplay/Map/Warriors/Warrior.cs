@@ -1,16 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UniRx;
+using UnityEngine;
 using Zenject;
 
 namespace Gameplay.Map
 {
     public class Warrior : Unit
     {
+        public IObservable<UniRx.Unit> OnDie => Model.OnDie;
         public Vector3 SnapPosition => _snapPosition;
         public Unit AttackTarget => _attackTarget;
+        public WarriorAnimationController Animation => _animation;
         
         private WarriorStateMachine _stateMachine;
         private Unit _attackTarget;
         private Vector3 _snapPosition;
+        private IDisposable _attackDisposable;
+        private CompositeDisposable _dieDisposables;
+        
+        [SerializeField] private WarriorAnimationController _animation;
 
         [Inject]
         private void Construct(DiContainer container)
@@ -35,20 +43,46 @@ namespace Gameplay.Map
 
         public void ApplyAttack(Unit warrior)
         {
-            warrior.Model.TakeDamage(Model.Damage);
+            _attackDisposable?.Dispose();
+            _attackDisposable = _animation.OnEmitAttack
+                .First()
+                .Subscribe(_ =>
+                {
+                    warrior.TakeDamage(Model.Damage);
+                });
+            _animation.Attack();
+        }
+
+        public override void TakeDamage(float damage)
+        {
+            _animation.SetTakeDamage();
+            base.TakeDamage(damage);
         }
 
         public void SetWinner()
         {
+            _animation.SetIdle();
             _stateMachine.SwitchState<WarriorWinState>();
         }
 
         private void Update() => _stateMachine.Update();
         private void FixedUpdate() => _stateMachine.FixedUpdate();
 
-        private void OnEnable() =>
+        private void OnEnable()
+        {
             _stateMachine.Run();
-        private void OnDisable() => 
+            _dieDisposables = new();
+            _animation.OnEmitDie.Subscribe(_ => GameObject.Destroy(gameObject))
+                .AddTo(_dieDisposables);
+            Model.OnDie.Subscribe(_ => _animation.Die())
+                .AddTo(_dieDisposables);
+        }
+
+        private void OnDisable()
+        {
             _stateMachine.Stop();
+            _dieDisposables.Dispose();
+            _attackDisposable?.Dispose();
+        }
     }
 }

@@ -37,5 +37,10 @@ namespace Gameplay.Map
             }
             _model = new UnitModel(_baseData, unitModifiers, _class);
         }
+
+        public virtual void TakeDamage(float damage)
+        {
+            _model.TakeDamage(damage);
+        }
     }
 }

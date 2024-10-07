@@ -41,24 +41,16 @@ namespace Gameplay.Map.Spawn
         public void AddEnemy(Warrior warrior)
         {
             _enemies.Add(warrior);
-            warrior.Model.OnDie
-                .Subscribe(_ =>
-                {
-                    _enemies.Remove(warrior);
-                    GameObject.Destroy(warrior.gameObject);
-                })
+            warrior.OnDie
+                .Subscribe(_ => _enemies.Remove(warrior))
                 .AddTo(_disposables);
         }
 
         public void AddAlly(Warrior warrior)
         {
             _allies.Add(warrior);
-            warrior.Model.OnDie
-                .Subscribe(_ =>
-                {
-                    _allies.Remove(warrior);
-                    GameObject.Destroy(warrior.gameObject);
-                })
+            warrior.OnDie
+                .Subscribe(_ => _allies.Remove(warrior))
                 .AddTo(_disposables);
         }
 

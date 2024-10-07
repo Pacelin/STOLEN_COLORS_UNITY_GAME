@@ -32,6 +32,7 @@ namespace Gameplay.Map
                 if (_warrior.Agent.isStopped ||
                     Vector3.Distance(targetPosition, _warrior.Agent.destination) > UPDATE_DESTINATION_THRESHOLD)
                 {
+                    _warrior.Animation.SetWalk();
                     _warrior.Agent.ResetPath();
                     _warrior.Agent.SetDestination(targetPosition);
                 }

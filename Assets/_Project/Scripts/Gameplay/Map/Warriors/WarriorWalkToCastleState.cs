@@ -31,7 +31,8 @@ namespace Gameplay.Map
                     _warrior.SetWinner();
                 return;
             }
-            
+
+            _warrior.Animation.SetWalk();
             var destination = attackCastle.GetWarriorDestination(_warrior);
 
             _warrior.Agent.stoppingDistance = 0;

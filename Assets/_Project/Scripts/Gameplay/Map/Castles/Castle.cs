@@ -100,13 +100,13 @@ namespace Gameplay.Map
         {
             Gizmos.color = _owner == EBattleSide.Ally ? Color.yellow : Color.blue;
             foreach (var cell in _unitsCells[EWarriorClass.Tank])
-                Gizmos.DrawSphere(cell + transform.position + _offset, 0.1f);
+                Gizmos.DrawSphere(cell + transform.position + _offset, 0.3f);
             Gizmos.color = Color.red;
             foreach (var cell in _unitsCells[EWarriorClass.Soldier])
-                Gizmos.DrawSphere(cell + transform.position + _offset, 0.1f);
+                Gizmos.DrawSphere(cell + transform.position + _offset, 0.3f);
             Gizmos.color = _owner == EBattleSide.Ally ? Color.blue : Color.yellow;
             foreach (var cell in _unitsCells[EWarriorClass.Mage])
-                Gizmos.DrawSphere(cell + transform.position + _offset, 0.1f);
+                Gizmos.DrawSphere(cell + transform.position + _offset, 0.3f);
         }
     }
 }

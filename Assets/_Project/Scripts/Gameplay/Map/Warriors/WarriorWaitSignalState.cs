@@ -6,6 +6,7 @@
         {
             _warrior.Agent.stoppingDistance = 0;
             _warrior.Agent.SetDestination(_warrior.SnapPosition);
+            _warrior.Animation.SetIdle();
         }
 
         public override void Exit()
