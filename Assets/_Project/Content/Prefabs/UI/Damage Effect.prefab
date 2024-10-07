@@ -190,8 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initialOffset: {x: 0, y: 0, z: 2}
-  _animateDirection: {x: 0, y: 2, z: 0}
+  _animateDirection: {x: 0, y: 1, z: 0}
   _duration: 0.4
   _text: {fileID: 3509408151946579547}
-  _allyColor: {r: 0.28490567, g: 0.5913747, b: 1, a: 1}
-  _enemyColor: {r: 1, g: 0.2396226, b: 0.2396226, a: 1}
+  _allyColor: {r: 1, g: 1, b: 1, a: 1}
+  _enemyColor: {r: 1, g: 1, b: 1, a: 1}
