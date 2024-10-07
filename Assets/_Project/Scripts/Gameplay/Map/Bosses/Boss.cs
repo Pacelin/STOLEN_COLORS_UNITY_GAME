@@ -79,14 +79,11 @@ namespace Gameplay.Map.Bosses
                 return Array.Empty<Warrior>();
             var ordered = _warriors.Allies.OrderBy(w =>
                 Vector3.Distance(transform.position, w.Position)).ToArray();
-            for (int i = 0; i < ordered.Length; i++)
-            {
-                var d = Vector3.Distance(transform.position, ordered[i].Position);
-                if (d > _attacksRadiuses[index])
-                    return ordered.Take(Mathf.Max(1, i - 1)).ToArray();
-            }
-
-            return Array.Empty<Warrior>();
+            if (Vector3.Distance(transform.position, ordered[0].Position) > _attacksRadiuses[index])
+                return new Warrior[] { ordered[0] };
+            return ordered.Where(w =>
+                    Vector3.Distance(transform.position, w.Position) <= _attacksRadiuses[index])
+                .ToArray();
         }
 
         private void Activate()
