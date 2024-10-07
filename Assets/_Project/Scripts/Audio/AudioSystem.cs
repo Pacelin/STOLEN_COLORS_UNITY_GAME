@@ -4,6 +4,7 @@ using System.Threading;
 using AYellowpaper.SerializedCollections;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Gameplay.Map.Enemies;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -55,7 +56,7 @@ namespace Audio
         [SerializeField] private AudioMixer _mixer;
         [SerializeField] private SerializedDictionary<EAudioCategory, AudioSource> _audioSources = new();
         [SerializeField] private SerializedDictionary<EAudioCategory, string> _volumeProperties = new();
-        [SerializeField] private SerializedDictionary<ESoundKey, AudioEntry> _sounds = new();
+        [SerializeField] private SerializedDictionary<ESoundKey, AudioEntry[]> _sounds = new();
         [SerializeField] private SerializedDictionary<EMusicKey, AudioEntry> _music = new();
 
         [Header("Fade")] 
@@ -70,7 +71,7 @@ namespace Audio
 
         public void PlaySound(ESoundKey sound)
         {
-            var soundEntry = _sounds[sound];
+            var soundEntry = _sounds[sound].GetRandom();
             var source = _audioSources[soundEntry.Category];
             source.PlayOneShot(soundEntry.Clip, soundEntry.VolumeMultiplier);
         }

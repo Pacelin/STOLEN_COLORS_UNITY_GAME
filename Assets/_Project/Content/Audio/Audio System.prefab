@@ -319,10 +319,104 @@ MonoBehaviour:
     - Key: 1
       Value: Music_Volume
   _sounds:
-    _serializedList: []
+    _serializedList:
+    - Key: 0
+      Value:
+      - Clip: {fileID: 8300000, guid: 9ec2fabf14140da4ca3ab4fffe9bde1c, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+    - Key: 1
+      Value:
+      - Clip: {fileID: 8300000, guid: 08e3892512680f544bab5128bb7424b3, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+    - Key: 2
+      Value:
+      - Clip: {fileID: 8300000, guid: c48f845be1f77974ab874929308a11fd, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+      - Clip: {fileID: 8300000, guid: d5d25c630f0dc794599b56e1a9f5765a, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+      - Clip: {fileID: 8300000, guid: 8e67e7101b3902345b20da7f30a586bb, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+      - Clip: {fileID: 8300000, guid: 9ce1c789833734b4083b607c0e724585, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+      - Clip: {fileID: 8300000, guid: 9d152bc819b960f489c237114bac18ef, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+    - Key: 3
+      Value:
+      - Clip: {fileID: 8300000, guid: bb223fbc0efc57a4da663e321a4b747e, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+      - Clip: {fileID: 8300000, guid: 617416cce34aaa94babd2c9ed4e654ab, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+      - Clip: {fileID: 8300000, guid: 7ad443e357bb74944a8ab8084e7ee6b5, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+      - Clip: {fileID: 8300000, guid: 9a5275087715a5a46bf55ed039578d3a, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+      - Clip: {fileID: 8300000, guid: cb139d3ee1fc2c94eaf39137a833d537, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+    - Key: 4
+      Value:
+      - Clip: {fileID: 8300000, guid: ae82ef643b7793341a6ee52e79aaf42f, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+    - Key: 5
+      Value:
+      - Clip: {fileID: 8300000, guid: 2a05b7459c900474492cfd3d4ca50c41, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+    - Key: 6
+      Value:
+      - Clip: {fileID: 8300000, guid: 208e4f942b54474478e7b02cb8fbcceb, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+    - Key: 7
+      Value:
+      - Clip: {fileID: 8300000, guid: 0ba8c20ed9b871a479dbb40a5407d157, type: 3}
+        Category: 0
+        VolumeMultiplier: 1
+    - Key: 8
+      Value: []
+    - Key: 9
+      Value: []
+    - Key: 10
+      Value: []
+    - Key: 11
+      Value: []
+    - Key: 12
+      Value: []
   _music:
-    _serializedList: []
-  _fadeOffDuration: 0
-  _fadeOffEase: 0
-  _fadeOnDuration: 0
-  _fadeOnEase: 0
+    _serializedList:
+    - Key: 0
+      Value:
+        Clip: {fileID: 8300000, guid: aa24c1f3f73a855419fcc661843646e8, type: 3}
+        Category: 1
+        VolumeMultiplier: 1
+    - Key: 1
+      Value:
+        Clip: {fileID: 8300000, guid: 8275dd8125df5994a8e06986fa94fefe, type: 3}
+        Category: 1
+        VolumeMultiplier: 1
+    - Key: 2
+      Value:
+        Clip: {fileID: 8300000, guid: 82deabb74102c1941aacd2b6af59cdb9, type: 3}
+        Category: 1
+        VolumeMultiplier: 1
+    - Key: 3
+      Value:
+        Clip: {fileID: 8300000, guid: 42979b388db81fe4b995072a5a1f998e, type: 3}
+        Category: 1
+        VolumeMultiplier: 1
+  _fadeOffDuration: 1
+  _fadeOffEase: 1
+  _fadeOnDuration: 1
+  _fadeOnEase: 1
