@@ -81,7 +81,7 @@ namespace UniOwl.UI
                 _animationOffset,
                 Vector3.zero,
                 _animationSpeed,
-                offset => _charOffsets[charIndex] = offset);
+                offset => _charOffsets[charIndex] = offset).SetEase(_easeFunction);
         }
     }
 }
