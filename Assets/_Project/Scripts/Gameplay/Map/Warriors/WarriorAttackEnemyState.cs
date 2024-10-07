@@ -4,7 +4,7 @@ namespace Gameplay.Map
 {
     public class WarriorAttackEnemyState : WarriorState
     {
-        private const float UPDATE_DESTINATION_THRESHOLD = 0.3f;
+        private const float UPDATE_DESTINATION_THRESHOLD = 0.1f;
         private float _counter;
         
         public override void Enter()
@@ -25,7 +25,7 @@ namespace Gameplay.Map
             
             var targetPosition = _warrior.AttackTarget.Position;
             var distanceBetweenWarriors = Vector3.Distance(_warrior.Position, targetPosition);
-            if (distanceBetweenWarriors <= _warrior.Model.AttackDistance + UPDATE_DESTINATION_THRESHOLD)
+            if (distanceBetweenWarriors <= _warrior.Model.AttackDistance + _warrior.Agent.radius + _warrior.AttackTarget.Agent.radius + UPDATE_DESTINATION_THRESHOLD)
                 AttackFixedUpdate();
             else
             {

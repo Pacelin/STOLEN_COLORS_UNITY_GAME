@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using Gameplay.Map.Allies;
+using Gameplay.Map.Spawn;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -26,6 +27,10 @@ namespace Audio.Gameplay.PointsGrid
         [SerializeField] private Color _defaultLineColor;
         [SerializeField] private Color _errorLineColor;
         [Space] [SerializeField] private TMP_Text _text;
+        [Space] [SerializeField] private float _delay;
+        [SerializeField] private float _firstX;
+        [SerializeField] private float _secondX;
+        [SerializeField] private float _duration;
         
         private List<GridPointsConnection> _connections = new();
         private GridPoint _lastClickedGridPoint;
@@ -34,12 +39,22 @@ namespace Audio.Gameplay.PointsGrid
         private Tween _errorTween;
 
         private AlliesSpawner _spawner;
+        private WaveManager _wave;
         private IDisposable _descriptionDisposable;
+        private Tween _tween;
         
         [Inject]
-        private void Construct(AlliesSpawner spawner)
+        private void Construct(AlliesSpawner spawner, WaveManager wave)
         {
             _grid.Regenerate();
+            _wave = wave;
+            var transform1 = transform;
+            var p = transform1.localPosition;
+            p.x = _firstX;
+            transform1.localPosition = p;
+            _tween = DOTween.Sequence()
+                .AppendInterval(_delay)
+                .Append(transform.DOLocalMoveX(_secondX, _duration));
             _spawner = spawner;
             _text.text = "";
         }
@@ -57,10 +72,24 @@ namespace Audio.Gameplay.PointsGrid
                 .AddTo(_disposables);
             GridPoint.OnExit.Subscribe(OnExitPoint)
                 .AddTo(_disposables);
+            _wave.WaveIsInProgress.Skip(1).Subscribe(w =>
+            {
+                if (w)
+                {
+                    ClearGrid();
+                    _tween = transform.DOLocalMoveX(_firstX, _duration)
+                        .OnComplete(ClearGrid);
+                }
+                else
+                {
+                    _tween = transform.DOLocalMoveX(_secondX, _duration);
+                }
+            }).AddTo(_disposables);
         }
 
         private void OnDisable()
         {
+            _tween?.Kill();
             _disposables.Dispose();
             _errorTween?.Kill();
             _descriptionDisposable?.Dispose();

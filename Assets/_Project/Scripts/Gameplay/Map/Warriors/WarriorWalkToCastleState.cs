@@ -26,7 +26,10 @@ namespace Gameplay.Map
             if (!attackCastle)
             {
                 if (_warrior.Side == EBattleSide.Ally && _boss.BossIsAlive)
+                {
                     _warrior.SetAttack(_boss.Boss);
+                    _waveManager.SetBossFight();
+                }
                 else
                     _warrior.SetWinner();
                 return;
