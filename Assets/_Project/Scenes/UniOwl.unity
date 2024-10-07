@@ -327,11 +327,11 @@ MonoBehaviour:
   _mask: {fileID: 1586076956}
   _glow: {fileID: 1267353695}
   _ps: {fileID: 1021881427}
-  _orb: {fileID: 0}
+  _orb: {fileID: 1321140290}
   _maskIdleAlpha: 1
   _maskExpandedAlpha: 0.25
   _glowStartColor: {r: 1, g: 1, b: 1, a: 0.16862746}
-  _target: {fileID: 2135204673}
+  _target: {fileID: 1321140289}
   _initialMaskScale: 1
   _finalMaskScale: 50
   _scaleTime: 12
@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _delay: 4
-  _cooldown: 45
+  _cooldown: 15
   _timeText: {fileID: 800443333}
 --- !u!222 &704140688
 CanvasRenderer:
@@ -1687,7 +1687,7 @@ Transform:
   m_GameObject: {fileID: 1021881424}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1778,7 +1778,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021881424}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -1906,7 +1906,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2401,7 +2401,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 10
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -6983,7 +6983,7 @@ Transform:
   m_GameObject: {fileID: 1321140288}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.95, z: 4.57}
+  m_LocalPosition: {x: 0, y: 6, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
