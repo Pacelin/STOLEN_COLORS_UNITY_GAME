@@ -30,7 +30,7 @@ namespace Gameplay.Map
                     _warrior.SetAttack(_boss.Boss);
                     _waveManager.SetBossFight();
                 }
-                else
+                else if (_warrior.Side == EBattleSide.Ally)
                     _warrior.SetWinner();
                 return;
             }
