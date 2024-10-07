@@ -334,36 +334,36 @@ MonoBehaviour:
       Value:
       - Clip: {fileID: 8300000, guid: c48f845be1f77974ab874929308a11fd, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: d5d25c630f0dc794599b56e1a9f5765a, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: 8e67e7101b3902345b20da7f30a586bb, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: 9ce1c789833734b4083b607c0e724585, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: 9d152bc819b960f489c237114bac18ef, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.2
     - Key: 3
       Value:
       - Clip: {fileID: 8300000, guid: bb223fbc0efc57a4da663e321a4b747e, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: 617416cce34aaa94babd2c9ed4e654ab, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: 7ad443e357bb74944a8ab8084e7ee6b5, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: 9a5275087715a5a46bf55ed039578d3a, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: cb139d3ee1fc2c94eaf39137a833d537, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.2
     - Key: 4
       Value:
       - Clip: {fileID: 8300000, guid: ae82ef643b7793341a6ee52e79aaf42f, type: 3}
@@ -378,7 +378,7 @@ MonoBehaviour:
       Value:
       - Clip: {fileID: 8300000, guid: 208e4f942b54474478e7b02cb8fbcceb, type: 3}
         Category: 0
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.5
     - Key: 7
       Value:
       - Clip: {fileID: 8300000, guid: 0ba8c20ed9b871a479dbb40a5407d157, type: 3}
@@ -400,22 +400,22 @@ MonoBehaviour:
       Value:
         Clip: {fileID: 8300000, guid: aa24c1f3f73a855419fcc661843646e8, type: 3}
         Category: 1
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.8
     - Key: 1
       Value:
         Clip: {fileID: 8300000, guid: 8275dd8125df5994a8e06986fa94fefe, type: 3}
         Category: 1
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.8
     - Key: 2
       Value:
         Clip: {fileID: 8300000, guid: 82deabb74102c1941aacd2b6af59cdb9, type: 3}
         Category: 1
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.5
     - Key: 3
       Value:
         Clip: {fileID: 8300000, guid: 42979b388db81fe4b995072a5a1f998e, type: 3}
         Category: 1
-        VolumeMultiplier: 1
+        VolumeMultiplier: 0.5
   _fadeOffDuration: 1
   _fadeOffEase: 1
   _fadeOnDuration: 1

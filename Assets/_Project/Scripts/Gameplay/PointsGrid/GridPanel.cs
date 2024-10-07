@@ -64,7 +64,11 @@ namespace Audio.Gameplay.PointsGrid
         private void OnEnable()
         {
             _disposables = new();
-            _clearButton.OnClick.Subscribe(_ => ClearGrid())
+            _clearButton.OnClick.Subscribe(_ =>
+                {
+                    _audio.PlaySound(ESoundKey.GridClear);
+                    ClearGrid();
+                })
                 .AddTo(_disposables);
             _applyButton.OnClick.Subscribe(_ => ApplyGrid())
                 .AddTo(_disposables);
@@ -121,7 +125,6 @@ namespace Audio.Gameplay.PointsGrid
             foreach (var point in _grid)
                 point.ResetActivation();
 
-            _audio.PlaySound(ESoundKey.GridClear);
             _connections.Clear();
             _lastClickedGridPoint = null;
             _mouseConnection = null;
