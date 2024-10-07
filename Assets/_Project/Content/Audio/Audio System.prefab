@@ -391,9 +391,15 @@ MonoBehaviour:
     - Key: 10
       Value: []
     - Key: 11
-      Value: []
+      Value:
+      - Clip: {fileID: 8300000, guid: b75e1a39943ba9f4c9cf45657a546030, type: 3}
+        Category: 0
+        VolumeMultiplier: 0.1
     - Key: 12
-      Value: []
+      Value:
+      - Clip: {fileID: 8300000, guid: 58198847261a0a441b69855c200d1dd2, type: 3}
+        Category: 0
+        VolumeMultiplier: 0.2
   _music:
     _serializedList:
     - Key: 0
