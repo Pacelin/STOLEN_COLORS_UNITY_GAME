@@ -42,6 +42,8 @@ namespace Audio.Gameplay.PointsGrid
         private WaveManager _wave;
         private IDisposable _descriptionDisposable;
         private Tween _tween;
+
+        [Inject] private AudioSystem _audio;
         
         [Inject]
         private void Construct(AlliesSpawner spawner, WaveManager wave)
@@ -102,6 +104,7 @@ namespace Audio.Gameplay.PointsGrid
                 _spawner.Spawn();
                 ClearGrid();
                 _grid.Regenerate();
+                _audio.PlaySound(ESoundKey.GridApply);
             }
         }
 
@@ -118,6 +121,7 @@ namespace Audio.Gameplay.PointsGrid
             foreach (var point in _grid)
                 point.ResetActivation();
 
+            _audio.PlaySound(ESoundKey.GridClear);
             _connections.Clear();
             _lastClickedGridPoint = null;
             _mouseConnection = null;
@@ -148,6 +152,7 @@ namespace Audio.Gameplay.PointsGrid
                 _mouseConnection.Line.maskInteraction = SpriteMaskInteraction.None;
                 Update();
                 point.AddActivation();
+                _audio.PlaySound(ESoundKey.GridPointClick);
             }
             else
             {
@@ -162,6 +167,7 @@ namespace Audio.Gameplay.PointsGrid
                     
                     if (_connections.Count >= _maxConnections)
                         Destroy(_mouseConnection.gameObject);
+                    _audio.PlaySound(ESoundKey.GridPointClick);
                 }
                 else
                 {

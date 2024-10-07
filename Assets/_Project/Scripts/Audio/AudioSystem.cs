@@ -71,6 +71,11 @@ namespace Audio
 
         public void PlaySound(ESoundKey sound)
         {
+            if (!_sounds.ContainsKey(sound) || _sounds[sound] == null || _sounds[sound].Length == 0)
+            {
+                Debug.LogWarning("Sound Not Found: " + sound.ToString());
+                return;
+            }
             var soundEntry = _sounds[sound].GetRandom();
             var source = _audioSources[soundEntry.Category];
             source.PlayOneShot(soundEntry.Clip, soundEntry.VolumeMultiplier);
