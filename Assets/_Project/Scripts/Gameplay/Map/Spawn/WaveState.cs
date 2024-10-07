@@ -51,12 +51,12 @@ namespace Gameplay.Map.Spawn
 
         private async UniTaskVoid StartWave()
         {
-            await _panel.IsInProgress.Where(p => !p);
             _timeText.text = "";
             _cooldownDisposable?.Dispose();
             _timerDisposable?.Dispose();
-            _manager.StartWave();
             
+            await _panel.IsInProgress.Where(p => !p).First();
+            _manager.StartWave();
             _timerDisposable = _manager.WaveIsInProgress.Where(w => !w)
                 .Subscribe(_ => StartTime());
         }
