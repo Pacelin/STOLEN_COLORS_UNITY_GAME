@@ -12,6 +12,7 @@ namespace Gameplay.Map.Bosses
     {
         public IObservable<UniRx.Unit> OnActivate => _onActivate;
         private ReactiveCommand _onActivate = new();
+        public bool IsActivated => _activated;
 
         [SerializeField] private BossAnimation _bossAnimation;
         [SerializeField] private float[] _attacksCooldown;
@@ -74,9 +75,18 @@ namespace Gameplay.Map.Bosses
 
         private Warrior[] GetAttackedWarriors(int index)
         {
-            return _warriors.Allies
-                .Where(w => Vector3.Distance(transform.position, w.Position) <= _attacksRadiuses[index])
-                .ToArray();
+            if (_warriors.Allies.Count == 0)
+                return Array.Empty<Warrior>();
+            var ordered = _warriors.Allies.OrderBy(w =>
+                Vector3.Distance(transform.position, w.Position)).ToArray();
+            for (int i = 0; i < ordered.Length; i++)
+            {
+                var d = Vector3.Distance(transform.position, ordered[i].Position);
+                if (d > _attacksRadiuses[index])
+                    return ordered.Take(Mathf.Max(1, i - 1)).ToArray();
+            }
+
+            return Array.Empty<Warrior>();
         }
 
         private void Activate()

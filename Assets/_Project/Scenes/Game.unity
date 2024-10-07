@@ -278,7 +278,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 672125283}
   m_Father: {fileID: 2144096669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6311,17 +6312,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672125282}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1255346101}
+  m_Father: {fileID: 84284832}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: -10}
+  m_AnchoredPosition: {x: 0, y: 30.5}
+  m_SizeDelta: {x: -720, y: -75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &672125284
 MonoBehaviour:
@@ -6370,8 +6371,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7380,7 +7381,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1865613281}
-  - {fileID: 672125283}
   m_Father: {fileID: 2144096669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8391,7 +8391,7 @@ MonoBehaviour:
   _side: 1
   _class: 2
   _baseData:
-    Health: 5000
+    Health: 800
     Damage: 1
     AttackSpeed: 1
     AttackDistance: 1
@@ -8399,10 +8399,10 @@ MonoBehaviour:
   _bossAnimation: {fileID: 8136590539927262333}
   _attacksCooldown:
   - 0.8
-  - 0.5
+  - 1.5
   _attacksRadiuses:
-  - 3
   - 5
+  - 8
   _attacksDamages:
   - 5
   - 10

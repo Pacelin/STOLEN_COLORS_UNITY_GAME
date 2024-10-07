@@ -189,9 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db99b48e375443e89f2ff4089e2f60e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialOffset: {x: 0.5, y: 0.5, z: 0}
+  _initialOffset: {x: 0, y: 0, z: 2}
   _animateDirection: {x: 0, y: 2, z: 0}
-  _duration: 2
+  _duration: 0.4
   _text: {fileID: 3509408151946579547}
-  _allyColor: {r: 0.53333336, g: 0.6610873, b: 0.8352941, a: 1}
-  _enemyColor: {r: 0.94716984, g: 0.39137772, b: 0.39137772, a: 1}
+  _allyColor: {r: 0.28490567, g: 0.5913747, b: 1, a: 1}
+  _enemyColor: {r: 1, g: 0.2396226, b: 0.2396226, a: 1}
