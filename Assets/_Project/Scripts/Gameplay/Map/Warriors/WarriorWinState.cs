@@ -1,4 +1,5 @@
 ﻿using Audio;
+using UnityEngine;
 using Zenject;
 
 namespace Gameplay.Map
@@ -6,14 +7,28 @@ namespace Gameplay.Map
     public class WarriorWinState : WarriorState
     {
         [Inject]
-        private DesaturationMaskController _maskController;
+        private DesaturationMaskView _view;
         [Inject]
         private Orb _orb;
+
+        private float distance = 5f;
         
         public override void Enter()
         {
+            _warrior.Agent.stoppingDistance = distance / 2f;
             _warrior.Agent.SetDestination(_orb.transform.position);
             _warrior.Animation.SetWalk();
+        }
+
+        public override void Update()
+        {
+            Debug.Log("upd");
+            if (_warrior.Agent.remainingDistance < distance)
+            {
+                Debug.Log("call expand");
+                _warrior.Animation.SetIdle();
+                _view.ExpandPrism();
+            }
         }
 
         public override void Exit()
