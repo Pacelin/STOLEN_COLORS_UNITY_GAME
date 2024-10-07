@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _delay: 5
-  _cooldown: 15
+  _cooldown: 60
   _timeText: {fileID: 800443333}
 --- !u!222 &704140688
 CanvasRenderer:
