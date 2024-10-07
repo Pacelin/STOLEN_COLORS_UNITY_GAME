@@ -28,7 +28,7 @@ MonoBehaviour:
     - Class: 3
       Modifiers:
         AttackSpeedMultiplier: 1
-        MagesAttackRange: 0
+        MagesAttackRange: 5
         DamageMultiplier: 1
         HealthMultiplier: 1
         WalkSpeed: 0
