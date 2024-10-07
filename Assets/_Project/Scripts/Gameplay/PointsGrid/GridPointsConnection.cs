@@ -22,10 +22,10 @@ namespace Audio.Gameplay.PointsGrid
         {
             _first = first;
             _second = last;
-            Update();
+            LateUpdate();
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             if (_first)
             {

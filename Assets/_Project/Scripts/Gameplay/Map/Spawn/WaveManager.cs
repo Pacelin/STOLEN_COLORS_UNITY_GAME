@@ -23,6 +23,7 @@ namespace Gameplay.Map.Spawn
         public void SetBossFight()
         {
             _bossFight = true;
+            _waveIsInProgress.Value = true;
         }
         
         public void StartWave()

@@ -39,7 +39,8 @@ public class CameraController : MonoBehaviour
     {
         ShowLevelGoal();
 
-        _waveManager.WaveIsInProgress.Subscribe(value => _getCameraTargetPosition = value ? GetMostRightAllyPosition : GetAllyCastlePosition).AddTo(_disposables);
+        _waveManager.WaveIsInProgress.Subscribe(value =>
+            _getCameraTargetPosition = value ? GetMostRightAllyPosition : GetAllyCastlePosition).AddTo(_disposables);
     }
 
     private void OnDisable()

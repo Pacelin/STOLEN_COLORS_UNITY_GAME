@@ -25,8 +25,8 @@ namespace Audio.Gameplay
                     _msg.alpha = 0;
                     _msg.gameObject.SetActive(true);
                     _tween = DOTween.Sequence()
-                        .Append(_msg.DOFade(1, 2f))
                         .AppendCallback(() => _audio.PlaySound(ESoundKey.GameOver))
+                        .Append(_msg.DOFade(1, 2f))
                         .AppendInterval(2)
                         .AppendCallback(() => SceneManager.LoadScene(0));
                 });
