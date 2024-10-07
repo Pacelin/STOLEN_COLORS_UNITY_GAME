@@ -1,6 +1,9 @@
 using DG.Tweening;
+using Gameplay.Map;
 using Gameplay.Map.Spawn;
+using System;
 using System.Linq;
+using UniRx;
 using UnityEngine;
 using Zenject;
 
@@ -8,6 +11,10 @@ public class CameraController : MonoBehaviour
 {
     [Inject]
     private WarriorsCollection _warriors;
+    [Inject]
+    private CastlesCollection _castles;
+    [Inject]
+    private WaveManager _waveManager;
 
     [SerializeField]
     private Transform _camera;
@@ -24,9 +31,20 @@ public class CameraController : MonoBehaviour
 
     private bool _update = false;
 
+    private Func<Vector3> _getCameraTargetPosition;
+
+    private CompositeDisposable _disposables = new();
+    
     private void OnEnable()
     {
         ShowLevelGoal();
+
+        _waveManager.WaveIsInProgress.Subscribe(value => _getCameraTargetPosition = value ? GetMostRightAllyPosition : GetAllyCastlePosition).AddTo(_disposables);
+    }
+
+    private void OnDisable()
+    {
+        _disposables.Dispose();
     }
 
     public void ShowLevelGoal()
@@ -54,14 +72,22 @@ public class CameraController : MonoBehaviour
 
     private void MoveCamera()
     {
-        // когда перерыв, берём позицию замка + оффсет замка + оффсет камеры
-        // когда игра, берём позицию союзника + оффсет камеры
-        var allyPosition = GetMostRightAllyPosition();
+        var allyPosition = _getCameraTargetPosition();
         var targetPosition = allyPosition + _cameraOffset;
+        targetPosition.x = Mathf.Clamp(targetPosition.x, _start.position.x, _goal.position.x);
 
-        _camera.position = Vector3.Lerp(_camera.position, targetPosition, Time.deltaTime * _lerpSpeed);
+        var cameraPosition = _camera.position;
+        cameraPosition.x = Mathf.Lerp(_camera.position.x, targetPosition.x, Time.deltaTime * _lerpSpeed);
+
+        _camera.position = cameraPosition;
     }
 
+    private Vector3 GetAllyCastlePosition()
+    {
+        var castle = _castles.GetCastle(EBattleSide.Ally);
+        return (castle ? castle.transform.position : _start.position) + _castleOffset;
+    }
+    
     private Vector3 GetMostRightAllyPosition()
     {
         var warrior = _warriors.Allies.OrderByDescending(warrior => warrior.transform.position.x).FirstOrDefault();
