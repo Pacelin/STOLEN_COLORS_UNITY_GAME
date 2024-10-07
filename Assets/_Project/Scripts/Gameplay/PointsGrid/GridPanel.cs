@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using Gameplay.Map.Allies;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using Zenject;
@@ -23,6 +25,7 @@ namespace Audio.Gameplay.PointsGrid
         [SerializeField] private int _errorLoops;
         [SerializeField] private Color _defaultLineColor;
         [SerializeField] private Color _errorLineColor;
+        [Space] [SerializeField] private TMP_Text _text;
         
         private List<GridPointsConnection> _connections = new();
         private GridPoint _lastClickedGridPoint;
@@ -31,12 +34,14 @@ namespace Audio.Gameplay.PointsGrid
         private Tween _errorTween;
 
         private AlliesSpawner _spawner;
+        private IDisposable _descriptionDisposable;
         
         [Inject]
         private void Construct(AlliesSpawner spawner)
         {
             _grid.Regenerate();
             _spawner = spawner;
+            _text.text = "";
         }
         
         private void OnEnable()
@@ -48,12 +53,17 @@ namespace Audio.Gameplay.PointsGrid
                 .AddTo(_disposables);
             _grid.OnClickPoint.Subscribe(OnClickPoint)
                 .AddTo(_disposables);
+            GridPoint.OnEnter.Subscribe(OnEnterPoint)
+                .AddTo(_disposables);
+            GridPoint.OnExit.Subscribe(OnExitPoint)
+                .AddTo(_disposables);
         }
 
         private void OnDisable()
         {
             _disposables.Dispose();
             _errorTween?.Kill();
+            _descriptionDisposable?.Dispose();
         }
 
         private void ApplyGrid()
@@ -68,6 +78,8 @@ namespace Audio.Gameplay.PointsGrid
 
         private void ClearGrid()
         {
+            _descriptionDisposable?.Dispose();
+            _text.text = "";
             _errorTween?.Kill();
             if (_connections.Count > 0)
                 foreach (var connection in _connections)
@@ -82,6 +94,19 @@ namespace Audio.Gameplay.PointsGrid
             _mouseConnection = null;
         }
 
+        private void OnEnterPoint(GridPoint point)
+        {
+            _descriptionDisposable = point.Model.Action.GetDescription()
+                .Subscribe(s => _text.text = s);
+        }
+
+        private void OnExitPoint(GridPoint point)
+        {
+            _descriptionDisposable?.Dispose();
+            _text.text = "";
+        }
+        
+        
         private void OnClickPoint(GridPoint point)
         {
             if (_connections.Count >= _maxConnections)

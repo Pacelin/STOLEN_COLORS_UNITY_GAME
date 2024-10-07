@@ -58,9 +58,8 @@ namespace Audio.Gameplay.PointsGrid
                 }
             }
 
-            foreach (var point in this)
-                point.OnClick.Subscribe(p => _onClickPoint.Execute(p))
-                    .AddTo(_disposables);
+            GridPoint.OnClick.Subscribe(p => _onClickPoint.Execute(p))
+                .AddTo(_disposables);
         }
 
         private void OnDisable()
