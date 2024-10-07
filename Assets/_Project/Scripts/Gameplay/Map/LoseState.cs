@@ -12,6 +12,7 @@ namespace Audio.Gameplay
     {
         [Inject] private GameStateManager _gameState;
         [Inject] private CanvasGroup _msg;
+        [Inject] private AudioSystem _audio;
         
         private Tween _tween;
         private IDisposable _stateDisposable;
@@ -25,7 +26,8 @@ namespace Audio.Gameplay
                     _msg.gameObject.SetActive(true);
                     _tween = DOTween.Sequence()
                         .Append(_msg.DOFade(1, 2f))
-                        .AppendInterval(3)
+                        .AppendCallback(() => _audio.PlaySound(ESoundKey.GameOver))
+                        .AppendInterval(2)
                         .AppendCallback(() => SceneManager.LoadScene(0));
                 });
         }
