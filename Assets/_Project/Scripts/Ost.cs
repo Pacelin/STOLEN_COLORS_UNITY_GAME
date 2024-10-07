@@ -7,8 +7,11 @@ namespace Audio
     {
         [SerializeField] private EMusicKey _ost;
         [Inject] private AudioSystem _audio;
-        
-        private void Awake() =>
+
+        private void Awake()
+        {
+            Time.timeScale = 1f;
             _audio.PlayMusic(_ost, true).Forget();
+        }
     }
 }
