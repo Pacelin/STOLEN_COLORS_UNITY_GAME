@@ -265,6 +265,10 @@ MonoBehaviour:
   _defaultLineColor: {r: 0.28235295, g: 0.3254902, b: 0.49411765, a: 1}
   _errorLineColor: {r: 0.827451, g: 0.24313726, b: 0.11372549, a: 1}
   _text: {fileID: 147180433519396046}
+  _delay: 0
+  _firstX: 1.2
+  _secondX: -5.2
+  _duration: 0.8
 --- !u!1 &3789370224660225066
 GameObject:
   m_ObjectHideFlags: 0
