@@ -6,8 +6,16 @@ using UnityEngine.EventSystems;
 
 namespace Audio.Gameplay.PointsGrid
 {
-    public class GridPoint : MonoBehaviour, IPointerClickHandler
+    public class GridPoint : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
     {
+        public static IObservable<GridPoint> OnClick => _onClick;
+        public static IObservable<GridPoint> OnEnter => _onEnter;
+        public static IObservable<GridPoint> OnExit => _onExit;
+        
+        private static readonly ReactiveCommand<GridPoint> _onClick = new();
+        private static readonly ReactiveCommand<GridPoint> _onEnter = new();
+        private static readonly ReactiveCommand<GridPoint> _onExit = new();
+        
         public Vector2Int Coordinates
         {
             get => _coordinates;
@@ -21,7 +29,6 @@ namespace Audio.Gameplay.PointsGrid
 
         public GridPointModel Model => _model;
         public int ActivationsCount => _activationsCount;
-        public IObservable<GridPoint> OnClick => _onClick;
 
         [SerializeField] private GridPointModel _model;
         [SerializeField] private SerializedDictionary<int, GameObject> _activeMarkers;
@@ -29,7 +36,7 @@ namespace Audio.Gameplay.PointsGrid
         private Vector2Int _coordinates;
         private GridLayout _layout;
         private int _activationsCount = 0;
-        private ReactiveCommand<GridPoint> _onClick = new();
+
 
         private void Awake()
         {
@@ -57,5 +64,9 @@ namespace Audio.Gameplay.PointsGrid
 
         public void OnPointerClick(PointerEventData eventData) =>
             _onClick.Execute(this);
+        public void OnPointerEnter(PointerEventData eventData) =>
+            _onEnter.Execute(this);
+        public void OnPointerExit(PointerEventData eventData) =>
+            _onExit.Execute(this);
     }
 }

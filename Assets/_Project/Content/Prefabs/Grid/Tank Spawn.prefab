@@ -90,11 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537713868341338]._description.m_TableEntryReference.m_KeyId
-      value: 0
+      value: 748881842176
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537713868341338]._description.m_TableReference.m_TableCollectionName
-      value: 
+      value: GUID:805d00740beabcb42ab97d0c564a686f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

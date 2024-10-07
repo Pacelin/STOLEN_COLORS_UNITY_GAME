@@ -50,15 +50,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4124981127120082202, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: m_Name
-      value: Attack Speed
+      value: Attack Range
       objectReference: {fileID: 0}
     - target: {fileID: 5498028309061257906, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 98b8bde6c8e1aff4da7b5ac0d7a23151, type: 3}
+      objectReference: {fileID: 21300000, guid: 77c49c499c2b05f45bd83fc8752bc0d5, type: 3}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: _action
+      value: 1494537736242593870
+      objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: _canConnectThrough
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: 'managedReferences[1494537736242593870]'
+      value: Assembly-CSharp Audio.Gameplay.PointsGrid.IncreaseMagesAttackRangeAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242593870]._increaseMomentAttackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242593870]._description.m_FallbackState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242593870]._increaseConstantAttackRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242593870]._description.m_WaitForCompletion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242593870]._description.m_LocalVariables.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242593870]._description.m_TableEntryReference.m_Key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242593870]._description.m_TableEntryReference.m_KeyId
+      value: 54120550400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242593870]._description.m_TableReference.m_TableCollectionName
+      value: GUID:805d00740beabcb42ab97d0c564a686f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
