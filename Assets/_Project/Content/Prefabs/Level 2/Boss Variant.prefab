@@ -50,7 +50,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1860942698937953183, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: m_Name
-      value: Boss
+      value: Boss Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734232468620334774, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _baseData.Damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734232468620334774, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _baseData.Health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734232468620334774, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _baseData.AttackSpeed
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

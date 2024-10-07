@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753475933289125134, guid: d6c773019232c494daff450a5a3b9b9f, type: 3}
       propertyPath: _baseData.Speed
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5753475933289125134, guid: d6c773019232c494daff450a5a3b9b9f, type: 3}
       propertyPath: _baseData.Damage

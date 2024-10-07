@@ -50,19 +50,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2958767788998271390, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: _weight
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4124981127120082202, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: m_Name
-      value: Damage
+      value: Heal
       objectReference: {fileID: 0}
     - target: {fileID: 5498028309061257906, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: cc908248b5cc0b846be3c1931e244498, type: 3}
+      objectReference: {fileID: 21300000, guid: 833430152affdb34782f30ff0f79421a, type: 3}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: _action
-      value: 1494537736242593872
+      value: 1494537736242594098
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: _canConnectThrough
@@ -73,6 +73,14 @@ PrefabInstance:
       value: Assembly-CSharp Audio.Gameplay.PointsGrid.IncreaseDamageAction
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: 'managedReferences[1494537736242594098]'
+      value: Assembly-CSharp Audio.Gameplay.PointsGrid.HealAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242594098]._healingAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537736242593872]._description.m_FallbackState
       value: 0
       objectReference: {fileID: 0}
@@ -81,11 +89,19 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242594098]._description.m_FallbackState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537736242593872]._increaseConstantDamagePercent
       value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537736242593872]._description.m_WaitForCompletion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242594098]._description.m_WaitForCompletion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
@@ -97,11 +113,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242594098]._description.m_LocalVariables.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242594098]._description.m_TableEntryReference.m_Key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537736242593872]._description.m_TableEntryReference.m_KeyId
       value: 269544198144
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242594098]._description.m_TableEntryReference.m_KeyId
+      value: 58353662693376
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537736242593872]._description.m_TableReference.m_TableCollectionName
+      value: GUID:805d00740beabcb42ab97d0c564a686f
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: managedReferences[1494537736242594098]._description.m_TableReference.m_TableCollectionName
       value: GUID:805d00740beabcb42ab97d0c564a686f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
