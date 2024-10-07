@@ -4,7 +4,7 @@ namespace Gameplay.Map
 {
     public class WarriorAttackEnemyState : WarriorState
     {
-        private const float UPDATE_DESTINATION_THRESHOLD = 0.3f;
+        private const float UPDATE_DESTINATION_THRESHOLD = 0.1f;
         private float _counter;
         
         public override void Enter()

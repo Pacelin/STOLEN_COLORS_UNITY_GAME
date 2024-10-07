@@ -17,6 +17,11 @@ namespace Gameplay.Map.Spawn
             _waveIsInProgress = new(false);
         }
 
+        public void SetBossFight()
+        {
+            _waveIsInProgress.Value = true;
+        }
+        
         public void StartWave()
         {
             _castles.ReleaseCastles();
