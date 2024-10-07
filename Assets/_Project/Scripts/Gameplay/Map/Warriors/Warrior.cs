@@ -52,23 +52,23 @@ namespace Gameplay.Map
                 .First()
                 .Subscribe(_ =>
                 {
-                    if (warrior.Side == EBattleSide.Ally)
-                    {
-                        if (warrior.@Class == EWarriorClass.Mage)
-                            _audio.PlaySound(ESoundKey.AttackMagicAlly);
-                        else
-                            _audio.PlaySound(ESoundKey.AttackMeleeAlly);
-                    }
-                    else
-                    {
-                        if (warrior.@Class == EWarriorClass.Mage)
-                            _audio.PlaySound(ESoundKey.AttackMagicEnemy);
-                        else
-                            _audio.PlaySound(ESoundKey.AttackMeleeEnemy);
-                    }
                     warrior.TakeDamage(Model.Damage);
                 });
             _animation.Attack();
+            if (warrior.Side == EBattleSide.Ally)
+            {
+                if (warrior.@Class == EWarriorClass.Mage)
+                    _audio.PlaySound(ESoundKey.AttackMagicAlly);
+                else
+                    _audio.PlaySound(ESoundKey.AttackMeleeAlly);
+            }
+            else
+            {
+                if (warrior.@Class == EWarriorClass.Mage)
+                    _audio.PlaySound(ESoundKey.AttackMagicEnemy);
+                else
+                    _audio.PlaySound(ESoundKey.AttackMeleeEnemy);
+            }
         }
 
         public override void TakeDamage(float damage)

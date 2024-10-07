@@ -1,4 +1,6 @@
 ﻿using System;
+using Audio.Gameplay.PointsGrid;
+using Cysharp.Threading.Tasks;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -13,6 +15,7 @@ namespace Gameplay.Map.Spawn
         [SerializeField] private TMP_Text _timeText;
 
         [Inject] private WaveManager _manager;
+        [Inject] private GridPanel _panel;
 
         private float _time;
         private IDisposable _timerDisposable;
@@ -43,11 +46,12 @@ namespace Gameplay.Map.Spawn
                     _timeText.text = _time.ToString("0");
                 });
             _timerDisposable = Observable.Timer(TimeSpan.FromSeconds(_cooldown))
-                .Subscribe(_ => StartWave());
+                .Subscribe(_ => StartWave().Forget());
         }
 
-        private void StartWave()
+        private async UniTaskVoid StartWave()
         {
+            await _panel.IsInProgress.Where(p => !p);
             _timeText.text = "";
             _cooldownDisposable?.Dispose();
             _timerDisposable?.Dispose();
