@@ -23,8 +23,18 @@ namespace Gameplay.Map
 
         public void SetCapturingCastle(Castle castle) => _capturingCastle = castle;
         
-        public Castle GetCastle(EBattleSide side)
+        public Castle GetCastle(EBattleSide side, bool includeCapturing = false)
         {
+            if (includeCapturing && _capturingCastle)
+            {
+                if (_capturingCastle.Owner == side)
+                    return _capturingCastle;
+                if (side == EBattleSide.Ally)
+                    return _castles.LastOrDefault(c => c.Owner == EBattleSide.Ally);
+                return _castles.FirstOrDefault(c => c.Owner == EBattleSide.Enemy);
+            }
+            if (includeCapturing && _capturingCastle && _capturingCastle.Owner == side)
+                return _capturingCastle;
             if (side == EBattleSide.Ally)
                 return _allyCastle;
             return _enemyCastle;

@@ -25,7 +25,7 @@ namespace Gameplay.Map
             
             var targetPosition = _warrior.AttackTarget.Position;
             var distanceBetweenWarriors = Vector3.Distance(_warrior.Position, targetPosition);
-            if (distanceBetweenWarriors <= _warrior.Model.AttackDistance)
+            if (distanceBetweenWarriors <= _warrior.Model.AttackDistance + UPDATE_DESTINATION_THRESHOLD)
                 AttackFixedUpdate();
             else
             {
@@ -47,9 +47,8 @@ namespace Gameplay.Map
         {
             if (_counter <= 0)
             {
-                Debug.Log("Attacked", _warrior.AttackTarget);
-                _counter = 1f / _warrior.Model.AttackSpeed;
                 _warrior.ApplyAttack(_warrior.AttackTarget);
+                _counter = 1f / _warrior.Model.AttackSpeed;
             }   
         }
     }

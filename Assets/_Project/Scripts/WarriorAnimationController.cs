@@ -25,37 +25,44 @@ public class WarriorAnimationController : MonoBehaviour
 
     public void SetIdle()
     {
-        _animator.SetBool(s_moveId, false);
+        if (_animator)
+            _animator.SetBool(s_moveId, false);
     }
 
     public void SetWalk()
     {
-        _animator.SetBool(s_moveId, true);
+        if (_animator)
+            _animator.SetBool(s_moveId, true);
     }
 
     public void Attack()
     {
-        _animator.SetTrigger(s_attackId);
+        if (_animator)
+            _animator.SetTrigger(s_attackId);
     }
 
     public void SetTakeDamage()
     {
-        _animator.SetTrigger(s_damageId);
+        if (_animator)
+            _animator.SetTrigger(s_damageId);
     }
 
     public void Die()
     {
-        _animator.SetTrigger(s_deathId);
+        if (_animator)
+            _animator.SetTrigger(s_deathId);
     }
 
     public void SetAttackSpeed(float value)
     {
-        _animator.SetFloat(s_attackSpdId, value * _attackSpeedFactor);
+        if (_animator)
+            _animator.SetFloat(s_attackSpdId, value * _attackSpeedFactor);
     }
 
     public void SetWalkSpeed(float value)
     {
-        _animator.SetFloat(s_moveSpdId, value * _moveSpeedFactor);
+        if (_animator)
+            _animator.SetFloat(s_moveSpdId, value * _moveSpeedFactor);
     }
 
     public void EmitDamage()

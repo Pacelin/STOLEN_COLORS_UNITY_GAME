@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 1304214795477177376}
   - component: {fileID: 6851686675506726447}
   - component: {fileID: 1990332607627414385}
+  - component: {fileID: 5080276406682511534}
   m_Layer: 7
   m_Name: Square (2)
   m_TagString: Untagged
@@ -185,6 +186,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5536263, y: 1.0000002, z: 0.20000005}
   m_Center: {x: 0.00000011920929, y: 0.00000035762787, z: -1.6940643e-21}
+--- !u!114 &5080276406682511534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370757676006690734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe6b1f70539488b9356e7e2fe45e7eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 1304214795477177376}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  _hoverColor: {r: 0.7132075, g: 0.7132075, b: 0.7132075, a: 1}
+  _clickColor: {r: 0.4490565, g: 0.4490565, b: 0.4490565, a: 1}
+  fadeDuration: 0.1
 --- !u!1 &1759758062589392739
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +538,7 @@ GameObject:
   - component: {fileID: 8336238308677648527}
   - component: {fileID: 1783672780587253841}
   - component: {fileID: 7172715038029727445}
+  - component: {fileID: 4994439747101726569}
   m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
@@ -630,3 +649,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.509337, y: 1.0000002, z: 0.20000005}
   m_Center: {x: -0.03321767, y: 0.00000035762787, z: -1.6940643e-21}
+--- !u!114 &4994439747101726569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8156579619351734976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe6b1f70539488b9356e7e2fe45e7eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 8336238308677648527}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  _hoverColor: {r: 0.7132075, g: 0.7132075, b: 0.7132075, a: 1}
+  _clickColor: {r: 0.4490565, g: 0.4490565, b: 0.4490565, a: 1}
+  fadeDuration: 0.1

@@ -19,6 +19,7 @@ namespace Gameplay.Map
         private CompositeDisposable _dieDisposables;
         
         [SerializeField] private WarriorAnimationController _animation;
+        [SerializeField] private Transform _holder;
 
         [Inject]
         private void Construct(DiContainer container)
@@ -65,7 +66,11 @@ namespace Gameplay.Map
             _stateMachine.SwitchState<WarriorWinState>();
         }
 
-        private void Update() => _stateMachine.Update();
+        private void Update()
+        {
+            _stateMachine.Update();
+            _holder.localPosition = new Vector3(0, 4 - (transform.position.z + 14) , 0);
+        }
         private void FixedUpdate() => _stateMachine.FixedUpdate();
 
         private void OnEnable()

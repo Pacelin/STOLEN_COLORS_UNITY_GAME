@@ -53,11 +53,18 @@ public class CameraController : MonoBehaviour
         float time = distance / _initialMoveSpeed;
 
         _tween?.Kill();
+        var startPosition = _start.position;
+        startPosition.y = 0;
+        startPosition.z = 0;
+
+        var goalPosition = _goal.position;
+        goalPosition.y = 0;
+        goalPosition.z = 0;
         
         _tween = DOTween.Sequence().
-                Append(_camera.DOMove(_goal.position + _cameraOffset, time)).
+                Append(_camera.DOMove(goalPosition + _cameraOffset, time)).
                 AppendInterval(_cameraGoalStopDelay).
-                Append(_camera.DOMove(_start.position + _cameraOffset, time)).
+                Append(_camera.DOMove(startPosition + _cameraOffset, time)).
                 SetEase(Ease.InOutFlash).
                 AppendCallback(() => _update = true);
     }
@@ -74,7 +81,9 @@ public class CameraController : MonoBehaviour
     {
         var allyPosition = _getCameraTargetPosition();
         var targetPosition = allyPosition + _cameraOffset;
-        targetPosition.x = Mathf.Clamp(targetPosition.x, _start.position.x, _goal.position.x);
+        targetPosition.x = Mathf.Clamp(targetPosition.x, 
+            _start.position.x + _cameraOffset.x, 
+            _goal.position.x + _cameraOffset.x);
 
         var cameraPosition = _camera.position;
         cameraPosition.x = Mathf.Lerp(_camera.position.x, targetPosition.x, Time.deltaTime * _lerpSpeed);
@@ -84,7 +93,7 @@ public class CameraController : MonoBehaviour
 
     private Vector3 GetAllyCastlePosition()
     {
-        var castle = _castles.GetCastle(EBattleSide.Ally);
+        var castle = _castles.GetCastle(EBattleSide.Ally, true);
         return (castle ? castle.transform.position : _start.position) + _castleOffset;
     }
     
