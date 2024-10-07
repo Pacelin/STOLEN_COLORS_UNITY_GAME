@@ -1,11 +1,17 @@
 using DG.Tweening;
-using System;
 using UnityEngine;
 
 public class DesaturationMaskView : MonoBehaviour
 {
     [SerializeField]
     private SpriteRenderer _background, _mask, _glow;
+    [SerializeField]
+    private ParticleSystem _ps;
+    [SerializeField]
+    private SpriteRenderer _orb;
+
+    [SerializeField, Range(0f, 1f)]
+    private float _maskIdleAlpha = 1f, _maskExpandedAlpha = 0.25f;
 
     [SerializeField]
     private Color _glowStartColor;
@@ -29,6 +35,10 @@ public class DesaturationMaskView : MonoBehaviour
     private void OnEnable()
     {
         _mask.transform.localScale = Vector3.one * _initialMaskScale;
+        
+        Color maskColor = _mask.color;
+        maskColor.a = _maskIdleAlpha + 1e-3f;
+        _mask.color = maskColor;
     }
 
     private void OnDestroy()
@@ -49,7 +59,7 @@ public class DesaturationMaskView : MonoBehaviour
     public void ApplyDefaultLevel(int level)
     {
         float alpha = level * 0.25f + 1e-3f;
-        _background.color = new Color(0f, 0f, 0f, alpha);
+        _background.color = new Color(1f, 1f, 1f, alpha);
     }
 
     public void ShrinkPrism()
@@ -61,6 +71,7 @@ public class DesaturationMaskView : MonoBehaviour
         _tween = _mask.transform.DOScale(Vector3.zero, _scaleTime);
     }
     
+    [ContextMenu("Expand")]
     public void ExpandPrism()
     {
         _tween?.Kill();
@@ -68,12 +79,22 @@ public class DesaturationMaskView : MonoBehaviour
         _mask.transform.position = _target.position;
         _mask.transform.localScale = Vector3.zero;
         _glow.color = _glowStartColor;
+
+        Color maskColor = _mask.color;
+        maskColor.a = _maskIdleAlpha + 1e-3f;
+        _mask.color = maskColor;
+
+        Color finalMaskColor = maskColor;
+        finalMaskColor.a = _maskExpandedAlpha + 1e-3f;
         
         _tween = DOTween.
                  Sequence().
                  AppendInterval(_expandDelay).
                  Append(_mask.transform.DOScale(Vector3.one * _finalMaskScale, _scaleTime)).
+                 JoinCallback(_ps.Play).
                  Join(_glow.DOColor(Color.clear, _glowFadeTime)).
+                 Join(_mask.DOColor(finalMaskColor, _glowFadeTime)).
+                 Join(_orb.DOColor(Color.clear, _glowFadeTime)).
                  SetEase(Ease.OutFlash);
     }
 }

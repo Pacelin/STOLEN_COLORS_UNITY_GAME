@@ -1,4 +1,4 @@
-using Gameplay.Map.Bosses;
+using Gameplay.Map;
 using UniRx;
 using UnityEngine;
 using Zenject;
@@ -6,8 +6,7 @@ using Zenject;
 public class DesaturationMaskController : MonoBehaviour
 {
     [Inject]
-    private BossReference _boss;
-
+    private GameStateManager _gameStateManager;
     private CompositeDisposable _disposable;
 
     [SerializeField]
@@ -19,10 +18,10 @@ public class DesaturationMaskController : MonoBehaviour
     private void OnEnable()
     {
         _disposable = new CompositeDisposable();
-        
-        _boss.Boss.Model.Alive.Subscribe(alive =>
+
+        _gameStateManager.State.Subscribe(state =>
         {
-            if (!alive)
+            if (state == GameStateManager.EState.Win)
                 StartPrismSequence();
         }).AddTo(_disposable);
         
