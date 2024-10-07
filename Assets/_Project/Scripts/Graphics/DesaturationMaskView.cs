@@ -1,9 +1,14 @@
+using Audio;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 public class DesaturationMaskView : MonoBehaviour
 {
+    [Inject]
+    private AudioSystem _audioSystem;
+    
     [SerializeField]
     private SpriteRenderer _background, _mask, _glow;
     [SerializeField]
@@ -86,6 +91,8 @@ public class DesaturationMaskView : MonoBehaviour
     {
         if (expanded)
             return;
+        
+        _audioSystem.PlaySound(ESoundKey.Victory);
 
         expanded = true;
         
@@ -110,7 +117,6 @@ public class DesaturationMaskView : MonoBehaviour
                  Join(_glow.DOColor(Color.clear, _glowFadeTime)).
                  Join(_mask.DOColor(finalMaskColor, _glowFadeTime)).
                  Join(_orb.DOColor(Color.clear, _glowFadeTime)).
-                 AppendInterval(3f).
                  AppendCallback(AfterAnimationCallback).
                  SetEase(Ease.OutFlash);
     }
