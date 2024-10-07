@@ -22,10 +22,8 @@ namespace Gameplay.Map
 
         public override void Update()
         {
-            Debug.Log("upd");
             if (_warrior.Agent.remainingDistance < distance)
             {
-                Debug.Log("call expand");
                 _warrior.Animation.SetIdle();
                 _view.ExpandPrism();
             }

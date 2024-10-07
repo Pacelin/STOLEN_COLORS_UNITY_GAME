@@ -78,11 +78,16 @@ public class DesaturationMaskView : MonoBehaviour
         _mask.transform.localScale = Vector3.one * _finalMaskScale;
         _tween = _mask.transform.DOScale(Vector3.zero, _scaleTime);
     }
+
+    private bool expanded;
     
     [ContextMenu("Expand")]
     public void ExpandPrism()
     {
-        Debug.Log("Expand");
+        if (expanded)
+            return;
+
+        expanded = true;
         
         _tween?.Kill();
 
