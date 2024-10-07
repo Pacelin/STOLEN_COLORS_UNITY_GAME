@@ -57,9 +57,21 @@ PrefabInstance:
       value: Heal
       objectReference: {fileID: 0}
     - target: {fileID: 5498028309061257906, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: m_Size.x
+      value: 0.30273438
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498028309061257906, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: m_Size.y
+      value: 0.28710938
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498028309061257906, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: cc908248b5cc0b846be3c1931e244498, type: 3}
+      objectReference: {fileID: 21300000, guid: 833430152affdb34782f30ff0f79421a, type: 3}
+    - target: {fileID: 5498028309061257906, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: _action
       value: 1494537736242594098
