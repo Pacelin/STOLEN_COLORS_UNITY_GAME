@@ -16,32 +16,32 @@ MonoBehaviour:
   - Composition:
     - Class: 1
       Modifiers:
-        AttackSpeedMultiplier: 1
+        AttackSpeedMultiplier: 3
         MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 1
+        DamageMultiplier: 3
+        HealthMultiplier: 3
         WalkSpeed: 0
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
-      Count: 1
+      Count: 3
     - Class: 2
       Modifiers:
-        AttackSpeedMultiplier: 1
+        AttackSpeedMultiplier: 3
         MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 1
+        DamageMultiplier: 3
+        HealthMultiplier: 3
         WalkSpeed: 0
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
-      Count: 4
+      Count: 3
     - Class: 3
       Modifiers:
-        AttackSpeedMultiplier: 1
+        AttackSpeedMultiplier: 3
         MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 1
+        DamageMultiplier: 3
+        HealthMultiplier: 3
         WalkSpeed: 0
         MagesCount: 0
         SoldiersCount: 0
@@ -51,13 +51,13 @@ MonoBehaviour:
   - Composition:
     - Class: 1
       Modifiers:
-        AttackSpeedMultiplier: 1
+        AttackSpeedMultiplier: 3
         MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 1.2
+        DamageMultiplier: 3
+        HealthMultiplier: 5
         WalkSpeed: 1
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
       Count: 2
-  _waveCooldown: 20
+  _waveCooldown: 15
