@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6341823362431288666, guid: 13fa2309975203747a5ddb89666da7bc, type: 3}
       propertyPath: m_Name
-      value: Enemy Warrior
+      value: Enemy Mage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
