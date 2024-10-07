@@ -390,8 +390,8 @@ MonoBehaviour:
   _glowStartColor: {r: 1, g: 1, b: 1, a: 0.48235294}
   _target: {fileID: 292859790}
   _initialMaskScale: 1
-  _finalMaskScale: 30
-  _scaleTime: 2
+  _finalMaskScale: 50
+  _scaleTime: 12
   _glowFadeTime: 2
   _expandDelay: 1
   _winDelay: 2
@@ -1248,7 +1248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67557ce782394352955d7f7ae2ca951c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 5
+  _delay: 8
   _cooldown: 45
   _timeText: {fileID: 800443333}
 --- !u!222 &704140688
@@ -2650,7 +2650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2773098232657007525, guid: 06d59767b13e79644b09815b965de281, type: 3}
       propertyPath: _delay
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2773098232657007525, guid: 06d59767b13e79644b09815b965de281, type: 3}
       propertyPath: _camera
