@@ -24,7 +24,7 @@ MonoBehaviour:
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
-      Count: 1
+      Count: 2
     - Class: 2
       Modifiers:
         AttackSpeedMultiplier: 1

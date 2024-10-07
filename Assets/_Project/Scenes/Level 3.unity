@@ -390,8 +390,8 @@ MonoBehaviour:
   _glowStartColor: {r: 1, g: 1, b: 1, a: 0.48235294}
   _target: {fileID: 1609925220}
   _initialMaskScale: 1
-  _finalMaskScale: 50
-  _scaleTime: 12
+  _finalMaskScale: 30
+  _scaleTime: 2
   _glowFadeTime: 2
   _expandDelay: 1
   _winDelay: 2

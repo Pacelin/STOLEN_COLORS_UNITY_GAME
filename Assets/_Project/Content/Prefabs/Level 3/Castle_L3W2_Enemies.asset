@@ -19,7 +19,7 @@ MonoBehaviour:
         AttackSpeedMultiplier: 0.7
         MagesAttackRange: 0
         DamageMultiplier: 3
-        HealthMultiplier: 2
+        HealthMultiplier: 3
         WalkSpeed: 0
         MagesCount: 0
         SoldiersCount: 0
