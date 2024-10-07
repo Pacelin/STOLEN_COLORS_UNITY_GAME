@@ -16,9 +16,9 @@ MonoBehaviour:
   - Composition:
     - Class: 1
       Modifiers:
-        AttackSpeedMultiplier: 1.4
+        AttackSpeedMultiplier: 2
         MagesAttackRange: 0
-        DamageMultiplier: 1.7
+        DamageMultiplier: 2.5
         HealthMultiplier: 2
         WalkSpeed: 1
         MagesCount: 0
@@ -49,26 +49,15 @@ MonoBehaviour:
       Count: 1
   _reinforcementWaves:
   - Composition:
-    - Class: 2
+    - Class: 3
       Modifiers:
-        AttackSpeedMultiplier: 0
-        MagesAttackRange: 0
-        DamageMultiplier: 0
-        HealthMultiplier: 0
-        WalkSpeed: 0
+        AttackSpeedMultiplier: 2
+        MagesAttackRange: 7
+        DamageMultiplier: 1.5
+        HealthMultiplier: 1.5
+        WalkSpeed: 1
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
       Count: 2
-    - Class: 2
-      Modifiers:
-        AttackSpeedMultiplier: 1.5
-        MagesAttackRange: 0
-        DamageMultiplier: 2
-        HealthMultiplier: 1
-        WalkSpeed: 3
-        MagesCount: 0
-        SoldiersCount: 0
-        TanksCount: 0
-      Count: 2
-  _waveCooldown: 10
+  _waveCooldown: 20

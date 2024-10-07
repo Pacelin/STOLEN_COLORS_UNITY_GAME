@@ -98,6 +98,50 @@ PrefabInstance:
       propertyPath: _baseData.AttackSpeed
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _attacksDamages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _attacksCooldown.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _attacksRadiuses.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: '_attacksDamages.Array.data[0]'
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: '_attacksDamages.Array.data[1]'
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: '_attacksDamages.Array.data[2]'
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: '_attacksCooldown.Array.data[0]'
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: '_attacksCooldown.Array.data[1]'
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: '_attacksCooldown.Array.data[2]'
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: '_attacksRadiuses.Array.data[0]'
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: '_attacksRadiuses.Array.data[2]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4330352822543222233, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: m_Name
       value: Boss Level 2
