@@ -34,6 +34,8 @@ public class DesaturationMaskView : MonoBehaviour
     [SerializeField]
     private float _expandDelay = 1f;
     [SerializeField]
+    private float _winDelay = 2f;
+    [SerializeField]
     private Vector3 _maskRotationSpeed = new Vector3(0f, 30f, 0);
 
     [SerializeField]
@@ -117,6 +119,7 @@ public class DesaturationMaskView : MonoBehaviour
                  Join(_glow.DOColor(Color.clear, _glowFadeTime)).
                  Join(_mask.DOColor(finalMaskColor, _glowFadeTime)).
                  Join(_orb.DOColor(Color.clear, _glowFadeTime)).
+                 AppendInterval(_winDelay).
                  AppendCallback(AfterAnimationCallback).
                  SetEase(Ease.OutFlash);
     }
