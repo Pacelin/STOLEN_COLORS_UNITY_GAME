@@ -63,8 +63,17 @@ namespace Gameplay.Map.Spawn
             _disposables = null;
         }
         
-        public void SpawnEnemy(EWarriorClass @class, SpawnModifiers modifiers = default, bool release = true)
+        public void SpawnEnemy(EWarriorClass @class, SpawnModifiers modifiers = null, bool release = true)
         {
+            if (modifiers == null)
+                modifiers = new SpawnModifiers()
+                {
+                    WalkSpeed = 0,
+                    AttackSpeedMultiplier = 1,
+                    MagesAttackRange = 0,
+                    DamageMultiplier = 1,
+                    HealthMultiplier = 1
+                };
             var castle = _castles.GetCastle(EBattleSide.Enemy);
             if (_castles.CapturingCastle && _castles.CapturingCastle.Owner == EBattleSide.Enemy)
                 castle = _castles.CapturingCastle;
@@ -78,8 +87,18 @@ namespace Gameplay.Map.Spawn
             _onSpawnEnemy.Execute(enemy);
         }
 
-        public void SpawnAlly(EWarriorClass @class, SpawnModifiers modifiers = default, bool release = true)
+        public void SpawnAlly(EWarriorClass @class, SpawnModifiers modifiers = null, bool release = true)
         {
+            if (modifiers == null)
+                modifiers = new SpawnModifiers()
+                {
+                    WalkSpeed = 0,
+                    AttackSpeedMultiplier = 1,
+                    MagesAttackRange = 0,
+                    DamageMultiplier = 1,
+                    HealthMultiplier = 1
+                };
+            
             var castle = _castles.GetCastle(EBattleSide.Ally);
             if (_castles.CapturingCastle && _castles.CapturingCastle.Owner == EBattleSide.Ally)
                 castle = _castles.CapturingCastle;
