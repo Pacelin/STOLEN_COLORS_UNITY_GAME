@@ -16,36 +16,70 @@ MonoBehaviour:
   - Composition:
     - Class: 1
       Modifiers:
-        AdditiveHealth: 0
-        AdditiveDamage: 0
-        AdditiveAttackSpeed: 0
-        AdditiveAttackDistance: 0
-        AdditiveSpeed: 0
+        AttackSpeedMultiplier: 1
+        MagesAttackRange: 0
+        DamageMultiplier: 1
+        HealthMultiplier: 1
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
       Count: 1
     - Class: 2
       Modifiers:
-        AdditiveHealth: 0
-        AdditiveDamage: 0
-        AdditiveAttackSpeed: 0
-        AdditiveAttackDistance: 0
-        AdditiveSpeed: 0
+        AttackSpeedMultiplier: 1
+        MagesAttackRange: 0
+        DamageMultiplier: 1
+        HealthMultiplier: 1
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
       Count: 3
     - Class: 3
       Modifiers:
-        AdditiveHealth: 0
-        AdditiveDamage: 0
-        AdditiveAttackSpeed: 0
-        AdditiveAttackDistance: 0
-        AdditiveSpeed: 0
-      Count: 5
+        AttackSpeedMultiplier: 1
+        MagesAttackRange: 0
+        DamageMultiplier: 1
+        HealthMultiplier: 1
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 2
   _reinforcementWaves:
   - Composition:
     - Class: 2
       Modifiers:
-        AdditiveHealth: 0
-        AdditiveDamage: 0
-        AdditiveAttackSpeed: 0
-        AdditiveAttackDistance: 0
-        AdditiveSpeed: 0
+        AttackSpeedMultiplier: 1
+        MagesAttackRange: 0
+        DamageMultiplier: 1.2
+        HealthMultiplier: 1.1
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
       Count: 2
-  _waveCooldown: 10
+    - Class: 3
+      Modifiers:
+        AttackSpeedMultiplier: 1.2
+        MagesAttackRange: 2
+        DamageMultiplier: 1
+        HealthMultiplier: 1
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 1
+    - Class: 1
+      Modifiers:
+        AttackSpeedMultiplier: 1
+        MagesAttackRange: 0
+        DamageMultiplier: 1
+        HealthMultiplier: 1.2
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 1
+  _waveCooldown: 12

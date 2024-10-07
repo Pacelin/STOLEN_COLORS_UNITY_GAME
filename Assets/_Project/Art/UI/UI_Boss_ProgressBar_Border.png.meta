@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_Boss_ProgressBar_Border_0: -5217087519030643801
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

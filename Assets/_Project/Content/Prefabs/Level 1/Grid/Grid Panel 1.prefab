@@ -55,6 +55,8 @@ MonoBehaviour:
   - {fileID: 1627395678734566817, guid: 85e083389f16e2f4b81ee30e64260956, type: 3}
   - {fileID: 1627395678734566817, guid: 8fb2a068b697bd640a59711ec9df84f0, type: 3}
   - {fileID: 1627395678734566817, guid: cafef7548d75aee4b969b81c8e1d11e8, type: 3}
+  - {fileID: 1627395678734566817, guid: db6c68e42bb21a14c8e125ee19c867bc, type: 3}
+  - {fileID: 1627395678734566817, guid: 5faee6976b4b242479e2ff2deb351946, type: 3}
   _disabledCoordinates:
   - {x: 0, y: 0}
   - {x: 0, y: 4}

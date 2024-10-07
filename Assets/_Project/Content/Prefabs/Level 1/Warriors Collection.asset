@@ -23,8 +23,8 @@ MonoBehaviour:
   _enemies:
     _serializedList:
     - Key: 1
-      Value: {fileID: 1270804292013845285, guid: 6275d191cca9eec4f9266a9b270d4e7a, type: 3}
+      Value: {fileID: 193588580925196705, guid: 6dcaef7d8d299774a817d369853a7100, type: 3}
     - Key: 2
-      Value: {fileID: 9208912812238086543, guid: 6c04a07648cd72243963d3891f855a3e, type: 3}
+      Value: {fileID: 4286866607606758733, guid: 8eb091508be75da4aa3d8ddacb2ca6c5, type: 3}
     - Key: 3
-      Value: {fileID: 2853150926896467310, guid: f8a50d478ee30f646b7e972fd4ba7f05, type: 3}
+      Value: {fileID: 4917669090288918701, guid: f4f5c9ace2f56a94b97d185b1fad4d2b, type: 3}

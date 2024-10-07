@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753475933289125134, guid: 1dac5cdbd716efd489f50408e3611a3e, type: 3}
       propertyPath: _baseData.Speed
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5753475933289125134, guid: 1dac5cdbd716efd489f50408e3611a3e, type: 3}
       propertyPath: _baseData.Damage
@@ -66,11 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753475933289125134, guid: 1dac5cdbd716efd489f50408e3611a3e, type: 3}
       propertyPath: _baseData.AttackSpeed
-      value: 0.8
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5753475933289125134, guid: 1dac5cdbd716efd489f50408e3611a3e, type: 3}
       propertyPath: _baseData.AttackDistance
-      value: 14
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
