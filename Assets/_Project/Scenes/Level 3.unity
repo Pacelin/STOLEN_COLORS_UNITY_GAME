@@ -389,7 +389,7 @@ MonoBehaviour:
   _maskExpandedAlpha: 0.25
   _glowStartColor: {r: 1, g: 1, b: 1, a: 0.48235294}
   _target: {fileID: 1609925220}
-  _initialMaskScale: 1
+  _initialMaskScale: 3
   _finalMaskScale: 30
   _scaleTime: 2
   _glowFadeTime: 2
@@ -2840,6 +2840,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1939931261253091640, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: m_Color.a
+      value: 0.019607844
+      objectReference: {fileID: 0}
     - target: {fileID: 3012781059588601826, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2858,7 +2862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8196501666257542618, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 103.7
+      value: 110.38
       objectReference: {fileID: 0}
     - target: {fileID: 8196501666257542618, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2895,6 +2899,10 @@ PrefabInstance:
     - target: {fileID: 8196501666257542618, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048312550248212951, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
