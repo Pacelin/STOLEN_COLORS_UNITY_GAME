@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4a32b599944754a3ef79a369337c04, type: 3}
+  m_Name: Warriors Collection
+  m_EditorClassIdentifier: 
+  _allies:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 1587009726902491410, guid: 854458c8352dcb144afd9bfb82c5de45, type: 3}
+    - Key: 2
+      Value: {fileID: 4286458671374951035, guid: 932148f20a7c2404bae0b3625f368bee, type: 3}
+    - Key: 3
+      Value: {fileID: 3721425824320429828, guid: 788ba7a3b93b2cc4089a876a69c67ba0, type: 3}
+  _enemies:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 1270804292013845285, guid: 11ecf4cb59b2a8d4ea19d260b480b74c, type: 3}
+    - Key: 2
+      Value: {fileID: 9208912812238086543, guid: 3491659dd7887734ea6dfc7cd60c1604, type: 3}
+    - Key: 3
+      Value: {fileID: 2853150926896467310, guid: 854fd056cc5919649b7f0df55ff33c93, type: 3}
