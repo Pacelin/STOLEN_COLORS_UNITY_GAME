@@ -4,9 +4,17 @@
     {
         public override void Enter()
         {
-            _warrior.Agent.stoppingDistance = 0;
+            _warrior.Agent.stoppingDistance = 0.05f;
             _warrior.Agent.SetDestination(_warrior.SnapPosition);
-            _warrior.Animation.SetIdle();
+            _warrior.Animation.SetWalk();
+            if (_warrior.Agent.hasPath)
+                _warrior.Animation.SetIdle();
+        }
+
+        public override void Update()
+        {
+            if (_warrior.Agent.hasPath)
+                _warrior.Animation.SetIdle();
         }
 
         public override void Exit()

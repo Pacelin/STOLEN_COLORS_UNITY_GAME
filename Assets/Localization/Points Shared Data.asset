@@ -51,6 +51,10 @@ MonoBehaviour:
     m_Key: Walk_Speed
     m_Metadata:
       m_Items: []
+  - m_Id: 58353662693376
+    m_Key: Heal
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

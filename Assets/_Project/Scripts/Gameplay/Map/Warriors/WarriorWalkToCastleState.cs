@@ -39,7 +39,7 @@ namespace Gameplay.Map
             _warrior.Agent.SetDestination(destination);
             Observable.EveryFixedUpdate()
                 .First(_ => Vector3.Distance(destination, _warrior.Position) <= SNAP_CASTLE_DISTANCE &&
-                            !_warriors.HasEnemies)
+                            !_warriors.HasEnemiesFor(_warrior.Side))
                 .Subscribe(_ =>
                 {
                     _waveManager.CaptureCastle(attackCastle, _warrior);

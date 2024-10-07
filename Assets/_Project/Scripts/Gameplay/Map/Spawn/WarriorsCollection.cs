@@ -8,7 +8,12 @@ namespace Gameplay.Map.Spawn
 {
     public class WarriorsCollection : IInitializable, IDisposable
     {
-        public bool HasEnemies => _enemies.Count > 0;
+        public bool HasEnemiesFor(EBattleSide side)
+        {
+            if (side == EBattleSide.Ally)
+                return _enemies.Count > 0;
+            return _allies.Count > 0;
+        }
 
         public IReadOnlyList<Warrior> Allies => _allies;
 

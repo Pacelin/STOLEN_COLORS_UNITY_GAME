@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: +Walk Speed
     m_Metadata:
       m_Items: []
+  - m_Id: 58353662693376
+    m_Localized: Heal
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -39,7 +39,7 @@ namespace Audio.Gameplay.PointsGrid
         private GridLayout _layout;
         private int _activationsCount = 0;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             foreach (var marker in _activeMarkers)
                 marker.Value.SetActive(false);
