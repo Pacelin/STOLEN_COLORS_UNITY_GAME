@@ -38,7 +38,7 @@ namespace Audio.Gameplay.PointsGrid
             _gridPoints.Clear();
             var size = _size.x * _size.y;
             for (int i = 0; i < size; i++)
-                _gridPoints.Add(Instantiate(_gridPointPrefabs.GetRandom(), transform));
+                _gridPoints.Add(Instantiate(_gridPointPrefabs.GetRandomWeight(), transform));
 
             var wDistance = _pointSize * Mathf.Sqrt(3);
             var hDistance = _pointSize * 1.5f;

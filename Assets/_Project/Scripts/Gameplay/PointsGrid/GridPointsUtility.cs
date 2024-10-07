@@ -1,10 +1,26 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Audio.Gameplay.PointsGrid
 {
     public static class GridPointsUtility
     {
+        public static GridPoint GetRandomWeight(this GridPoint[] points)
+        {
+            var weightSum = points.Sum(p => p.Weight);
+            var r = Random.Range(0, weightSum);
+            var accumulate = 0f;
+            foreach (var point in points)
+            {
+                accumulate += point.Weight;
+                if (accumulate >= r)
+                    return point;
+            }
+
+            return points[0];
+        }
+        
         public static void AddActivations(this GridPoint[] connections)
         {
             if (connections[0].ActivationsCount <= 0)
@@ -35,7 +51,8 @@ namespace Audio.Gameplay.PointsGrid
             var x = Mathf.Abs(offset.x);
             var y = Mathf.Abs(offset.y);
             if ((x == 0 || y == 0) ||
-                (x != y && x % 4 == 0))
+                (x != y && x % 4 == 0) ||
+                (y % 4 == 0 && x % 4 != 0))
                 nod = NOD(offset.x / 2, offset.y / 2);
             else
                 nod = NOD(offset.x, offset.y);
