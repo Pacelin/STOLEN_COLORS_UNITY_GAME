@@ -1,3 +1,4 @@
+using _Project.Scripts.Gameplay.Map.Effects;
 using Gameplay.Map.Allies;
 using UnityEngine;
 using UnityEngine.AI;
@@ -20,6 +21,7 @@ namespace Gameplay.Map
         [SerializeField] private UnitData _baseData;
 
         private UnitModel _model;
+        [Inject] private DamageEffectPool _effectPool;
 
         [Inject]
         private void Construct(DiContainer container, [InjectOptional] SpawnModifiers unitModifiers)
@@ -41,6 +43,7 @@ namespace Gameplay.Map
         public virtual void TakeDamage(float damage)
         {
             _model.TakeDamage(damage);
+            _effectPool.ApplyEffect(this, damage).Forget();
         }
     }
 }
