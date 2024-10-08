@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2958767788998271390, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: _weight
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4124981127120082202, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: m_Name
@@ -74,11 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537736242593874]._increaseMomentWalkSpeed
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537736242593874]._increaseConstantWalkSpeed
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537736242593874]._description.m_FallbackState

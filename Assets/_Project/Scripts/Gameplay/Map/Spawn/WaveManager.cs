@@ -28,15 +28,14 @@ namespace Gameplay.Map.Spawn
         
         public void StartWave()
         {
-            _castles.ReleaseCastles();
             _warriors.SpawnEnemiesWave();
+            _castles.StartWaveCastles();
             _waveIsInProgress.Value = true;
         }
 
         public void CaptureCastle(Castle castle, Warrior warrior)
         {
             castle.SetOwner(warrior.Side);
-            _castles.SetCapturingCastle(castle);
             _castles.SnapCastles();
             _warriors.StopWave();
             _waveIsInProgress.Value = false;

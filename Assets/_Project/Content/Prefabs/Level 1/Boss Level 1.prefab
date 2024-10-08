@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: _baseData.Damage
-      value: 25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: _baseData.Health
-      value: 3000
+      value: 15000
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: _baseData.AttackSpeed
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: _attacksDamages.Array.size
@@ -34,31 +34,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksDamages.Array.data[0]'
-      value: 10
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksDamages.Array.data[1]'
-      value: 15
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksDamages.Array.data[2]'
-      value: 75
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksCooldown.Array.data[0]'
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
-      propertyPath: '_attacksCooldown.Array.data[1]'
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: '_attacksCooldown.Array.data[1]'
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksCooldown.Array.data[2]'
-      value: 1.5
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: '_attacksRadiuses.Array.data[0]'
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksRadiuses.Array.data[1]'
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksRadiuses.Array.data[2]'

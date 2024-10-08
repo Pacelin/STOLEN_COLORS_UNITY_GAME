@@ -47,6 +47,9 @@ namespace Gameplay.Map
         {
             if (_counter <= 0)
             {
+                var cooldown = 1f / _warrior.Model.AttackSpeed;
+                var modifier = Mathf.Max(1, 0.6f / cooldown);
+                _warrior.Animation.SetAttackSpeed(modifier);
                 _warrior.ApplyAttack(_warrior.AttackTarget);
                 _counter = 1f / _warrior.Model.AttackSpeed;
             }   

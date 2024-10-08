@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2958767788998271390, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: _weight
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4124981127120082202, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: m_Name
@@ -82,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537736242593870]._increaseConstantAttackRange
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6513896889377129369, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: managedReferences[1494537736242593870]._description.m_WaitForCompletion

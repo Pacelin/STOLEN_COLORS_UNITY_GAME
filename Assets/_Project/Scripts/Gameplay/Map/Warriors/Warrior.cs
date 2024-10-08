@@ -27,7 +27,6 @@ namespace Gameplay.Map
         [Inject]
         private void Construct(DiContainer container)
         {
-            Agent.speed = Model.Speed;
             _stateMachine = new WarriorStateMachine(container, this);
         }
 

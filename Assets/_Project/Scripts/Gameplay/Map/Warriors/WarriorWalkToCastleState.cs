@@ -20,9 +20,7 @@ namespace Gameplay.Map
         public override void Enter()
         {
             _disposables = new();
-            var attackCastle = _castles.GetCastle(1 - _warrior.Side);
-            if (_castles.CapturingCastle && _castles.CapturingCastle.Owner == _warrior.Side)
-                attackCastle = _castles.CapturingCastle;
+            var attackCastle = _castles.GetWaveCastle(1 - _warrior.Side);
             if (!attackCastle)
             {
                 if (_warrior.Side == EBattleSide.Ally && _boss.BossIsAlive)
