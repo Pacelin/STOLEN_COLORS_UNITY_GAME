@@ -2111,7 +2111,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1759758062589392739, guid: 06d59767b13e79644b09815b965de281, type: 3}
       propertyPath: m_Name
-      value: Grid Panel 1
+      value: Grid Panel
       objectReference: {fileID: 0}
     - target: {fileID: 2773098232657007525, guid: 06d59767b13e79644b09815b965de281, type: 3}
       propertyPath: _delay

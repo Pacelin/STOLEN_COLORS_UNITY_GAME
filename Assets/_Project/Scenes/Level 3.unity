@@ -2712,7 +2712,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1759758062589392739, guid: 06d59767b13e79644b09815b965de281, type: 3}
       propertyPath: m_Name
-      value: Grid Panel 1
+      value: Grid Panel
       objectReference: {fileID: 0}
     - target: {fileID: 2773098232657007525, guid: 06d59767b13e79644b09815b965de281, type: 3}
       propertyPath: _delay
@@ -3195,7 +3195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87e0e3037844c7ea828bab9468d72a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _warriors: {fileID: 11400000, guid: d3fa403110d9b0d4c97f5644692d03b8, type: 2}
+  _warriors: {fileID: 11400000, guid: 28f1cf46e7f2e7740a1ca5d373a2a139, type: 2}
 --- !u!1001 &1834638895
 PrefabInstance:
   m_ObjectHideFlags: 0
