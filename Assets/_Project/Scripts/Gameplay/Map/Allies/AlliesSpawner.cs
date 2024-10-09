@@ -1,18 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Audio.Gameplay.PointsGrid;
 using Gameplay.Map.Enemies;
 using Gameplay.Map.Spawn;
+using UniRx;
 
 namespace Gameplay.Map.Allies
 {
     public class AlliesSpawner
     {
+        public IObservable<SpawnModifiers> OnChangeModifiers => _onChangeModifiers;
+        public SpawnModifiers ConstantModifiers => _constantModifiers;
+        
         private readonly GridPanel _gridPanel;
         private readonly WarriorsSpawner _spawner;
         private readonly WarriorsCollection _warriors;
         private readonly SpawnModifiers _constantModifiers;
         private readonly SpawnModifiers _momentModifiers;
-        
+        private readonly ReactiveCommand<SpawnModifiers> _onChangeModifiers;
+
         public AlliesSpawner(GridPanel gridPanel, WarriorsSpawner warriorsSpawner, WarriorsCollection warriors)
         {
             _gridPanel = gridPanel;
@@ -20,6 +26,7 @@ namespace Gameplay.Map.Allies
             _warriors = warriors;
             _constantModifiers = new();
             _momentModifiers = new();
+            _onChangeModifiers = new();
         }
 
         public void Spawn()
@@ -65,6 +72,8 @@ namespace Gameplay.Map.Allies
                 wave.Composition = composition.ToArray();
                 _spawner.SpawnAlliesWave(wave);
             }
+
+            _onChangeModifiers.Execute(_constantModifiers);
         }
     }
 }

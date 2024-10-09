@@ -10,7 +10,8 @@ namespace Gameplay.Map
     {
         public Vector3 Position => transform.position;
         public EBattleSide Side => _side;
-        
+
+        public UnitData BaseData => _baseData;
         public NavMeshAgent Agent => _agent;
         public UnitModel Model => _model;        
         public EWarriorClass Class => _class;
