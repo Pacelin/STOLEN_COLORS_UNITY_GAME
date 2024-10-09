@@ -9,7 +9,9 @@ namespace Gameplay.Map
     {
         public EBattleSide Owner => _owner;
         public CastleEnemies Enemies => _enemies;
+        public int GridsCount => _gridsCount;
         
+        [SerializeField] private int _gridsCount = 5;
         [SerializeField] private CastleEnemies _enemies;
         [SerializeField] private Transform _warriorsDestination;
         [SerializeField] private EBattleSide _owner;
