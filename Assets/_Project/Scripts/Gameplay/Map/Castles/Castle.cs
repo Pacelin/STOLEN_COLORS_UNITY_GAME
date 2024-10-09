@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using AYellowpaper.SerializedCollections;
 using Gameplay.Map.Enemies;
 using UnityEngine;
@@ -33,6 +34,8 @@ namespace Gameplay.Map
         
         public void AddUnit(Warrior unit)
         {
+            if (_snapped.Values.Any(l => l.Contains(unit)))
+                return;
             if (_isReleased)
                 unit.Release();
             else
