@@ -15,17 +15,15 @@ namespace Audio.Gameplay.PointsGrid
         [SerializeField] private EWarriorClass _class;
         public ReactiveLocalizedString GetDescription() => new (_description);
         
-        public void ApplyAction(
-            SpawnModifiers momentModifiers,
-            SpawnModifiers constantModifiers,
-            WarriorsCollection warriors)
+        public void ApplyAction(AlliesSpawner.SpawnCount count,
+            SpawnModifiers constantModifiers, WarriorsCollection warriors)
         {
             if (_class == EWarriorClass.Mage)
-                momentModifiers.MagesCount++;
+                count.MagesCount++;
             else if (_class == EWarriorClass.Soldier)
-                momentModifiers.SoldiersCount++;
+                count.WarriorsCount++;
             else if (_class == EWarriorClass.Tank)
-                momentModifiers.TanksCount++;
+                count.TanksCount++;
         }
     }
 }

@@ -12,12 +12,12 @@ namespace Audio.Gameplay.PointsGrid
         [SerializeField] private LocalizedString _description;
         
         public ReactiveLocalizedString GetDescription() => new (_description);
-
-        public void ApplyAction(
-            SpawnModifiers momentModifiers,
+        
+        public void ApplyAction(AlliesSpawner.SpawnCount count,
             SpawnModifiers constantModifiers,
             WarriorsCollection warriors)
         {
+            
         }
     }
 }

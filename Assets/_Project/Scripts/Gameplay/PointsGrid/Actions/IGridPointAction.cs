@@ -7,6 +7,6 @@ namespace Audio.Gameplay.PointsGrid
     public interface IGridPointAction
     {
         ReactiveLocalizedString GetDescription();
-        void ApplyAction(SpawnModifiers momentModifiers, SpawnModifiers constantModifiers, WarriorsCollection warriors);
+        void ApplyAction(AlliesSpawner.SpawnCount count, SpawnModifiers constantModifiers, WarriorsCollection warriors);
     }
 }

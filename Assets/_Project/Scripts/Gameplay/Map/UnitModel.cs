@@ -19,23 +19,27 @@ namespace Gameplay.Map
         public IObservable<float> OnTakeDamage => _onTakeDamage;
         public IObservable<UniRx.Unit> OnDie => _alive.Where(a => !a).AsUnitObservable();
 
-        private readonly float _damage;
-        private readonly float _maxHealth;
-        private readonly float _attackSpeed;
-        private readonly float _attackDistance;
-        private readonly float _speed;
+        private float _damage;
+        private float _maxHealth;
+        private float _attackSpeed;
+        private float _attackDistance;
+        private float _speed;
         private readonly ReactiveProperty<float> _health;
         private readonly IReadOnlyReactiveProperty<float> _normalizedHealth;
         private readonly ReactiveCommand<float> _onTakeDamage;
         private readonly ReactiveProperty<bool> _alive;
+        private readonly UnitData _data;
+        private readonly EWarriorClass _class;
 
         public UnitModel(UnitData data, SpawnModifiers modifiers, EWarriorClass @class)
         {
+            _data = data;
+            _class = @class;
             _speed = data.Speed + modifiers.WalkSpeed;
             _damage = data.Damage * modifiers.DamageMultiplier;
             _maxHealth = data.Health * modifiers.HealthMultiplier;
             _attackSpeed = data.AttackSpeed * modifiers.AttackSpeedMultiplier;
-            if (@class == EWarriorClass.Mage)
+            if (_class == EWarriorClass.Mage)
                 _attackDistance = data.AttackDistance + modifiers.MagesAttackRange;
             else
                 _attackDistance = data.AttackDistance;
@@ -45,6 +49,25 @@ namespace Gameplay.Map
             _alive = new(true);
         }
 
+        public void UpdateStats(SpawnModifiers modifiers)
+        {
+            var newSpeed = _data.Speed + modifiers.WalkSpeed;
+            var newDamage = _data.Damage * modifiers.DamageMultiplier;
+            var newMaxHealth = _data.Health * modifiers.HealthMultiplier;
+            var newAtkSpd = _data.AttackSpeed * modifiers.AttackSpeedMultiplier;
+            var newAtkDistance = _data.AttackDistance;
+            if (_class == EWarriorClass.Mage)
+                newAtkDistance += modifiers.MagesAttackRange;
+
+            var healthDelta = newMaxHealth - _maxHealth;
+            _speed = newSpeed;
+            _damage = newDamage;
+            _maxHealth = newMaxHealth;
+            _attackSpeed = newAtkSpd;
+            _attackDistance = newAtkDistance;
+            _health.Value += healthDelta;
+        }
+        
         public void TakeDamage(float damage)
         {
             if (_alive.Value)

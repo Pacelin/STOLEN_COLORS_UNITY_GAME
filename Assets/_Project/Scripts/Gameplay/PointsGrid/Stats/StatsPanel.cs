@@ -73,11 +73,11 @@ namespace Audio.Gameplay.PointsGrid
             var warrior = _baseStats.GetAlly(EWarriorClass.Soldier).BaseData;
             
             FillRowMultiplier(_hpRow, mage, tank, warrior, 
-                1 + m.HealthMultiplier, d => d.Health);
+                m.HealthMultiplier, d => d.Health);
             FillRowMultiplier(_dmgRow, mage, tank, warrior,
-                1 + m.DamageMultiplier, d => d.Damage);
+                m.DamageMultiplier, d => d.Damage);
             FillRowMultiplier(_atkspdRow, mage, tank, warrior,
-                1 + m.AttackSpeedMultiplier, d => d.AttackSpeed);
+                m.AttackSpeedMultiplier, d => d.AttackSpeed);
             FillRowAdd(_mvspdRow, mage, tank, warrior,
                 m.WalkSpeed, d => d.Speed);
             _rangeRow.Mage.text = (mage.AttackDistance + m.MagesAttackRange).ToString("0.#");

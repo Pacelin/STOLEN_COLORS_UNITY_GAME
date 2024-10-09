@@ -9,6 +9,12 @@ namespace Gameplay.Map.Allies
 {
     public class AlliesSpawner
     {
+        public class SpawnCount
+        {
+            public int MagesCount;
+            public int WarriorsCount;
+            public int TanksCount;
+        }
         public IObservable<SpawnModifiers> OnChangeModifiers => _onChangeModifiers;
         public SpawnModifiers ConstantModifiers => _constantModifiers;
         
@@ -16,7 +22,6 @@ namespace Gameplay.Map.Allies
         private readonly WarriorsSpawner _spawner;
         private readonly WarriorsCollection _warriors;
         private readonly SpawnModifiers _constantModifiers;
-        private readonly SpawnModifiers _momentModifiers;
         private readonly ReactiveCommand<SpawnModifiers> _onChangeModifiers;
 
         public AlliesSpawner(GridPanel gridPanel, WarriorsSpawner warriorsSpawner, WarriorsCollection warriors)
@@ -25,47 +30,44 @@ namespace Gameplay.Map.Allies
             _spawner = warriorsSpawner;
             _warriors = warriors;
             _constantModifiers = new();
-            _momentModifiers = new();
+            _constantModifiers.DamageMultiplier = 1;
+            _constantModifiers.HealthMultiplier = 1;
+            _constantModifiers.AttackSpeedMultiplier = 1;
             _onChangeModifiers = new();
         }
 
         public void Spawn()
         {
-            _momentModifiers.DamageMultiplier = 1 + _constantModifiers.DamageMultiplier;
-            _momentModifiers.HealthMultiplier = 1 + _constantModifiers.HealthMultiplier;
-            _momentModifiers.WalkSpeed = 0 + _constantModifiers.WalkSpeed;
-            _momentModifiers.MagesAttackRange = 0 + _constantModifiers.MagesAttackRange;
-            _momentModifiers.AttackSpeedMultiplier = 1 + _constantModifiers.AttackSpeedMultiplier;
-            _momentModifiers.MagesCount = 0;
-            _momentModifiers.SoldiersCount = 0;
-            _momentModifiers.TanksCount = 0;
-            
+            var count = new SpawnCount();
             foreach (var point in _gridPanel.Grid)
                 for (int i = 0; i < point.ActivationsCount; i++)
-                    point.Model.Action.ApplyAction(_momentModifiers, _constantModifiers, _warriors);
+                    point.Model.Action.ApplyAction(count, _constantModifiers, _warriors);
 
+            foreach (var ally in _warriors.Allies)
+                ally.UpdateModifiers(_constantModifiers);
+            
             var wave = new WarriorsWave();
             var composition = new List<WarriorComposition>();
-            if (_momentModifiers.TanksCount > 0)
+            if (count.TanksCount > 0)
                 composition.Add(new WarriorComposition()
                 {
                     Class =  EWarriorClass.Tank,
-                    Count = _momentModifiers.TanksCount,
-                    Modifiers = _momentModifiers
+                    Count = count.TanksCount,
+                    Modifiers = _constantModifiers
                 });
-            if (_momentModifiers.SoldiersCount > 0)
+            if (count.WarriorsCount > 0)
                 composition.Add(new WarriorComposition()
                 {
                     Class = EWarriorClass.Soldier,
-                    Count = _momentModifiers.SoldiersCount,
-                    Modifiers = _momentModifiers
+                    Count = count.WarriorsCount,
+                    Modifiers = _constantModifiers
                 });
-            if (_momentModifiers.MagesCount > 0)
+            if (count.MagesCount > 0)
                 composition.Add(new WarriorComposition()
                 {
                     Class = EWarriorClass.Mage,
-                    Count = _momentModifiers.MagesCount,
-                    Modifiers = _momentModifiers
+                    Count = count.MagesCount,
+                    Modifiers = _constantModifiers
                 });
             if (composition.Count > 0)
             {

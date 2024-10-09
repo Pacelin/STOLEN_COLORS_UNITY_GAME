@@ -3,7 +3,6 @@ using Gameplay.Map.Spawn;
 using Runtime.Utils;
 using UnityEngine;
 using UnityEngine.Localization;
-using Zenject;
 
 namespace Audio.Gameplay.PointsGrid
 {
@@ -12,16 +11,14 @@ namespace Audio.Gameplay.PointsGrid
     {
         [SerializeField] private LocalizedString _description;
         [SerializeField] private float _increaseConstantHealthPercent = 0.01f;
-        [SerializeField] private float _increaseMomentHealthPercent = 0.1f;
 
         public ReactiveLocalizedString GetDescription() => new(_description);
-
+       
         public void ApplyAction(
-            SpawnModifiers momentModifiers,
+            AlliesSpawner.SpawnCount count,
             SpawnModifiers constantModifiers,
             WarriorsCollection warriors)
         {
-            momentModifiers.HealthMultiplier += _increaseMomentHealthPercent;
             constantModifiers.HealthMultiplier += _increaseConstantHealthPercent;
         }
     }

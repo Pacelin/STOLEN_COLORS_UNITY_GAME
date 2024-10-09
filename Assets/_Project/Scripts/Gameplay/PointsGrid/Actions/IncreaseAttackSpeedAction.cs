@@ -11,16 +11,14 @@ namespace Audio.Gameplay.PointsGrid
     {
         [SerializeField] private LocalizedString _description;
         [SerializeField] private float _increaseConstantAttackSpeedPercent = 0.01f;
-        [SerializeField] private float _increaseMomentAttackSpeedPercent = 0.1f;
         
         public ReactiveLocalizedString GetDescription() => new (_description);
         
         public void ApplyAction(
-            SpawnModifiers momentModifiers,
+            AlliesSpawner.SpawnCount momentModifiers,
             SpawnModifiers constantModifiers,
             WarriorsCollection warriors)
         {
-            momentModifiers.AttackSpeedMultiplier += _increaseMomentAttackSpeedPercent;
             constantModifiers.AttackSpeedMultiplier += _increaseConstantAttackSpeedPercent;
         }
     }
