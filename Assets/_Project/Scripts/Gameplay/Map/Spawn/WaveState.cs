@@ -33,6 +33,7 @@ namespace Gameplay.Map.Spawn
 
         private void StartTime()
         {
+            _counterDisposable?.Dispose();
             _remaining = _castles.GetCurrentCastle(EBattleSide.Ally).GridsCount;
             _timeText.text = _remaining.ToString();
             _counterDisposable = _panel.OnApply.Subscribe(_ =>
@@ -49,6 +50,8 @@ namespace Gameplay.Map.Spawn
             _timeText.text = "";
             _counterDisposable.Dispose();
             _manager.StartWave();
+            _counterDisposable = _manager.WaveIsInProgress
+                .Where(b => !b).Subscribe(_ => StartTime());
         }
     }
 }
