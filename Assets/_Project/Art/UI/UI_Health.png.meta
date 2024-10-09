@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 912bd1bd4052392409ca63080ea5878b
+guid: 6fdc041413dc30d4899f72f8c6b844e7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8985334201132731142
-    second: T_Circle_2_0
+      213: -5480726165076951931
+    second: UI_Health_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: T_Circle_2_0
+      name: UI_Health_0
       rect:
         serializedVersion: 2
-        x: 193
-        y: 195
-        width: 480
-        height: 467
+        x: 0
+        y: 0
+        width: 155
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60b4fae79d152bc70800000000000000
-      internalID: 8985334201132731142
+      spriteID: 58c366b479c80f3b0800000000000000
+      internalID: -5480726165076951931
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      T_Circle_2_0: 8985334201132731142
+      UI_Health_0: -5480726165076951931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

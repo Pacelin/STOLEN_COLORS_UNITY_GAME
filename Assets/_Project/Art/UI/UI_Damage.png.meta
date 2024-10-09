@@ -1,34 +1,19 @@
 fileFormatVersion: 2
-guid: 8568c52326cb57148a85ee5d49b2df96
+guid: cbddb139283442749a02fb533ac902a3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8313560109262391580
-    second: T_Circle_3_0
+      213: 5290938745184234009
+    second: UI_Damage_0
   - first:
-      213: -2190981873216964291
-    second: T_Circle_3_1
+      213: -747560854722023171
+    second: UI_Damage_1
   - first:
-      213: 4947378335545768256
-    second: T_Circle_3_2
+      213: 1788462153210927596
+    second: UI_Damage_2
   - first:
-      213: 3193356758707216086
-    second: T_Circle_3_3
-  - first:
-      213: 2386817825270865679
-    second: T_Circle_3_4
-  - first:
-      213: 6172053898113087011
-    second: T_Circle_3_5
-  - first:
-      213: 7857390308973692602
-    second: T_Circle_3_6
-  - first:
-      213: -3958424826576662048
-    second: T_Circle_3_7
-  - first:
-      213: 1765512347173906082
-    second: T_Circle_3_8
+      213: 7425853066959607693
+    second: UI_Damage_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,7 +81,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -150,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: T_Circle_3_0
+      name: UI_Damage_0
       rect:
         serializedVersion: 2
-        x: 656
-        y: 695
-        width: 30
-        height: 29
+        x: 0
+        y: 0
+        width: 144
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c19417b4fd2bf5370800000000000000
-      internalID: 8313560109262391580
+      spriteID: 91aae0391c03d6940800000000000000
+      internalID: 5290938745184234009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Circle_3_1
+      name: UI_Damage_1
       rect:
         serializedVersion: 2
-        x: 678
-        y: 689
-        width: 8
-        height: 7
+        x: 20
+        y: 123
+        width: 15
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d39359938911891e0800000000000000
-      internalID: -2190981873216964291
+      spriteID: df07e460d5120a5f0800000000000000
+      internalID: -747560854722023171
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Circle_3_2
+      name: UI_Damage_2
       rect:
         serializedVersion: 2
-        x: 686
-        y: 701
-        width: 12
-        height: 12
+        x: 27
+        y: 123
+        width: 102
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0493ba3426e98a440800000000000000
-      internalID: 4947378335545768256
+      spriteID: ce91e584ad4e1d810800000000000000
+      internalID: 1788462153210927596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Circle_3_3
+      name: UI_Damage_3
       rect:
         serializedVersion: 2
-        x: 149
-        y: 377
-        width: 133
-        height: 65
+        x: 101
+        y: 0
+        width: 60
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,118 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6de16db8d05115c20800000000000000
-      internalID: 3193356758707216086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Circle_3_4
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 419
-        width: 242
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f0f17da8a2eaf1120800000000000000
-      internalID: 2386817825270865679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Circle_3_5
-      rect:
-        serializedVersion: 2
-        x: 406
-        y: 406
-        width: 268
-        height: 285
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3267893c15a87a550800000000000000
-      internalID: 6172053898113087011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Circle_3_6
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 355
-        width: 65
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab649f31bde0b0d60800000000000000
-      internalID: 7857390308973692602
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Circle_3_7
-      rect:
-        serializedVersion: 2
-        x: 185
-        y: 191
-        width: 191
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e19fc5c799d019c0800000000000000
-      internalID: -3958424826576662048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Circle_3_8
-      rect:
-        serializedVersion: 2
-        x: 414
-        y: 182
-        width: 178
-        height: 182
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a6eddb202c508810800000000000000
-      internalID: 1765512347173906082
+      spriteID: d875f52450eed0760800000000000000
+      internalID: 7425853066959607693
       vertices: []
       indices: 
       edges: []
@@ -361,15 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      T_Circle_3_0: 8313560109262391580
-      T_Circle_3_1: -2190981873216964291
-      T_Circle_3_2: 4947378335545768256
-      T_Circle_3_3: 3193356758707216086
-      T_Circle_3_4: 2386817825270865679
-      T_Circle_3_5: 6172053898113087011
-      T_Circle_3_6: 7857390308973692602
-      T_Circle_3_7: -3958424826576662048
-      T_Circle_3_8: 1765512347173906082
+      UI_Damage_0: 5290938745184234009
+      UI_Damage_1: -747560854722023171
+      UI_Damage_2: 1788462153210927596
+      UI_Damage_3: 7425853066959607693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

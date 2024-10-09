@@ -15,7 +15,7 @@ namespace Audio.Gameplay.PointsGrid
         public ReactiveLocalizedString GetDescription() => new (_description);
 
         public void ApplyAction(
-            SpawnModifiers momentModifiers,
+            AlliesSpawner.SpawnCount momentModifiers,
             SpawnModifiers constantModifiers,
             WarriorsCollection warriors)
         {

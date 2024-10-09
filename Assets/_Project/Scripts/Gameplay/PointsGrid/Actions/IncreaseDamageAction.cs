@@ -11,16 +11,14 @@ namespace Audio.Gameplay.PointsGrid
     {
         [SerializeField] private LocalizedString _description;
         [SerializeField] private float _increaseConstantDamagePercent = 0.01f;
-        [SerializeField] private float _increaseMomentDamagePercent = 0.1f;
         
         public ReactiveLocalizedString GetDescription() => new (_description);
         
         public void ApplyAction(
-            SpawnModifiers momentModifiers,
+            AlliesSpawner.SpawnCount momentModifiers,
             SpawnModifiers constantModifiers,
             WarriorsCollection warriors)
         {
-            momentModifiers.DamageMultiplier += _increaseMomentDamagePercent;
             constantModifiers.DamageMultiplier += _increaseConstantDamagePercent;
         }
     }

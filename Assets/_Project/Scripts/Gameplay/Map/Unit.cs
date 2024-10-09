@@ -42,6 +42,12 @@ namespace Gameplay.Map
             Agent.speed = _model.Speed;
         }
 
+        public void UpdateModifiers(SpawnModifiers constantModifiers)
+        {
+            _model.UpdateStats(constantModifiers);
+            Agent.speed = _model.Speed;
+        }
+        
         public virtual void TakeDamage(float damage)
         {
             _model.TakeDamage(damage);

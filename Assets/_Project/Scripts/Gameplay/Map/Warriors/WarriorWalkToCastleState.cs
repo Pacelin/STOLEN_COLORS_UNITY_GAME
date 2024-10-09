@@ -15,7 +15,7 @@ namespace Gameplay.Map
 
         private CompositeDisposable _disposables;
         private const float SNAP_CASTLE_DISTANCE = 1.5f;
-        private const float FIND_ENEMY_DISTANCE = 5;
+        private const float FIND_ENEMY_DISTANCE = 2;
         
         public override void Enter()
         {
@@ -47,7 +47,7 @@ namespace Gameplay.Map
                 .Subscribe(_ =>
                 {
                     var warrior = _warriors.GetNearestEnemyFor(_warrior, out var distance);
-                    if (warrior != null && distance <= FIND_ENEMY_DISTANCE)
+                    if (warrior != null && distance <= FIND_ENEMY_DISTANCE + _warrior.Model.AttackDistance)
                         _warrior.SetAttack(warrior);
                 }).AddTo(_disposables);
         }

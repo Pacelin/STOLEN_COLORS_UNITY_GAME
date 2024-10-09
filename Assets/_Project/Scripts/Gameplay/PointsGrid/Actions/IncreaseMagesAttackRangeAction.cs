@@ -11,16 +11,14 @@ namespace Audio.Gameplay.PointsGrid
     {
         [SerializeField] private LocalizedString _description;
         [SerializeField] private float _increaseConstantAttackRange = 0.1f;
-        [SerializeField] private float _increaseMomentAttackRange = 1f;
         
         public ReactiveLocalizedString GetDescription() => new (_description);
         
         public void ApplyAction(
-            SpawnModifiers momentModifiers,
+            AlliesSpawner.SpawnCount count,
             SpawnModifiers constantModifiers,
             WarriorsCollection warriors)
         {
-            momentModifiers.MagesAttackRange += _increaseMomentAttackRange;
             constantModifiers.MagesAttackRange += _increaseConstantAttackRange;
         }
     }

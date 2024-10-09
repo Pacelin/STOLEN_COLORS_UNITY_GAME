@@ -28,7 +28,7 @@ namespace Audio.Gameplay
                         .AppendCallback(() => _audio.PlaySound(ESoundKey.GameOver))
                         .Append(_msg.DOFade(1, 2f))
                         .AppendInterval(2)
-                        .AppendCallback(() => SceneManager.LoadScene(0));
+                        .AppendCallback(() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex));
                 });
         }
 
