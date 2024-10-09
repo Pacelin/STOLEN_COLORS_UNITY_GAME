@@ -93,10 +93,13 @@ namespace Gameplay.Map
         {
             _stateMachine.Run();
             _dieDisposables = new();
-            _stateMachine.Stop();
             _animation.OnEmitDie.Subscribe(_ => GameObject.Destroy(gameObject))
                 .AddTo(_dieDisposables);
-            Model.OnDie.Subscribe(_ => _animation.Die())
+            Model.OnDie.Subscribe(_ =>
+                {
+                    _stateMachine.Stop();
+                    _animation.Die();
+                })
                 .AddTo(_dieDisposables);
         }
 
