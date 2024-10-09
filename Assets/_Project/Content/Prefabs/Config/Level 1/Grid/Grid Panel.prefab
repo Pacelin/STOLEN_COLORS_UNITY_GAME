@@ -46,17 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _size: {x: 5, y: 5}
   _gridPointPrefabs:
-  - {fileID: 1627395678734566817, guid: 7c24c9c890ee7b847844b1a6716bbf64, type: 3}
-  - {fileID: 1627395678734566817, guid: 54361ac8051994e4087bab9f4bf655fe, type: 3}
-  - {fileID: 1627395678734566817, guid: c94e028e5f0219a4d86e81801fe93100, type: 3}
-  - {fileID: 1627395678734566817, guid: b0bf0b5c5d509fe4eadf191b2f3fbc0f, type: 3}
-  - {fileID: 1627395678734566817, guid: 728a85d5a8265c54b9a9d1bc7d1c510e, type: 3}
-  - {fileID: 1627395678734566817, guid: ced46f0f10fa7224f9774314ef80620c, type: 3}
-  - {fileID: 1627395678734566817, guid: 85e083389f16e2f4b81ee30e64260956, type: 3}
-  - {fileID: 1627395678734566817, guid: 8fb2a068b697bd640a59711ec9df84f0, type: 3}
-  - {fileID: 1627395678734566817, guid: cafef7548d75aee4b969b81c8e1d11e8, type: 3}
-  - {fileID: 1627395678734566817, guid: db6c68e42bb21a14c8e125ee19c867bc, type: 3}
-  - {fileID: 1627395678734566817, guid: 5faee6976b4b242479e2ff2deb351946, type: 3}
+  - {fileID: 1627395678734566817, guid: 3728d634e984f1b42b5b32c3b4a8bff2, type: 3}
+  - {fileID: 1627395678734566817, guid: d3d61b3133e29b8438d4494f6c7b803a, type: 3}
+  - {fileID: 1627395678734566817, guid: e1200758e74f7904eb88ca2b4c9a9db7, type: 3}
+  - {fileID: 1627395678734566817, guid: f6fd76bbb291feb479fa6584d049254c, type: 3}
+  - {fileID: 1627395678734566817, guid: d1c1573c9d9de3242abb0c0fe57edb5c, type: 3}
+  - {fileID: 1627395678734566817, guid: ac6c6c7327b920748aafbf67fdae1043, type: 3}
+  - {fileID: 1627395678734566817, guid: 7050260d6f679ec48b73dcf471e07611, type: 3}
+  - {fileID: 1627395678734566817, guid: ebabdd9244cb01847a4aea3d773ff9fa, type: 3}
+  - {fileID: 1627395678734566817, guid: f4360b5f25e65114087e6f4bbc4ef8e9, type: 3}
+  - {fileID: 1627395678734566817, guid: 611062b8bc12aa148931278337469c36, type: 3}
+  - {fileID: 1627395678734566817, guid: 2c5e766523421cd418e557d105b22361, type: 3}
   _disabledCoordinates:
   - {x: 0, y: 0}
   - {x: 0, y: 4}
@@ -247,6 +247,10 @@ MonoBehaviour:
   _defaultLineColor: {r: 0.28235295, g: 0.3254902, b: 0.49411765, a: 1}
   _errorLineColor: {r: 0.827451, g: 0.24313726, b: 0.11372549, a: 1}
   _text: {fileID: 147180433519396046}
+  _delay: 0
+  _firstX: 0
+  _secondX: 0
+  _duration: 0
 --- !u!1 &3789370224660225066
 GameObject:
   m_ObjectHideFlags: 0

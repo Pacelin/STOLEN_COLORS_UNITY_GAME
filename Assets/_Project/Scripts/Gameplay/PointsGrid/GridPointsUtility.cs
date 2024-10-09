@@ -6,19 +6,41 @@ namespace Audio.Gameplay.PointsGrid
 {
     public static class GridPointsUtility
     {
-        public static GridPoint GetRandomWeight(this GridPoint[] points)
+        public static GridPoint GetRandomWeight(this GridPoint[] points, Dictionary<GridPoint, float> additionalWeights)
         {
-            var weightSum = points.Sum(p => p.Weight);
-            var r = Random.Range(0, weightSum);
-            var accumulate = 0f;
-            foreach (var point in points)
+            float GetAdditional(GridPoint p)
             {
-                accumulate += point.Weight;
-                if (accumulate >= r)
-                    return point;
+                if (additionalWeights.ContainsKey(p))
+                    return additionalWeights[p];
+                return 0;
             }
 
-            return points[0];
+            void AddAdditional(GridPoint p)
+            {
+                if (additionalWeights.ContainsKey(p))
+                    additionalWeights[p] += p.AdditionalWeight;
+                else
+                    additionalWeights[p] = p.AdditionalWeight;
+            }
+            
+            var weightSum = points.Sum(p => p.Weight + GetAdditional(p));
+            var r = Random.Range(0, weightSum);
+            var accumulate = 0f;
+            GridPoint result = null;
+            
+            foreach (var point in points)
+            {
+                if (result == null)
+                {
+                    accumulate += point.Weight + GetAdditional(point);
+                    if (accumulate >= r)
+                        result = point;
+                }
+                AddAdditional(point);
+            }
+
+            additionalWeights[result] = 0;
+            return result;
         }
         
         public static void AddActivations(this GridPoint[] connections)

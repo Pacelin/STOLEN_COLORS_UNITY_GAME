@@ -17,6 +17,7 @@ namespace Audio.Gameplay.PointsGrid
         [SerializeField] private Vector2Int[] _disabledCoordinates;
         [SerializeField] private float _pointSize;
 
+        private Dictionary<GridPoint, float> _additionalWeights = new();
         private List<GridPoint> _gridPoints;
         private ReactiveCommand<GridPoint> _onClickPoint = new();
         private CompositeDisposable _disposables;
@@ -38,7 +39,8 @@ namespace Audio.Gameplay.PointsGrid
             _gridPoints.Clear();
             var size = _size.x * _size.y;
             for (int i = 0; i < size; i++)
-                _gridPoints.Add(Instantiate(_gridPointPrefabs.GetRandomWeight(), transform));
+                _gridPoints.Add(Instantiate(
+                    _gridPointPrefabs.GetRandomWeight(_additionalWeights), transform));
 
             var wDistance = _pointSize * Mathf.Sqrt(3);
             var hDistance = _pointSize * 1.5f;

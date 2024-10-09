@@ -30,10 +30,12 @@ namespace Audio.Gameplay.PointsGrid
         public GridPointModel Model => _model;
         public int ActivationsCount => _activationsCount;
         public float Weight => _weight;
+        public float AdditionalWeight => _additionalWeight;
         
         [SerializeField] private GridPointModel _model;
         [SerializeField] private SerializedDictionary<int, GameObject> _activeMarkers;
         [SerializeField] private float _weight;
+        [SerializeField] private float _additionalWeight;
         
         private Vector2Int _coordinates;
         private GridLayout _layout;
