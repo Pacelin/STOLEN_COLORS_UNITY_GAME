@@ -54,7 +54,7 @@ namespace Audio.Gameplay.PointsGrid
         private void Construct(AlliesSpawner spawner, WaveManager wave)
         {
             _isInProgress.Value = false;
-            _grid.Regenerate();
+            _grid.Regenerate(false);
             _wave = wave;
             var transform1 = transform;
             var p = transform1.localPosition;
@@ -114,7 +114,7 @@ namespace Audio.Gameplay.PointsGrid
                 _onApply.Execute(_grid);
                 _spawner.Spawn();
                 ClearGrid();
-                _grid.Regenerate();
+                _grid.Regenerate(false);
                 _audio.PlaySound(ESoundKey.GridApply);
             }
         }

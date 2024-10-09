@@ -6,7 +6,9 @@ namespace Audio.Gameplay.PointsGrid
 {
     public static class GridPointsUtility
     {
-        public static GridPoint GetRandomWeight(this GridPoint[] points, Dictionary<GridPoint, float> additionalWeights)
+        public static GridPoint GetRandomWeight(this GridPoint[] allPoints,
+            Dictionary<GridPoint, float> additionalWeights,
+            bool ignoreBadPoints)
         {
             float GetAdditional(GridPoint p)
             {
@@ -22,6 +24,14 @@ namespace Audio.Gameplay.PointsGrid
                 else
                     additionalWeights[p] = p.AdditionalWeight;
             }
+
+            GridPoint[] points;
+            if (ignoreBadPoints)
+                points = allPoints
+                    .Where(p => p.Model.CanConnectThrough && p is not EmptyGridPoint)
+                    .ToArray();
+            else
+                points = allPoints;
             
             var weightSum = points.Sum(p => p.Weight + GetAdditional(p));
             var r = Random.Range(0, weightSum);

@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Gameplay.Map.Enemies;
 using UniRx;
 using UnityEngine;
 
@@ -22,7 +21,7 @@ namespace Audio.Gameplay.PointsGrid
         private ReactiveCommand<GridPoint> _onClickPoint = new();
         private CompositeDisposable _disposables;
         
-        public void Regenerate()
+        public void Regenerate(bool ignoreBadPoints)
         {
             _disposables?.Dispose();
             _disposables = new();
@@ -40,7 +39,7 @@ namespace Audio.Gameplay.PointsGrid
             var size = _size.x * _size.y;
             for (int i = 0; i < size; i++)
                 _gridPoints.Add(Instantiate(
-                    _gridPointPrefabs.GetRandomWeight(_additionalWeights), transform));
+                    _gridPointPrefabs.GetRandomWeight(_additionalWeights, ignoreBadPoints), transform));
 
             var wDistance = _pointSize * Mathf.Sqrt(3);
             var hDistance = _pointSize * 1.5f;
