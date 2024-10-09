@@ -38,6 +38,7 @@ namespace Gameplay.Map
                 };
             }
             _model = new UnitModel(_baseData, unitModifiers, _class);
+            Agent.speed = _model.Speed;
         }
 
         public virtual void TakeDamage(float damage)

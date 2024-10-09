@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b214cd97ae44a09b5faa897fa74014, type: 3}
+  m_Name: Castle_L1W1_Enemies
+  m_EditorClassIdentifier: 
+  _firstWaveVariations:
+  - Composition:
+    - Class: 1
+      Modifiers:
+        AttackSpeedMultiplier: 1
+        MagesAttackRange: 0
+        DamageMultiplier: 1
+        HealthMultiplier: 1
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 3
+    - Class: 2
+      Modifiers:
+        AttackSpeedMultiplier: 1
+        MagesAttackRange: 0
+        DamageMultiplier: 1
+        HealthMultiplier: 1
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 2
+    - Class: 3
+      Modifiers:
+        AttackSpeedMultiplier: 1
+        MagesAttackRange: 0
+        DamageMultiplier: 1
+        HealthMultiplier: 1
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 3
+  _reinforcementWaves:
+  - Composition:
+    - Class: 1
+      Modifiers:
+        AttackSpeedMultiplier: 1
+        MagesAttackRange: 0
+        DamageMultiplier: 1
+        HealthMultiplier: 1.5
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 1
+    - Class: 3
+      Modifiers:
+        AttackSpeedMultiplier: 1
+        MagesAttackRange: 0
+        DamageMultiplier: 1.5
+        HealthMultiplier: 1
+        WalkSpeed: 0
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 1
+  _waveCooldown: 10

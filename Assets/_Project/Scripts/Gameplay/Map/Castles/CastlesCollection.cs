@@ -1,61 +1,50 @@
 ﻿using System.Linq;
 using UnityEngine;
-using Zenject;
 
 namespace Gameplay.Map
 {
     public class CastlesCollection : MonoBehaviour
     {
-        public Castle CapturingCastle => _capturingCastle;
         public bool HasAllyCastle => _castles.Any(c => c.Owner == EBattleSide.Ally);
         
         [SerializeField] private Castle[] _castles;
 
-        private Castle _allyCastle;
-        private Castle _enemyCastle;
-        private Castle _capturingCastle;
+        private Castle _allyCastleWave;
+        private Castle _enemyCastleWave;
 
-        [Inject]
-        private void Construct()
+        public void UpdateWaveCastle()
         {
-            _allyCastle = _castles.LastOrDefault(c => c.Owner == EBattleSide.Ally);
-            _enemyCastle = _castles.FirstOrDefault(c => c.Owner == EBattleSide.Enemy);
+            _allyCastleWave = _castles.LastOrDefault(c => c.Owner == EBattleSide.Ally);
+            _enemyCastleWave = _castles.FirstOrDefault(c => c.Owner == EBattleSide.Enemy);
         }
 
-        public void SetCapturingCastle(Castle castle) => _capturingCastle = castle;
-        
-        public Castle GetCastle(EBattleSide side, bool includeCapturing = false)
+        public Castle GetCurrentCastle(EBattleSide side)
         {
-            if (includeCapturing && _capturingCastle)
-            {
-                if (_capturingCastle.Owner == side)
-                    return _capturingCastle;
-                if (side == EBattleSide.Ally)
-                    return _castles.LastOrDefault(c => c.Owner == EBattleSide.Ally);
-                return _castles.FirstOrDefault(c => c.Owner == EBattleSide.Enemy);
-            }
-            if (includeCapturing && _capturingCastle && _capturingCastle.Owner == side)
-                return _capturingCastle;
+            if (side == EBattleSide.Ally) 
+                return _castles.LastOrDefault(c => c.Owner == EBattleSide.Ally);
+            return _castles.FirstOrDefault(c => c.Owner == EBattleSide.Enemy);
+        }
+
+        public Castle GetWaveCastle(EBattleSide side)
+        {
             if (side == EBattleSide.Ally)
-                return _allyCastle;
-            return _enemyCastle;
+                return _allyCastleWave;
+            return _enemyCastleWave;
         }
-        
+
         public void SnapCastles()
         {
             foreach (var castle in _castles)
                 castle.SnapUnits();
         }
 
-        public void ReleaseCastles()
+        public void StartWaveCastles()
         {
-            _capturingCastle = null;
-            _allyCastle = _castles.LastOrDefault(c => c.Owner == EBattleSide.Ally);
-            _enemyCastle = _castles.FirstOrDefault(c => c.Owner == EBattleSide.Enemy);
-            if (_allyCastle)
-                _allyCastle.ReleaseUnits();
-            if (_enemyCastle)
-                _enemyCastle.ReleaseUnits();
+            UpdateWaveCastle();
+            if (_allyCastleWave)
+                _allyCastleWave.ReleaseUnits();
+            if (_enemyCastleWave)
+                _enemyCastleWave.ReleaseUnits();
         }
     }
 }

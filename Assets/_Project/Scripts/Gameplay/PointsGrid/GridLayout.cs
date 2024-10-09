@@ -79,7 +79,7 @@ namespace Audio.Gameplay.PointsGrid
         public IEnumerator<GridPoint> GetEnumerator()
         {
             foreach (var gridPoint in _gridPoints)
-                if (gridPoint.gameObject.activeSelf)
+                if (!_disabledCoordinates.Contains(gridPoint.Coordinates))
                     yield return gridPoint;
         }
 

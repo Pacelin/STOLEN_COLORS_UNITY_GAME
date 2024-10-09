@@ -10,6 +10,7 @@ namespace Audio.Gameplay.PointsGrid
     [System.Serializable]
     public class SpawnWarriorAction : IGridPointAction
     {
+        public EWarriorClass Class => _class;
         [SerializeField] private LocalizedString _description;
         [SerializeField] private EWarriorClass _class;
         public ReactiveLocalizedString GetDescription() => new (_description);

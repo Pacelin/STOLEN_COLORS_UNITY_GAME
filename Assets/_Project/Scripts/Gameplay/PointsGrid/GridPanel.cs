@@ -13,7 +13,8 @@ namespace Audio.Gameplay.PointsGrid
     public class GridPanel : MonoBehaviour
     {
         public GridLayout Grid => _grid;
-        
+        public IObservable<IEnumerable<GridPoint>> OnApply => _onApply;
+
         [SerializeField] private Camera _camera;
         [SerializeField] private GridLayout _grid;
         [SerializeField] private SpriteButton _clearButton;
@@ -31,7 +32,7 @@ namespace Audio.Gameplay.PointsGrid
         [SerializeField] private float _firstX;
         [SerializeField] private float _secondX;
         [SerializeField] private float _duration;
-
+        
         public IReadOnlyReactiveProperty<bool> IsInProgress => _isInProgress;
 
         private List<GridPointsConnection> _connections = new();
@@ -45,6 +46,7 @@ namespace Audio.Gameplay.PointsGrid
         private IDisposable _descriptionDisposable;
         private Tween _tween;
         private ReactiveProperty<bool> _isInProgress = new();
+        private ReactiveCommand<IEnumerable<GridPoint>> _onApply = new();
 
         [Inject] private AudioSystem _audio;
         
@@ -109,6 +111,7 @@ namespace Audio.Gameplay.PointsGrid
         {
             if (_connections.Count > 0)
             {
+                _onApply.Execute(_grid);
                 _spawner.Spawn();
                 ClearGrid();
                 _grid.Regenerate();

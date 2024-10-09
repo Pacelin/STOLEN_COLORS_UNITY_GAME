@@ -12,9 +12,6 @@ namespace Gameplay.Map.Spawn
         public IObservable<Warrior> OnSpawnAlly => _onSpawnAlly;
         public IObservable<Warrior> OnSpawnEnemy => _onSpawnEnemy;
 
-        public Castle EnemiesCastle => _castles.GetCastle(EBattleSide.Enemy);
-        public Castle AlliesCastle => _castles.GetCastle(EBattleSide.Ally);
-
         private readonly DiContainer _container;
         private readonly WarriorsConfig _warriorsConfig;
         private readonly CastlesCollection _castles;
@@ -34,25 +31,29 @@ namespace Gameplay.Map.Spawn
 
         public void SpawnEnemiesWave()
         {
-            if (!EnemiesCastle)
+            var enemiesCastle = _castles.GetCurrentCastle(EBattleSide.Enemy);
+            
+            if (!enemiesCastle)
                 return;
             _disposables?.Dispose();
             _disposables = new();
-            var wave = EnemiesCastle.Enemies.FirstWaveVariations.GetRandom();
-            SpawnWave(wave);
-            Observable.Interval(TimeSpan.FromSeconds(EnemiesCastle.Enemies.WaveCooldown))
-                .Subscribe(_ => SpawnWave(EnemiesCastle.Enemies.ReinforcementWaves.GetRandom()))
+            var wave = enemiesCastle.Enemies.FirstWaveVariations.GetRandom();
+            SpawnWave(enemiesCastle, wave);
+            Observable.Interval(TimeSpan.FromSeconds(enemiesCastle.Enemies.WaveCooldown))
+                .Subscribe(_ => SpawnWave(enemiesCastle, enemiesCastle.Enemies.ReinforcementWaves.GetRandom()))
                 .AddTo(_disposables);
         }
 
         public void SpawnAlliesWave(WarriorsWave wave)
         {
-            if (!AlliesCastle)
+            var alliesCastle = _castles.GetCurrentCastle(EBattleSide.Ally);
+
+            if (!alliesCastle)
                 return;
             foreach (var composition in wave.Composition)
                 for (int i = 0; i < composition.Count; i++)
-                    SpawnAlly(composition.Class, composition.Modifiers, false);
-            AlliesCastle.ReleaseIfNeed();
+                    SpawnAlly(alliesCastle, composition.Class, composition.Modifiers, false);
+            alliesCastle.ReleaseIfNeed();
         }
 
         public void StopWave() => Dispose();
@@ -63,7 +64,7 @@ namespace Gameplay.Map.Spawn
             _disposables = null;
         }
         
-        public void SpawnEnemy(EWarriorClass @class, SpawnModifiers modifiers = null, bool release = true)
+        private void SpawnEnemy(Castle castle, EWarriorClass @class, SpawnModifiers modifiers = null, bool release = true)
         {
             if (modifiers == null)
                 modifiers = new SpawnModifiers()
@@ -74,9 +75,6 @@ namespace Gameplay.Map.Spawn
                     DamageMultiplier = 1,
                     HealthMultiplier = 1
                 };
-            var castle = _castles.GetCastle(EBattleSide.Enemy);
-            if (_castles.CapturingCastle && _castles.CapturingCastle.Owner == EBattleSide.Enemy)
-                castle = _castles.CapturingCastle;
             var position = castle.GetWarriorSpawnPosition(EBattleSide.Enemy, @class);
             var enemy = _container.InstantiatePrefabForComponent<Warrior>(_warriorsConfig.GetEnemy(@class),
                 position, Quaternion.identity, null, new object[] { modifiers });
@@ -87,7 +85,7 @@ namespace Gameplay.Map.Spawn
             _onSpawnEnemy.Execute(enemy);
         }
 
-        public void SpawnAlly(EWarriorClass @class, SpawnModifiers modifiers = null, bool release = true)
+        private void SpawnAlly(Castle castle, EWarriorClass @class, SpawnModifiers modifiers = null, bool release = true)
         {
             if (modifiers == null)
                 modifiers = new SpawnModifiers()
@@ -98,10 +96,7 @@ namespace Gameplay.Map.Spawn
                     DamageMultiplier = 1,
                     HealthMultiplier = 1
                 };
-            
-            var castle = _castles.GetCastle(EBattleSide.Ally);
-            if (_castles.CapturingCastle && _castles.CapturingCastle.Owner == EBattleSide.Ally)
-                castle = _castles.CapturingCastle;
+
             var position = castle.GetWarriorSpawnPosition(EBattleSide.Ally, @class);
             var ally = _container.InstantiatePrefabForComponent<Warrior>(_warriorsConfig.GetAlly(@class),
                 position, Quaternion.identity, null, new object[] { modifiers });
@@ -112,12 +107,12 @@ namespace Gameplay.Map.Spawn
             _onSpawnAlly.Execute(ally);
         }
 
-        public void SpawnWave(WarriorsWave wave)
+        private void SpawnWave(Castle castle, WarriorsWave wave)
         {
             foreach (var composition in wave.Composition)
                 for (int i = 0; i < composition.Count; i++)
-                    SpawnEnemy(composition.Class, composition.Modifiers, false);
-            EnemiesCastle.ReleaseIfNeed();
+                    SpawnEnemy(castle, composition.Class, composition.Modifiers, false);
+            castle.ReleaseIfNeed();
         }
     }
 }

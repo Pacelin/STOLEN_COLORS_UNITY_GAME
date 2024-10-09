@@ -30,7 +30,8 @@ public class CameraController : MonoBehaviour
     private Vector3 _cameraOffset = new(0f, 10f, 0f), _castleOffset = new(5f, 0f, 0f);
 
     private bool _update = false;
-
+    private Vector3 _lastPos;
+    
     private Func<Vector3> _getCameraTargetPosition;
 
     private CompositeDisposable _disposables = new();
@@ -94,13 +95,15 @@ public class CameraController : MonoBehaviour
 
     private Vector3 GetAllyCastlePosition()
     {
-        var castle = _castles.GetCastle(EBattleSide.Ally, true);
-        return (castle ? castle.transform.position : _start.position) + _castleOffset;
+        var castle = _castles.GetCurrentCastle(EBattleSide.Ally);
+        _lastPos = (castle ? castle.transform.position : _start.position) + _castleOffset;
+        return _lastPos;
     }
     
     private Vector3 GetMostRightAllyPosition()
     {
         var warrior = _warriors.Allies.OrderByDescending(warrior => warrior.transform.position.x).FirstOrDefault();
-        return warrior ? warrior.transform.position : _start.position;
+        _lastPos = warrior ? warrior.transform.position : _lastPos;
+        return _lastPos;
     }
 }
