@@ -31,11 +31,13 @@ namespace Audio.Gameplay.PointsGrid
         public int ActivationsCount => _activationsCount;
         public float Weight => _weight;
         public float AdditionalWeight => _additionalWeight;
+        public bool IsEmptyPoint => _isEmptyPoint;
         
         [SerializeField] private GridPointModel _model;
         [SerializeField] private SerializedDictionary<int, GameObject> _activeMarkers;
         [SerializeField] private float _weight;
         [SerializeField] private float _additionalWeight;
+        [SerializeField] private bool _isEmptyPoint = false;
         
         private Vector2Int _coordinates;
         private GridLayout _layout;
@@ -43,8 +45,11 @@ namespace Audio.Gameplay.PointsGrid
 
         protected virtual void Awake()
         {
-            foreach (var marker in _activeMarkers)
-                marker.Value.SetActive(false);
+            if (_isEmptyPoint)
+                gameObject.SetActive(false);
+            else
+                foreach (var marker in _activeMarkers)
+                    marker.Value.SetActive(false);
         }
 
         public void AddActivation()

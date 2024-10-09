@@ -69,6 +69,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2958767788998271390, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
+      propertyPath: _isEmptyPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958767788998271390, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: _additionalWeight
       value: 1
       objectReference: {fileID: 0}
@@ -78,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4124981127120082202, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5498028309061257906, guid: 697e62244e41e934d8efd7b581dfd2e0, type: 3}
       propertyPath: m_Sprite

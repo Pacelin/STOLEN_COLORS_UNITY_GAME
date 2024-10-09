@@ -28,7 +28,7 @@ namespace Audio.Gameplay.PointsGrid
             GridPoint[] points;
             if (ignoreBadPoints)
                 points = allPoints
-                    .Where(p => p.Model.CanConnectThrough && p is not EmptyGridPoint)
+                    .Where(p => p.Model.CanConnectThrough && !p.IsEmptyPoint)
                     .ToArray();
             else
                 points = allPoints;

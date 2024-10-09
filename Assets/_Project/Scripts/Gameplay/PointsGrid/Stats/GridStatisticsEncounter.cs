@@ -64,7 +64,7 @@ namespace Audio.Gameplay.PointsGrid
 
         private void CollectPoint(GridPoint point, GridStatisticsUnit count, GridStatisticsUnit activations)
         {
-            if (point is EmptyGridPoint)
+            if (point.IsEmptyPoint)
                 count.EmptyPoints++;
             else if (point.Model.Action is EmptyAction)
                 count.Locks++;
