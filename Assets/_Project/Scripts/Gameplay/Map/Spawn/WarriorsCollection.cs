@@ -16,6 +16,7 @@ namespace Gameplay.Map.Spawn
         }
 
         public IReadOnlyList<Warrior> Allies => _allies;
+        public IReadOnlyList<Warrior> Enemies => _enemies;
 
         private readonly WarriorsSpawner _spawner;
         private readonly List<Warrior> _enemies;
