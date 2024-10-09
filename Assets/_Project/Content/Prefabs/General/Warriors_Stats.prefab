@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7043bf71ecd44d9090b779ca213ece1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _closedX: 4.4
+  _closedX: 4.7
   _openedX: 0.4
   _duration: 1
   _delay: 5

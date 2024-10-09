@@ -14,8 +14,7 @@ namespace Audio.Gameplay.PointsGrid
         public void Connect(GridPoint first, Vector3 v2)
         {
             var v1 = first.transform.position;
-            v1.y = 0.5f;
-            v2.y = 0.5f;
+            v2.y = v1.y;
             _line.SetPositions(new Vector3[] {v1, v2});
         }
         public void Connect(GridPoint first, GridPoint last)
@@ -30,9 +29,7 @@ namespace Audio.Gameplay.PointsGrid
             if (_first)
             {
                 var v1 = _first.transform.position;
-                v1.y = 0.5f;
                 var v2 = _second.transform.position;
-                v2.y = 0.5f;
                 _line.SetPositions(new Vector3[] {v1, v2});
             }
         }
