@@ -12,7 +12,7 @@ public class TutorialArmController : MonoBehaviour
     private GridPanel _gridPanel;
     
     [SerializeField]
-    private int[] _pointIndices;
+    private Vector2Int[] _points;
 
     [SerializeField]
     private float _initialDelay = 5f;
@@ -30,29 +30,24 @@ public class TutorialArmController : MonoBehaviour
     [SerializeField]
     private Vector3 _positionOffset;
     
-    private async UniTaskVoid Awake()
+    private async UniTaskVoid Start()
     {
         _gridPanel.Grid.Regenerate(ignoreBadPoints: true);
         
-        List<GridPoint> points = new();
-        foreach (var point in _gridPanel.Grid)
-            points.Add(point);
-
-        transform.localPosition = points[0].transform.localPosition + _positionOffset;
+        transform.localPosition = _gridPanel.Grid.Get(_points[0].x, _points[0].y).transform.localPosition + _positionOffset;
 
         await UniTask.Delay(TimeSpan.FromSeconds(_initialDelay));
 
         _sequence = DOTween.Sequence();
 
-        for (int i = 1; i < _pointIndices.Length; i++)
+        for (int i = 1; i < _points.Length; i++)
         {
-            int point = _pointIndices[i];
             _sequence.
                 AppendInterval(_armStayTime).
                 Append(transform.DOScale(Vector3.one * _tapScale, _tapTime)).
                 Append(transform.DOScale(Vector3.one, _tapTime)).
                 AppendInterval(_armStayTime).
-                Append(transform.DOLocalMove(points[point].transform.localPosition + _positionOffset, _armMoveTime));
+                Append(transform.DOLocalMove(_gridPanel.Grid.Get(_points[i].x, _points[i].y).transform.localPosition + _positionOffset, _armMoveTime));
         }
 
         _sequence.
@@ -60,7 +55,7 @@ public class TutorialArmController : MonoBehaviour
             Append(transform.DOScale(Vector3.one * _tapScale, _tapTime)).
             Append(transform.DOScale(Vector3.one, _tapTime)).
             AppendInterval(_restartDelay).
-            AppendCallback(() => transform.localPosition = points[0].transform.localPosition + _positionOffset).
+            AppendCallback(() => transform.localPosition = _gridPanel.Grid.Get(_points[0].x, _points[0].y).transform.localPosition + _positionOffset).
             SetLoops(-1);
 
         _disposables = new CompositeDisposable();
