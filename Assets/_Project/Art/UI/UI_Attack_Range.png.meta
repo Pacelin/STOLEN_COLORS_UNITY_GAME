@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6a1f318f5c5f015458beccedafd07f01
+guid: 973180015a8cc5e4c9d3d80b16fec124
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4291966631134568630
-    second: T_Hit_2_0
+      213: 5977299591119578929
+    second: UI_Attack_Range_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: T_Hit_2_0
+      name: UI_Attack_Range_0
       rect:
         serializedVersion: 2
-        x: 397
-        y: 431
-        width: 504
-        height: 693
+        x: 0
+        y: 0
+        width: 191
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b02b9449e0209b30800000000000000
-      internalID: 4291966631134568630
+      spriteID: 13725cc1f42a3f250800000000000000
+      internalID: 5977299591119578929
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      T_Hit_2_0: 4291966631134568630
+      UI_Attack_Range_0: 5977299591119578929
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

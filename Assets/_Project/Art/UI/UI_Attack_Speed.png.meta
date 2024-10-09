@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 84bcd5c8e4bf91846a56b1fe1e595caa
+guid: e981943d2e4733a46a07d092e952a212
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2798593110567287486
-    second: T_Hit_1_0
+      213: -1263398238894647494
+    second: UI_Attack_Speed_0
   - first:
-      213: 2021992815657092592
-    second: T_Hit_1_1
+      213: -235858563793062518
+    second: UI_Attack_Speed_1
+  - first:
+      213: 8942787375548593469
+    second: UI_Attack_Speed_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +78,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -129,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: T_Hit_1_0
+      name: UI_Attack_Speed_0
       rect:
         serializedVersion: 2
-        x: 385
-        y: 689
-        width: 37
-        height: 65
+        x: 0
+        y: 0
+        width: 144
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ebaf7324b9996d620800000000000000
-      internalID: 2798593110567287486
+      spriteID: a3794d8def1877ee0800000000000000
+      internalID: -1263398238894647494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Hit_1_1
+      name: UI_Attack_Speed_1
       rect:
         serializedVersion: 2
-        x: 414
-        y: 693
-        width: 246
-        height: 477
+        x: 5
+        y: 130
+        width: 88
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +169,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f502abb0cf8f0c10800000000000000
-      internalID: 2021992815657092592
+      spriteID: a8571e7c2ef0abcf0800000000000000
+      internalID: -235858563793062518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Attack_Speed_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 4
+        width: 62
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d35fb65bcb92b1c70800000000000000
+      internalID: 8942787375548593469
       vertices: []
       indices: 
       edges: []
@@ -186,8 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      T_Hit_1_0: 2798593110567287486
-      T_Hit_1_1: 2021992815657092592
+      UI_Attack_Speed_0: -1263398238894647494
+      UI_Attack_Speed_1: -235858563793062518
+      UI_Attack_Speed_2: 8942787375548593469
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
