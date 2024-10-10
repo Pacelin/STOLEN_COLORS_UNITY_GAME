@@ -90,6 +90,8 @@ namespace Gameplay.Map
 
         public override void TakeDamage(float damage)
         {
+            if (!Model.Alive.Value)
+                return;
             _animation.SetTakeDamage();
             base.TakeDamage(damage);
         }

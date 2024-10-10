@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8668728761273435397
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2590958098609337528}
+    m_Modifications:
+    - target: {fileID: 94860953936132548, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: ShapeModule.m_Rotation.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633134720936168195, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_Name
+      value: Damage Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946678964388214340, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+      propertyPath: m_Flip.x
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+--- !u!4 &8195561127726869964 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 716628201270585545, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+  m_PrefabInstance: {fileID: 8668728761273435397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8726992469457157313 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 94860953936132548, guid: b93172a9501fe844ab810f07ebebcbd1, type: 3}
+  m_PrefabInstance: {fileID: 8668728761273435397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8698728486513236501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8,6 +83,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _damageEffect
+      value: 
+      objectReference: {fileID: 8726992469457157313}
+    - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _damagePosition
+      value: 
+      objectReference: {fileID: 8195561127726869964}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: _baseData.Damage
       value: 1
@@ -114,6 +197,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6578907834874244781, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8195561127726869964}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+--- !u!4 &2590958098609337528 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6578907834874244781, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+  m_PrefabInstance: {fileID: 8698728486513236501}
+  m_PrefabAsset: {fileID: 0}

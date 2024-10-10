@@ -38,10 +38,9 @@ public class CameraController : MonoBehaviour
     
     private void OnEnable()
     {
-        ShowLevelGoal();
-
         _waveManager.WaveIsInProgress.Subscribe(value =>
             _getCameraTargetPosition = value ? GetMostRightAllyPosition : GetAllyCastlePosition).AddTo(_disposables);
+        ShowLevelGoal();
     }
 
     private void OnDisable()
@@ -51,10 +50,6 @@ public class CameraController : MonoBehaviour
 
     public void ShowLevelGoal()
     {
-        float distance = Mathf.Abs(_start.position.x - _goal.position.x);
-        float time = distance / _initialMoveSpeed;
-
-        _tween?.Kill();
         var startPosition = _start.position;
         startPosition.y = 0;
         startPosition.z = 0;
@@ -63,10 +58,20 @@ public class CameraController : MonoBehaviour
         goalPosition.y = 0;
         goalPosition.z = 0;
         
+        float distance = Mathf.Abs(startPosition.x - goalPosition.x);
+        float time = distance / _initialMoveSpeed;
+
+        _tween?.Kill();
+        _camera.position = startPosition + _cameraOffset;
+
+        var startPos = _getCameraTargetPosition();
+        startPos.z = 0;
+        startPos.y = 0;
+        
         _tween = DOTween.Sequence().
                 Append(_camera.DOMove(goalPosition + _cameraOffset, time)).
                 AppendInterval(_cameraGoalStopDelay).
-                Append(_camera.DOMove(startPosition + _cameraOffset, time)).
+                Append(_camera.DOMove(startPos + _cameraOffset, time)).
                 SetEase(Ease.InOutFlash).
                 AppendCallback(() => _update = true);
     }
@@ -88,7 +93,7 @@ public class CameraController : MonoBehaviour
             _goal.position.x + _cameraOffset.x);
 
         var cameraPosition = _camera.position;
-        cameraPosition.x = Mathf.Lerp(_camera.position.x, targetPosition.x, Time.deltaTime * _lerpSpeed);
+        cameraPosition.x = Mathf.Lerp(cameraPosition.x, targetPosition.x, Time.deltaTime * _lerpSpeed);
 
         _camera.position = cameraPosition;
     }
@@ -99,11 +104,18 @@ public class CameraController : MonoBehaviour
         _lastPos = (castle ? castle.transform.position : _start.position) + _castleOffset;
         return _lastPos;
     }
-    
+
     private Vector3 GetMostRightAllyPosition()
     {
-        var warrior = _warriors.Allies.OrderByDescending(warrior => warrior.transform.position.x).FirstOrDefault();
-        _lastPos = warrior ? warrior.transform.position : _lastPos;
+        var warrior = _warriors.Allies.OrderByDescending(w => w.transform.position.x).FirstOrDefault();
+        if (warrior)
+            _lastPos = warrior.transform.position;
+        else
+        {
+            var enemy = _warriors.Enemies.OrderBy(w => w.transform.position.x).FirstOrDefault();
+            if (enemy)
+                _lastPos = enemy.transform.position;
+        }
         return _lastPos;
     }
 }

@@ -53,6 +53,8 @@ namespace Gameplay.Map
         
         public virtual void TakeDamage(float damage)
         {
+            if (!_model.Alive.Value)
+                return;
             _model.TakeDamage(damage);
             _damageEffect.Play();
             _effectPool.ApplyEffect(this, damage).Forget();

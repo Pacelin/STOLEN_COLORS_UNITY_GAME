@@ -94,6 +94,8 @@ namespace Gameplay.Map.Bosses
         
         public override void TakeDamage(float damage)
         {
+            if (!Model.Alive.Value)
+                return;
             Activate();
             base.TakeDamage(damage);
         }

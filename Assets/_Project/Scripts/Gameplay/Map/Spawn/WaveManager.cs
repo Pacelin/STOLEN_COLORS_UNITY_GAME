@@ -1,17 +1,16 @@
-﻿using UniRx;
+﻿using System;
+using UniRx;
 
 namespace Gameplay.Map.Spawn
 {
     public class WaveManager
     {
-        public IReadOnlyReactiveProperty<bool> WaveIsInProgress => 
-            _waveIsInProgress.Select(b => _bossFight || b).ToReactiveProperty();
+        public IReadOnlyReactiveProperty<bool> WaveIsInProgress => _waveIsInProgress;
 
         private readonly WarriorsSpawner _warriorsSpawner;
         private readonly WarriorsCollection _warriors;
         private readonly CastlesCollection _castles;
         private readonly ReactiveProperty<bool> _waveIsInProgress;
-        private bool _bossFight;
 
         public WaveManager(WarriorsSpawner warriorsSpawner, CastlesCollection castles, WarriorsCollection warriors)
         {
@@ -19,15 +18,8 @@ namespace Gameplay.Map.Spawn
             _warriors = warriors;
             _castles = castles;
             _waveIsInProgress = new(false);
-            _bossFight = false;
         }
 
-        public void SetBossFight()
-        {
-            _bossFight = true;
-            _waveIsInProgress.Value = true;
-        }
-        
         public void StartWave()
         {
             _warriorsSpawner.SpawnEnemiesWave();
