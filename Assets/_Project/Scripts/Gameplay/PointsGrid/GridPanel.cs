@@ -111,8 +111,8 @@ namespace Audio.Gameplay.PointsGrid
         {
             if (_connections.Count > 0)
             {
-                _onApply.Execute(_grid);
                 _spawner.Spawn();
+                _onApply.Execute(_grid);
                 ClearGrid();
                 _grid.Regenerate(false);
                 _audio.PlaySound(ESoundKey.GridApply);

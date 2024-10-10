@@ -39,9 +39,10 @@ namespace Gameplay.Map.Spawn
             _disposables = new();
             var wave = enemiesCastle.Enemies.FirstWaveVariations.GetRandom();
             SpawnWave(enemiesCastle, wave);
-            Observable.Interval(TimeSpan.FromSeconds(enemiesCastle.Enemies.WaveCooldown))
-                .Subscribe(_ => SpawnWave(enemiesCastle, enemiesCastle.Enemies.ReinforcementWaves.GetRandom()))
-                .AddTo(_disposables);
+            if (enemiesCastle.Enemies.ReinforcementWaves != null && enemiesCastle.Enemies.ReinforcementWaves.Length > 0)
+                Observable.Interval(TimeSpan.FromSeconds(enemiesCastle.Enemies.WaveCooldown))
+                    .Subscribe(_ => SpawnWave(enemiesCastle, enemiesCastle.Enemies.ReinforcementWaves.GetRandom()))
+                    .AddTo(_disposables);
         }
 
         public void SpawnAlliesWave(WarriorsWave wave)
