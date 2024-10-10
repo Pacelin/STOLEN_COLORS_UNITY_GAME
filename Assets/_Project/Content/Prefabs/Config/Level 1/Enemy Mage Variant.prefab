@@ -54,15 +54,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4714394088002417803, guid: 91d7a9604d2f99545bbfc7e10339041e, type: 3}
       propertyPath: _baseData.Damage
-      value: 15
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 4714394088002417803, guid: 91d7a9604d2f99545bbfc7e10339041e, type: 3}
       propertyPath: _baseData.Health
-      value: 30
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4714394088002417803, guid: 91d7a9604d2f99545bbfc7e10339041e, type: 3}
       propertyPath: _baseData.AttackSpeed
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4714394088002417803, guid: 91d7a9604d2f99545bbfc7e10339041e, type: 3}
       propertyPath: _baseData.AttackDistance

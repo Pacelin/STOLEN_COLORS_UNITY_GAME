@@ -6,12 +6,13 @@ namespace Gameplay.Map
     {
         private const float UPDATE_DESTINATION_THRESHOLD = 0.1f;
         private float _counter;
+        private float _lastTime;
         
         public override void Enter()
         {
             _warrior.Agent.stoppingDistance = 
                 _warrior.Model.AttackDistance + _warrior.Agent.radius + _warrior.AttackTarget.Agent.radius;
-            _counter = 0;
+            _counter -= Time.time - _lastTime;
         }
 
         public override void FixedUpdate()
@@ -41,6 +42,7 @@ namespace Gameplay.Map
 
         public override void Exit()
         {
+            _lastTime = Time.time;
         }
         
         private void AttackFixedUpdate()

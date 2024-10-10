@@ -62,13 +62,16 @@ namespace Gameplay.Map
                 .First()
                 .Subscribe(_ =>
                 {
-                    var position = _mageFirePoint.position;
-                    var proj = Instantiate(_mageProjectilePrefab, position, Quaternion.identity);
-                    proj.Shoot(position, target, Model.Damage);
-                    if (Side == EBattleSide.Ally)
-                        _audio.PlaySound(ESoundKey.AttackMagicAlly);
-                    else
-                        _audio.PlaySound(ESoundKey.AttackMagicEnemy);
+                    if (target)
+                    {
+                        var position = _mageFirePoint.position;
+                        var proj = Instantiate(_mageProjectilePrefab, position, Quaternion.identity);
+                        proj.Shoot(position, target, Model.Damage);
+                        if (Side == EBattleSide.Ally)
+                            _audio.PlaySound(ESoundKey.AttackMagicAlly);
+                        else
+                            _audio.PlaySound(ESoundKey.AttackMagicEnemy);
+                    }
                 });
             _animation.Attack();
         }
