@@ -50,23 +50,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4714394088002417803, guid: 5a954bed94b5c5543984195db0490b89, type: 3}
       propertyPath: _baseData.Speed
-      value: 2.5
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 4714394088002417803, guid: 5a954bed94b5c5543984195db0490b89, type: 3}
       propertyPath: _baseData.Damage
-      value: 50
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4714394088002417803, guid: 5a954bed94b5c5543984195db0490b89, type: 3}
       propertyPath: _baseData.Health
-      value: 160
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4714394088002417803, guid: 5a954bed94b5c5543984195db0490b89, type: 3}
       propertyPath: _baseData.AttackSpeed
-      value: 1
+      value: 0.9090909
       objectReference: {fileID: 0}
     - target: {fileID: 4714394088002417803, guid: 5a954bed94b5c5543984195db0490b89, type: 3}
       propertyPath: _baseData.AttackDistance
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8670026355705591207, guid: 5a954bed94b5c5543984195db0490b89, type: 3}
       propertyPath: m_Name
