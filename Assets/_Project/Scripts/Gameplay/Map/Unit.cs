@@ -15,11 +15,14 @@ namespace Gameplay.Map
         public NavMeshAgent Agent => _agent;
         public UnitModel Model => _model;        
         public EWarriorClass Class => _class;
+        public Vector3 DamagePosition => _damagePosition.position;
 
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private EBattleSide _side;
         [SerializeField] private EWarriorClass _class;
         [SerializeField] private UnitData _baseData;
+        [SerializeField] private Transform _damagePosition;
+        [SerializeField] private ParticleSystem _damageEffect;
 
         private UnitModel _model;
         [Inject] private DamageEffectPool _effectPool;
@@ -51,6 +54,7 @@ namespace Gameplay.Map
         public virtual void TakeDamage(float damage)
         {
             _model.TakeDamage(damage);
+            _damageEffect.Play();
             _effectPool.ApplyEffect(this, damage).Forget();
         }
     }

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8235687687671125255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7344530206258640606}
+  m_Layer: 0
+  m_Name: Fire_Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7344530206258640606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235687687671125255}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7069921, y: -0.012736453, z: 0.012736453, w: 0.7069921}
+  m_LocalPosition: {x: 0.36111367, y: 0.5863872, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 55540220540863361}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8300944076150904292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,6 +88,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4389482728101150954, guid: 67105e97a0f3cc846b41b43626daf529, type: 3}
+      propertyPath: _mageFirePoint
+      value: 
+      objectReference: {fileID: 7344530206258640606}
+    - target: {fileID: 4389482728101150954, guid: 67105e97a0f3cc846b41b43626daf529, type: 3}
       propertyPath: _baseData.Speed
       value: 2
       objectReference: {fileID: 0}
@@ -64,6 +99,10 @@ PrefabInstance:
       propertyPath: _baseData.Health
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4389482728101150954, guid: 67105e97a0f3cc846b41b43626daf529, type: 3}
+      propertyPath: _mageProjectilePrefab
+      value: 
+      objectReference: {fileID: 1250439529136809838, guid: a29ff32145721694baf8ffa645626be1, type: 3}
     - target: {fileID: 4389482728101150954, guid: 67105e97a0f3cc846b41b43626daf529, type: 3}
       propertyPath: _baseData.AttackDistance
       value: 5
@@ -112,8 +151,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally Mage
       objectReference: {fileID: 0}
+    - target: {fileID: 8861799730771648191, guid: 67105e97a0f3cc846b41b43626daf529, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 269960f1d04d53a42bbbf11909bbe7ad, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8356342390567360101, guid: 67105e97a0f3cc846b41b43626daf529, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7344530206258640606}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67105e97a0f3cc846b41b43626daf529, type: 3}
+--- !u!4 &55540220540863361 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8356342390567360101, guid: 67105e97a0f3cc846b41b43626daf529, type: 3}
+  m_PrefabInstance: {fileID: 8300944076150904292}
+  m_PrefabAsset: {fileID: 0}

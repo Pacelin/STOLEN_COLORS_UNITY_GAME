@@ -34,7 +34,10 @@ namespace Gameplay.Map.Spawn
         private void StartTime()
         {
             _counterDisposable?.Dispose();
-            _remaining = _castles.GetCurrentCastle(EBattleSide.Ally).GridsCount;
+            var c = _castles.GetCurrentCastle(EBattleSide.Ally);
+            if (!c)
+                return;
+            _remaining = c.GridsCount;
             _timeText.text = _remaining.ToString();
             _counterDisposable = _panel.OnApply.Subscribe(_ =>
             {

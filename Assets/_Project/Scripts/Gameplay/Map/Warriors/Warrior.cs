@@ -21,7 +21,9 @@ namespace Gameplay.Map
         
         [SerializeField] private WarriorAnimationController _animation;
         [SerializeField] private Transform _holder;
-
+        [SerializeField] private Transform _mageFirePoint;
+        [SerializeField] private MageProjectile _mageProjectilePrefab;
+        
         [Inject] private AudioSystem _audio;
 
         [Inject]
@@ -47,27 +49,43 @@ namespace Gameplay.Map
         public void ApplyAttack(Unit warrior)
         {
             _attackDisposable?.Dispose();
+            
+            if (Class == EWarriorClass.Mage)
+                MageAttack(warrior);
+            else
+                MeleeAttack(warrior);
+        }
+
+        private void MageAttack(Unit target)
+        {
             _attackDisposable = _animation.OnEmitAttack
                 .First()
                 .Subscribe(_ =>
                 {
-                    warrior.TakeDamage(Model.Damage);
+                    var position = _mageFirePoint.position;
+                    var proj = Instantiate(_mageProjectilePrefab, position, Quaternion.identity);
+                    proj.Shoot(position, target, Model.Damage);
+                    if (Side == EBattleSide.Ally)
+                        _audio.PlaySound(ESoundKey.AttackMagicAlly);
+                    else
+                        _audio.PlaySound(ESoundKey.AttackMagicEnemy);
                 });
             _animation.Attack();
-            if (warrior.Side == EBattleSide.Ally)
-            {
-                if (warrior.@Class == EWarriorClass.Mage)
-                    _audio.PlaySound(ESoundKey.AttackMagicAlly);
-                else
-                    _audio.PlaySound(ESoundKey.AttackMeleeAlly);
-            }
-            else
-            {
-                if (warrior.@Class == EWarriorClass.Mage)
-                    _audio.PlaySound(ESoundKey.AttackMagicEnemy);
-                else
-                    _audio.PlaySound(ESoundKey.AttackMeleeEnemy);
-            }
+        }
+
+        private void MeleeAttack(Unit target)
+        {
+            _attackDisposable = _animation.OnEmitAttack
+                .First()
+                .Subscribe(_ =>
+                {
+                    if (Side == EBattleSide.Ally)
+                        _audio.PlaySound(ESoundKey.AttackMeleeAlly);
+                    else
+                        _audio.PlaySound(ESoundKey.AttackMeleeEnemy);
+                    target.TakeDamage(Model.Damage);
+                });
+            _animation.Attack();
         }
 
         public override void TakeDamage(float damage)

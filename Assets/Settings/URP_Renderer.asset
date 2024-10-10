@@ -207,5 +207,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7180cf71c349a41ab5b29e706ce616, type: 3}
   m_Name: DesaturationRendererFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   m_Material: {fileID: 2100000, guid: 2933e3706d9861047a662964d688726d, type: 2}
