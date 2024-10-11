@@ -34,7 +34,7 @@ MonoBehaviour:
       RenderQueueType: 1
       LayerMask:
         serializedVersion: 2
-        m_Bits: 385
+        m_Bits: 129
       PassNames: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
@@ -171,7 +171,6 @@ MonoBehaviour:
   - {fileID: -41386861812281464}
   m_RendererFeatureMap: 7d9677f4da96b5ed4419d1b6801fa9578137bcf5cc9affb2888f4f53def66cff
   m_UseNativeRenderPass: 0
-  xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   m_AssetVersion: 2
   m_OpaqueLayerMask:
@@ -207,5 +206,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7180cf71c349a41ab5b29e706ce616, type: 3}
   m_Name: DesaturationRendererFeature
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   m_Material: {fileID: 2100000, guid: 2933e3706d9861047a662964d688726d, type: 2}

@@ -1182,7 +1182,7 @@ Camera:
   m_GameObject: {fileID: 741100196}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.17735851, g: 0.17735851, b: 0.17735851, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1221,7 +1221,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &741100199
@@ -1254,9 +1254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RenderShadows: 0
+  m_RequiresDepthTextureOption: 0
+  m_RequiresOpaqueTextureOption: 0
   m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: -1
@@ -1265,7 +1265,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2542,7 +2542,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: def38cd409d92ff489e001e10e0496e9, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 68bf72179750b9645ab68985c7273391, type: 2}
 --- !u!4 &1724846220
 Transform:
   m_ObjectHideFlags: 0
@@ -2691,7 +2691,7 @@ SpriteRenderer:
   m_Size: {x: 0.26757812, y: 0.274}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1820834452
@@ -3701,6 +3701,10 @@ PrefabInstance:
       propertyPath: _delay
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 447151222412041519, guid: a324b646a6e61554bb4e78f7c77429ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5611549793237915166, guid: 249624321443ee54d8da0045643e9b86, type: 3}
     - target: {fileID: 1016866652018564033, guid: a324b646a6e61554bb4e78f7c77429ee, type: 3}
       propertyPath: m_Name
       value: Warriors_Stats

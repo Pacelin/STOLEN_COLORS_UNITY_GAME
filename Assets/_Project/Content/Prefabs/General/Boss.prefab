@@ -167,6 +167,8 @@ MonoBehaviour:
     AttackSpeed: 1
     AttackDistance: 1
     Speed: 1
+  _damagePosition: {fileID: 0}
+  _damageEffect: {fileID: 0}
   _bossAnimation: {fileID: 7086370049135020376}
   _attacksCooldown:
   - 5
