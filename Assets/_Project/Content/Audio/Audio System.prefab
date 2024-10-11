@@ -354,16 +354,16 @@ MonoBehaviour:
         VolumeMultiplier: 0.1
       - Clip: {fileID: 8300000, guid: 617416cce34aaa94babd2c9ed4e654ab, type: 3}
         Category: 0
-        VolumeMultiplier: 0.1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: 7ad443e357bb74944a8ab8084e7ee6b5, type: 3}
         Category: 0
-        VolumeMultiplier: 0.1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: 9a5275087715a5a46bf55ed039578d3a, type: 3}
         Category: 0
-        VolumeMultiplier: 0.1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: cb139d3ee1fc2c94eaf39137a833d537, type: 3}
         Category: 0
-        VolumeMultiplier: 0.1
+        VolumeMultiplier: 0.2
     - Key: 4
       Value:
       - Clip: {fileID: 8300000, guid: ae82ef643b7793341a6ee52e79aaf42f, type: 3}
