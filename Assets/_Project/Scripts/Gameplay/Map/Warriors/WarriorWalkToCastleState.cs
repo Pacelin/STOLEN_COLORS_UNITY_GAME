@@ -22,13 +22,7 @@ namespace Gameplay.Map
             _disposables = new();
             var attackCastle = _castles.GetWaveCastle(1 - _warrior.Side);
             if (!attackCastle)
-            {
-                if (_warrior.Side == EBattleSide.Ally && _boss.BossIsAlive)
-                    _warrior.SetAttack(_boss.Boss);
-                else if (_warrior.Side == EBattleSide.Ally)
-                    _warrior.SetWinner();
                 return;
-            }
             if (!_warrior.transform)
                 return;
 

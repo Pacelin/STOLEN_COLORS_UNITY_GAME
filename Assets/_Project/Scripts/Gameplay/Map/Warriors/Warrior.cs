@@ -39,8 +39,10 @@ namespace Gameplay.Map
         {
             if (_castles.HasEnemyCastle)
                 _stateMachine.SwitchState<WarriorWalkToCastleState>();
-            else
+            else if (_boss.BossIsAlive)
                 SetAttack(_boss.Boss);
+            else
+                SetWinner();
         }
 
         public void Snap(Vector3 position)
