@@ -125,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksDamages.Array.data[2]'
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksCooldown.Array.data[0]'
@@ -141,11 +141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksRadiuses.Array.data[0]'
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksRadiuses.Array.data[1]'
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: '_attacksRadiuses.Array.data[2]'

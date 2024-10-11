@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 7006569431295018102, guid: 13fa2309975203747a5ddb89666da7bc, type: 3}
       propertyPath: _mageProjectilePrefab
       value: 
-      objectReference: {fileID: 1250439529136809838, guid: a29ff32145721694baf8ffa645626be1, type: 3}
+      objectReference: {fileID: 1250439529136809838, guid: 9ab82fea0f9977d4097b75bb34021100, type: 3}
     - target: {fileID: 8058811157007467090, guid: 13fa2309975203747a5ddb89666da7bc, type: 3}
       propertyPath: m_Controller
       value: 
