@@ -14,24 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firstWaveVariations:
   - Composition:
-    - Class: 1
-      Modifiers:
-        AttackSpeedMultiplier: 1
-        MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 1
-        WalkSpeed: 0
-        MagesCount: 0
-        SoldiersCount: 0
-        TanksCount: 0
-      Count: 2
     - Class: 2
       Modifiers:
         AttackSpeedMultiplier: 1
         MagesAttackRange: 0
         DamageMultiplier: 1
-        HealthMultiplier: 1
-        WalkSpeed: 0
+        HealthMultiplier: 3
+        WalkSpeed: 2
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
@@ -40,13 +29,13 @@ MonoBehaviour:
       Modifiers:
         AttackSpeedMultiplier: 1
         MagesAttackRange: 0
-        DamageMultiplier: 1
+        DamageMultiplier: 2
         HealthMultiplier: 1
         WalkSpeed: 0
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
-      Count: 3
+      Count: 1
   _reinforcementWaves:
   - Composition:
     - Class: 2

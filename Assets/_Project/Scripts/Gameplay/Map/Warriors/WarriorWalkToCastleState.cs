@@ -15,7 +15,7 @@ namespace Gameplay.Map
 
         private CompositeDisposable _disposables;
         private const float SNAP_CASTLE_DISTANCE = 1.5f;
-        private const float FIND_ENEMY_DISTANCE = 2;
+        private const float FIND_ENEMY_DISTANCE = 5;
         
         public override void Enter()
         {
@@ -29,6 +29,8 @@ namespace Gameplay.Map
                     _warrior.SetWinner();
                 return;
             }
+            if (!_warrior.transform)
+                return;
 
             _warrior.Animation.SetWalk();
             var destination = attackCastle.GetWarriorDestination(_warrior);

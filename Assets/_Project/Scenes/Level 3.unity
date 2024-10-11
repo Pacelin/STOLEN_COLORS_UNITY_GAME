@@ -1403,7 +1403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152197992231849566, guid: 06d59767b13e79644b09815b965de281, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5000007
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 9152197992231849566, guid: 06d59767b13e79644b09815b965de281, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1570,7 +1570,11 @@ PrefabInstance:
     - target: {fileID: 4480575257676228572, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: _enemies
       value: 
-      objectReference: {fileID: 11400000, guid: f6b1fd0e8f9582d418cd119bb08275cf, type: 2}
+      objectReference: {fileID: 11400000, guid: ff6b074d6265b354ba7e8f38ac579223, type: 2}
+    - target: {fileID: 4480575257676228572, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
+      propertyPath: _gridsCount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5819748244673789860, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: m_Name
       value: Castle
@@ -2679,7 +2683,11 @@ PrefabInstance:
     - target: {fileID: 4480575257676228572, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: _enemies
       value: 
-      objectReference: {fileID: 11400000, guid: e117a8bd4a6f8534186bb8c62fc432e0, type: 2}
+      objectReference: {fileID: 11400000, guid: 05a25384e610caa4fa5d2517ce821c23, type: 2}
+    - target: {fileID: 4480575257676228572, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
+      propertyPath: _gridsCount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5819748244673789860, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: m_Name
       value: Castle (1)
@@ -2989,6 +2997,10 @@ PrefabInstance:
       propertyPath: _enemies
       value: 
       objectReference: {fileID: 11400000, guid: f6b1fd0e8f9582d418cd119bb08275cf, type: 2}
+    - target: {fileID: 4480575257676228572, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
+      propertyPath: _gridsCount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5819748244673789860, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: m_Name
       value: Castle
@@ -3957,7 +3969,11 @@ PrefabInstance:
     - target: {fileID: 4480575257676228572, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: _enemies
       value: 
-      objectReference: {fileID: 11400000, guid: ff6b074d6265b354ba7e8f38ac579223, type: 2}
+      objectReference: {fileID: 11400000, guid: 83053ac6f4d37f741bfc230b7ccf9a42, type: 2}
+    - target: {fileID: 4480575257676228572, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
+      propertyPath: _gridsCount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5819748244673789860, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: m_Name
       value: Castle (2)
@@ -4193,7 +4209,11 @@ PrefabInstance:
     - target: {fileID: 4480575257676228572, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: _enemies
       value: 
-      objectReference: {fileID: 11400000, guid: f6b1fd0e8f9582d418cd119bb08275cf, type: 2}
+      objectReference: {fileID: 11400000, guid: e117a8bd4a6f8534186bb8c62fc432e0, type: 2}
+    - target: {fileID: 4480575257676228572, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
+      propertyPath: _gridsCount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5819748244673789860, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: m_Name
       value: Castle

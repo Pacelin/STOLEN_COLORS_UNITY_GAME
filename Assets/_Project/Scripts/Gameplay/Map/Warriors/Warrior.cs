@@ -1,5 +1,6 @@
 ﻿using System;
 using Audio;
+using Gameplay.Map.Bosses;
 using UniRx;
 using UnityEngine;
 using Zenject;
@@ -25,6 +26,8 @@ namespace Gameplay.Map
         [SerializeField] private MageProjectile _mageProjectilePrefab;
         
         [Inject] private AudioSystem _audio;
+        [Inject] private CastlesCollection _castles;
+        [Inject] private BossReference _boss;
 
         [Inject]
         private void Construct(DiContainer container)
@@ -32,7 +35,13 @@ namespace Gameplay.Map
             _stateMachine = new WarriorStateMachine(container, this);
         }
 
-        public void Release() => _stateMachine.SwitchState<WarriorWalkToCastleState>();
+        public void Release()
+        {
+            if (_castles.HasEnemyCastle)
+                _stateMachine.SwitchState<WarriorWalkToCastleState>();
+            else
+                SetAttack(_boss.Boss);
+        }
 
         public void Snap(Vector3 position)
         {

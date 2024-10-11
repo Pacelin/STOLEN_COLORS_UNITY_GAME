@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 741100199}
-  _start: {fileID: 4218579554836504560}
+  _start: {fileID: 1075021381}
   _goal: {fileID: 2135204673}
   _initialMoveSpeed: 25
   _cameraGoalStopDelay: 3
@@ -2310,7 +2310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152197992231849566, guid: 3e180cc7a4d5f2f469919f4631a0e232, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5000007
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 9152197992231849566, guid: 3e180cc7a4d5f2f469919f4631a0e232, type: 3}
       propertyPath: m_LocalPosition.z

@@ -42,8 +42,9 @@ namespace Gameplay.Map
         
         public void SwitchState<T>() where T : WarriorState
         {
-            _isRun = true;
-            _currentState?.Exit();
+            if (!_isRun)
+                return;
+            _currentState.Exit();
             _currentState = _states[typeof(T)];
             _currentState.Enter();
         }

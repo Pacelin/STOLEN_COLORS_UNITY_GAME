@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57b214cd97ae44a09b5faa897fa74014, type: 3}
-  m_Name: Castle_L1C2_Enemies
+  m_Name: "Castle_L3\u04211_Enemies"
   m_EditorClassIdentifier: 
   _firstWaveVariations:
   - Composition:
@@ -19,45 +19,34 @@ MonoBehaviour:
         AttackSpeedMultiplier: 1
         MagesAttackRange: 0
         DamageMultiplier: 1
-        HealthMultiplier: 1
-        WalkSpeed: 0
-        MagesCount: 0
-        SoldiersCount: 0
-        TanksCount: 0
-      Count: 3
-    - Class: 2
-      Modifiers:
-        AttackSpeedMultiplier: 1
-        MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 1
-        WalkSpeed: 0
-        MagesCount: 0
-        SoldiersCount: 0
-        TanksCount: 0
-      Count: 1
-    - Class: 3
-      Modifiers:
-        AttackSpeedMultiplier: 1
-        MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 1
+        HealthMultiplier: 3
         WalkSpeed: 0
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
       Count: 2
+    - Class: 3
+      Modifiers:
+        AttackSpeedMultiplier: 2
+        MagesAttackRange: 0
+        DamageMultiplier: 2
+        HealthMultiplier: 2
+        WalkSpeed: 2
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 1
   _reinforcementWaves:
   - Composition:
-    - Class: 2
+    - Class: 3
       Modifiers:
-        AttackSpeedMultiplier: 1
-        MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 1
+        AttackSpeedMultiplier: 2
+        MagesAttackRange: 1
+        DamageMultiplier: 2
+        HealthMultiplier: 2
         WalkSpeed: 0
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
       Count: 1
-  _waveCooldown: 20
+  _waveCooldown: 15
