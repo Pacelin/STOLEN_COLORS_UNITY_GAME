@@ -34,6 +34,7 @@ namespace Gameplay.Map.Spawn
         private void StartTime()
         {
             _counterDisposable?.Dispose();
+            _manager.PrepareEnemiesWave();
             var c = _castles.GetCurrentCastle(EBattleSide.Ally);
             if (!c)
                 return;

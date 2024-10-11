@@ -12,6 +12,9 @@ namespace Gameplay.Map.Spawn
         public IObservable<Warrior> OnSpawnAlly => _onSpawnAlly;
         public IObservable<Warrior> OnSpawnEnemy => _onSpawnEnemy;
 
+        public IReadOnlyReactiveProperty<WarriorsWave> PreparedEnemiesWave => _preparedEnemiesWave;
+        public bool HasPreparedEnemiesWave => _hasPreparedEnemiesWave;
+        
         private readonly DiContainer _container;
         private readonly WarriorsConfig _warriorsConfig;
         private readonly CastlesCollection _castles;
@@ -19,6 +22,8 @@ namespace Gameplay.Map.Spawn
         private ReactiveCommand<Warrior> _onSpawnAlly;
         private ReactiveCommand<Warrior> _onSpawnEnemy;
         private CompositeDisposable _disposables;
+        private ReactiveProperty<WarriorsWave> _preparedEnemiesWave;
+        private bool _hasPreparedEnemiesWave;
 
         public WarriorsSpawner(DiContainer container, WarriorsConfig warriorsConfig, CastlesCollection castles)
         {
@@ -29,6 +34,19 @@ namespace Gameplay.Map.Spawn
             _onSpawnEnemy = new();
         }
 
+        public void PrepareEnemiesWave()
+        {
+            var enemiesCastle = _castles.GetCurrentCastle(EBattleSide.Enemy);
+            if (!enemiesCastle)
+            {
+                _hasPreparedEnemiesWave = false;
+                _preparedEnemiesWave.Value = default;
+                return;
+            }
+            _hasPreparedEnemiesWave = true;
+            _preparedEnemiesWave.Value = enemiesCastle.Enemies.FirstWaveVariations.GetRandom();
+        }
+        
         public void SpawnEnemiesWave()
         {
             var enemiesCastle = _castles.GetCurrentCastle(EBattleSide.Enemy);
@@ -37,8 +55,7 @@ namespace Gameplay.Map.Spawn
                 return;
             _disposables?.Dispose();
             _disposables = new();
-            var wave = enemiesCastle.Enemies.FirstWaveVariations.GetRandom();
-            SpawnWave(enemiesCastle, wave);
+            SpawnWave(enemiesCastle, _preparedEnemiesWave.Value);
             if (enemiesCastle.Enemies.ReinforcementWaves != null && enemiesCastle.Enemies.ReinforcementWaves.Length > 0)
                 Observable.Interval(TimeSpan.FromSeconds(enemiesCastle.Enemies.WaveCooldown))
                     .Subscribe(_ => SpawnWave(enemiesCastle, enemiesCastle.Enemies.ReinforcementWaves.GetRandom()))

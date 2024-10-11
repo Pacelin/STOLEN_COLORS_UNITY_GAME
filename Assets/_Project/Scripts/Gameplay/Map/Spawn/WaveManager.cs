@@ -20,6 +20,8 @@ namespace Gameplay.Map.Spawn
             _waveIsInProgress = new(false);
         }
 
+        public void PrepareEnemiesWave() => _warriorsSpawner.PrepareEnemiesWave();
+        
         public void StartWave()
         {
             _warriorsSpawner.SpawnEnemiesWave();
