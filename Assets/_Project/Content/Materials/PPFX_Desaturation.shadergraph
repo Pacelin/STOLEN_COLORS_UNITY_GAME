@@ -119,6 +119,9 @@
         },
         {
             "m_Id": "085bc90d27af4279b5d2c9cd42a9679e"
+        },
+        {
+            "m_Id": "80d1c112b2ed492dbecc7db7a9c86583"
         }
     ],
     "m_GroupDatas": [],
@@ -1711,6 +1714,31 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "3e9e7ef937c243a2ba649d2c22bc6741",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "415ab8409a164542bbd220dce742cc42",
     "m_Id": 3,
@@ -2664,6 +2692,50 @@
         "w": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.ColorNode",
+    "m_ObjectId": "80d1c112b2ed492dbecc7db7a9c86583",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Color",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -1377.812744140625,
+            "y": -24.552213668823243,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "3e9e7ef937c243a2ba649d2c22bc6741"
+        }
+    ],
+    "synonyms": [
+        "rgba"
+    ],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Color": {
+        "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+        },
+        "mode": 0
+    }
 }
 
 {
@@ -4242,15 +4314,21 @@
     "m_SerializableColorKeys": [
         {
             "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 0.3329976201057434
+            "y": 1.0000001192092896,
+            "z": 0.9999999403953552,
+            "w": 0.3136339485645294
+        },
+        {
+            "x": 0.46226418018341067,
+            "y": 0.46226418018341067,
+            "z": 0.46226418018341067,
+            "w": 0.3990081548690796
         },
         {
             "x": 0.0,
             "y": 0.0,
             "z": 0.0,
-            "w": 0.383001446723938
+            "w": 0.43842220306396487
         },
         {
             "x": 0.0,
