@@ -10,9 +10,6 @@ public class TutorialPanels : MonoBehaviour
     
     private int _currentEntryIndex = -1;
     
-    [SerializeField]
-    private Behaviour[] _enableOnComplete;
-
     private void Start()
     {
         _cameraController.SetUpdate(true);
@@ -39,8 +36,6 @@ public class TutorialPanels : MonoBehaviour
 
     private void Complete()
     {
-        foreach (Behaviour behaviour in _enableOnComplete)
-            behaviour.enabled = true;
         Destroy(gameObject);
     }
 }

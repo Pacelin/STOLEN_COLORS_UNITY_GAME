@@ -13,12 +13,14 @@ namespace Audio.Tutorial
         
         protected override void OnEnable()
         {
+            base.OnEnable();
             _disposable = new CompositeDisposable();
             _gridPanel.OnApply.Subscribe(_ => _tutorial.NextEntry()).AddTo(_disposable);
         }
 
         protected override void OnDisable()
         {
+            base.OnDisable();
             _disposable.Dispose();
         }
     }
