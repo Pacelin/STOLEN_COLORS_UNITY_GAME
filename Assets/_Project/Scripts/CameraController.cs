@@ -36,13 +36,18 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private bool _showLevelGoal;
     
-    private Vector3 _initialPosition;
     private Transform _currentTarget;
     private Vector3 _currentTargetPosition;
     private Vector3 _targetOffset;
-    private float _moveTime;
+    
+    [SerializeField]
+    private float _lerpSpeed = 1f;
+
+    private bool _update = false;
     
     private CompositeDisposable _disposables = new();
+
+    private CompositeDisposable _warriorDieDisposable;
     
     private void OnEnable()
     {
@@ -59,16 +64,18 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        MoveCamera();
+        if (_update)
+            MoveCamera();
     }
 
     private void ShowLevelGoal()
     {
         _tween?.Kill();
         _tween = DOTween.Sequence().
-                AppendCallback(() => SetTarget(_goal, _goalMoveTime)).
-                AppendInterval(_goalMoveTime + _cameraGoalStopDelay).
-                AppendCallback(() => SetTarget(_start, _goalMoveTime));
+                Append(_camera.DOMoveX(_goal.position.x, _goalMoveTime)).
+                AppendInterval(_cameraGoalStopDelay).
+                Append(_camera.DOMoveX(_start.position.x + _castleOffset.x, _goalMoveTime)).
+                AppendCallback(() => _update = true);
     }
 
     private Vector3 GetTargetPosition()
@@ -77,52 +84,47 @@ public class CameraController : MonoBehaviour
             return _currentTarget.position + _targetOffset;
         return _currentTargetPosition + _targetOffset;
     }
-
+    
     public void SetTarget(Transform target)
     {
-        _initialPosition = transform.position;
         _currentTarget = target;
     }
     
     public void SetTarget(Vector3 targetPosition)
     {
-        _initialPosition = transform.position;
         _currentTarget = null;
         _currentTargetPosition = targetPosition;
     }
     
-    public void SetTarget(Transform target, float time)
+    public void MoveToTarget(Transform target, float time)
     {
-        _initialPosition = transform.position;
-        
-        _currentTarget = target;
-        
-        _moveTime = time;
+        _tween = DOTween.Sequence();
     }
 
-    public void SetTarget(Vector3 targetPosition, float time)
+    public void MoveToTarget(Vector3 targetPosition, float time)
     {
-        _initialPosition = transform.position;
-        
-        _currentTarget = null;
-        _currentTargetPosition = targetPosition;
-        
-        _moveTime = time;
+        _tween?.Kill();
+        _tween = DOTween.Sequence(_camera.DOMoveX(targetPosition.x, time));
     }
 
     public void SetTargetOffset(Vector3 targetOffset)
     {
         _targetOffset = targetOffset;
+        _targetOffset.y = 0f;
+        _targetOffset.z = 0f;
     }
     
     private void MoveCamera()
     {
-        Debug.Log(_currentTarget);
-        
         var targetPosition = GetTargetPosition();
-        var currentPosition = Vector3.Lerp(_initialPosition, targetPosition, Time.deltaTime / _moveTime);
 
-        Debug.Log(Vector3.Lerp(_initialPosition, targetPosition, Time.deltaTime / _moveTime));
+        var x = Mathf.Lerp(transform.position.x, targetPosition.x, Time.smoothDeltaTime * _lerpSpeed);
+
+        Vector3 currentPosition = _camera.position;
+        currentPosition.x = x;
+        currentPosition.y = 0f;
+        currentPosition.z = 0f;
+        
         _camera.position = currentPosition + _cameraOffset;
     }
 
@@ -158,6 +160,10 @@ public class CameraController : MonoBehaviour
             SetTarget(warrior.transform);
             SetTargetOffset(_creatureOffset);
             _targetOffset = _creatureOffset;
+
+            _warriorDieDisposable?.Dispose();
+            _warriorDieDisposable = new CompositeDisposable();
+            warrior.OnDie.Subscribe(_ => SetTargetAllyCreature()).AddTo(_warriorDieDisposable);
             return;
         }
 

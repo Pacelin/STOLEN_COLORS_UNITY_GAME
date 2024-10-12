@@ -1305,10 +1305,11 @@ MonoBehaviour:
   _goal: {fileID: 2135204673}
   _goalMoveTime: 3
   _cameraGoalStopDelay: 3
-  _cameraOffset: {x: 0, y: 0, z: 0}
-  _castleOffset: {x: 1, y: 0, z: 0}
-  _creatureOffset: {x: 1, y: 0, z: 0}
+  _cameraOffset: {x: 0, y: 10, z: -8.2}
+  _castleOffset: {x: 0, y: 0, z: 0}
+  _creatureOffset: {x: 0, y: 0, z: 0}
   _showLevelGoal: 1
+  _lerpSpeed: 1
 --- !u!1 &826511065
 GameObject:
   m_ObjectHideFlags: 0
