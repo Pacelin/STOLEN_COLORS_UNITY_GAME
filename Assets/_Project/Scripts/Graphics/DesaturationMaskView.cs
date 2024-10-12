@@ -17,10 +17,10 @@ public class DesaturationMaskView : MonoBehaviour
     private SpriteRenderer _orb;
 
     [SerializeField, Range(0f, 1f)]
-    private float _maskIdleAlpha = 1f, _maskExpandedAlpha = 0.25f;
+    private float _maskExpandedAlpha = 0.25f;
 
     [SerializeField]
-    private Color _glowStartColor;
+    private Color _glowFlashColor;
     
     [SerializeField]
     private Transform _target;
@@ -48,10 +48,6 @@ public class DesaturationMaskView : MonoBehaviour
     private void OnEnable()
     {
         _mask.transform.localScale = Vector3.one * _initialMaskScale;
-        
-        Color maskColor = _mask.color;
-        maskColor.a = _maskIdleAlpha + 1e-3f;
-        _mask.color = maskColor;
         
         ApplyDefaultLevel(_initialSaturationlevel);
     }
@@ -89,35 +85,37 @@ public class DesaturationMaskView : MonoBehaviour
     private bool expanded;
     
     [ContextMenu("Expand")]
-    public void ExpandPrism()
+    public void ExpandPrismDelay()
     {
         if (expanded)
             return;
+        expanded = true;
         
         _audioSystem.PlaySound(ESoundKey.Victory);
 
-        expanded = true;
-        
         _tween?.Kill();
-
-        _mask.transform.position = _target.position;
-        _mask.transform.localScale = Vector3.zero;
-        _glow.color = _glowStartColor;
-
-        Color maskColor = _mask.color;
-        maskColor.a = _maskIdleAlpha + 1e-3f;
-        _mask.color = maskColor;
-
-        Color finalMaskColor = maskColor;
-        finalMaskColor.a = _maskExpandedAlpha + 1e-3f;
-        
         _tween = DOTween.
                  Sequence().
                  AppendInterval(_expandDelay).
+                 AppendCallback(ExpandPrism);
+    }
+
+    private void ExpandPrism()
+    {
+        _tween?.Kill();
+
+        _mask.transform.position = _target.position;
+        _glow.color = _glowFlashColor;
+
+        Color finalMaskColor = _mask.color;
+        finalMaskColor.a = _maskExpandedAlpha + 1e-3f;
+        _mask.color = finalMaskColor;
+        
+        _tween = DOTween.
+                 Sequence().
                  Append(_mask.transform.DOScale(Vector3.one * _finalMaskScale, _scaleTime)).
                  JoinCallback(_ps.Play).
                  Join(_glow.DOColor(Color.clear, _glowFadeTime)).
-                 Join(_mask.DOColor(finalMaskColor, _glowFadeTime)).
                  Join(_orb.DOColor(Color.clear, _glowFadeTime)).
                  AppendInterval(_winDelay).
                  AppendCallback(AfterAnimationCallback).
