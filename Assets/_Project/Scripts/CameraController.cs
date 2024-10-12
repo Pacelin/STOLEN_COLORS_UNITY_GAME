@@ -75,7 +75,7 @@ public class CameraController : MonoBehaviour
                 Append(_camera.DOMoveX(_goal.position.x, _goalMoveTime)).
                 AppendInterval(_cameraGoalStopDelay).
                 Append(_camera.DOMoveX(_start.position.x + _castleOffset.x, _goalMoveTime)).
-                AppendCallback(() => _update = true);
+                AppendCallback(() => SetUpdate(true));
     }
 
     private Vector3 GetTargetPosition()
@@ -84,6 +84,8 @@ public class CameraController : MonoBehaviour
             return _currentTarget.position + _targetOffset;
         return _currentTargetPosition + _targetOffset;
     }
+
+    public void SetUpdate(bool value) => _update = value;
     
     public void SetTarget(Transform target)
     {
