@@ -9,7 +9,6 @@ namespace Gameplay.Map.Spawn
 {
     public class WaveState : MonoBehaviour
     {
-        [SerializeField] private float _delay;
         [SerializeField] private TMP_Text _timeText;
 
         [Inject] private WaveManager _manager;
@@ -21,8 +20,7 @@ namespace Gameplay.Map.Spawn
 
         private void OnEnable()
         {
-            _counterDisposable = Observable.Timer(TimeSpan.FromSeconds(_delay))
-                .Subscribe(_ => StartTime());
+            StartTime();
             _timeText.text = "";
         }
 

@@ -14,7 +14,6 @@ namespace Audio.Gameplay.PointsGrid
         [SerializeField] private float _closedX;
         [SerializeField] private float _openedX;
         [SerializeField] private float _duration;
-        [SerializeField] private float _delay;
         [Space] [SerializeField] private GameObject _defaultState;
         [SerializeField] private GameObject _bossState;
         [SerializeField] private TMP_Text _magesCount;
@@ -34,9 +33,6 @@ namespace Audio.Gameplay.PointsGrid
             var p = transform1.localPosition;
             p.x = _closedX;
             transform1.localPosition = p;
-            _tween = DOTween.Sequence()
-                .AppendInterval(_delay)
-                .Append(transform.DOLocalMoveX(_openedX, _duration));
             _wave.ShowWavePanels.Skip(1).Subscribe(b =>
             {
                 if (b)

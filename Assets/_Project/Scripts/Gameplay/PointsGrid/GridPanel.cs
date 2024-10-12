@@ -28,7 +28,6 @@ namespace Audio.Gameplay.PointsGrid
         [SerializeField] private Color _defaultLineColor;
         [SerializeField] private Color _errorLineColor;
         [Space] [SerializeField] private TMP_Text _text;
-        [Space] [SerializeField] private float _delay;
         [SerializeField] private float _firstX;
         [SerializeField] private float _secondX;
         [SerializeField] private float _duration;
@@ -66,9 +65,6 @@ namespace Audio.Gameplay.PointsGrid
         
         private void OnEnable()
         {
-            _tween = DOTween.Sequence()
-                            .AppendInterval(_delay)
-                            .Append(transform.DOLocalMoveX(_secondX, _duration));
             _disposables = new();
             _clearButton.OnClick.Subscribe(_ =>
                 {
