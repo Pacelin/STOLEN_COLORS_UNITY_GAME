@@ -11,8 +11,8 @@ namespace Gameplay.Map
         public override void Enter()
         {
             var attd = _warrior.Model.AttackDistance + _warrior.Agent.radius + _warrior.AttackTarget.Agent.radius;
-            _warrior.Agent.stoppingDistance = attd;
             _warrior.Agent.ResetPath();
+            _warrior.Agent.stoppingDistance = attd;
             _warrior.Agent.SetDestination(_warrior.AttackTarget.Position);
             
             if (_warrior.Agent.remainingDistance <= attd + UPDATE_DESTINATION_THRESHOLD)
@@ -41,8 +41,7 @@ namespace Gameplay.Map
             }
             else
             {
-                if (_warrior.Agent.isStopped ||
-                    Vector3.Distance(targetPosition, _warrior.Agent.destination) > UPDATE_DESTINATION_THRESHOLD)
+                if (Vector3.Distance(targetPosition, _warrior.Agent.destination) > UPDATE_DESTINATION_THRESHOLD)
                 {
                     _warrior.Animation.SetWalk();
                     _warrior.Agent.ResetPath();
