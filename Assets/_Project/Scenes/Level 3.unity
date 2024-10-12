@@ -1373,6 +1373,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1885617104}
     m_Modifications:
+    - target: {fileID: 252889551993692059, guid: 06d59767b13e79644b09815b965de281, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1759758062589392739, guid: 06d59767b13e79644b09815b965de281, type: 3}
       propertyPath: m_Name
       value: Grid Panel
