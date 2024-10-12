@@ -60,15 +60,15 @@ namespace Audio.Gameplay.PointsGrid
             var p = transform1.localPosition;
             p.x = _firstX;
             transform1.localPosition = p;
-            _tween = DOTween.Sequence()
-                .AppendInterval(_delay)
-                .Append(transform.DOLocalMoveX(_secondX, _duration));
             _spawner = spawner;
             _text.text = "";
         }
         
         private void OnEnable()
         {
+            _tween = DOTween.Sequence()
+                            .AppendInterval(_delay)
+                            .Append(transform.DOLocalMoveX(_secondX, _duration));
             _disposables = new();
             _clearButton.OnClick.Subscribe(_ =>
                 {
