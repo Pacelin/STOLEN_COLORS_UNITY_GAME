@@ -433,16 +433,15 @@ MonoBehaviour:
   _glow: {fileID: 1609925222}
   _ps: {fileID: 1609925221}
   _orb: {fileID: 1609925224}
-  _maskIdleAlpha: 1
   _maskExpandedAlpha: 0.25
-  _glowStartColor: {r: 1, g: 1, b: 1, a: 0.48235294}
+  _glowFlashColor: {r: 0, g: 0, b: 0, a: 0}
   _target: {fileID: 1609925220}
   _initialMaskScale: 3
   _finalMaskScale: 30
   _scaleTime: 2
   _glowFadeTime: 2
   _expandDelay: 1
-  _winDelay: 2
+  _winDelay: 1
   _maskRotationSpeed: {x: 0, y: 0, z: 30}
   _initialSaturationlevel: 2
   _nextLevelBuildIndex: 0
