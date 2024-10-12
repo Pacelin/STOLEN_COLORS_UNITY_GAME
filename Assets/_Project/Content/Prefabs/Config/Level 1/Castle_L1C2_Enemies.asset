@@ -19,7 +19,7 @@ MonoBehaviour:
         AttackSpeedMultiplier: 1.14
         MagesAttackRange: 0
         DamageMultiplier: 1.08
-        HealthMultiplier: 3.06
+        HealthMultiplier: 2.36
         WalkSpeed: 0.04
         MagesCount: 0
         SoldiersCount: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
       Modifiers:
         AttackSpeedMultiplier: 1.55
         MagesAttackRange: 0
-        DamageMultiplier: 2.51
+        DamageMultiplier: 2.11
         HealthMultiplier: 2.23
         WalkSpeed: 0.01
         MagesCount: 0
