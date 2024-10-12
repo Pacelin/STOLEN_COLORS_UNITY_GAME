@@ -7,6 +7,7 @@ namespace Gameplay.Map.Bosses
     public class BossAnimation : MonoBehaviour
     {
         public IObservable<int> OnAttack => _onAttack;
+        public IObservable<int> OnAttackFinished => _onAttackFinished;
         public IObservable<UniRx.Unit> OnDie => _onDie;
 
         private static readonly int ATTACK_INDEX = Animator.StringToHash("attack_index");
@@ -15,9 +16,12 @@ namespace Gameplay.Map.Bosses
         
         [SerializeField] private Animator _animator;
         
+        private ReactiveCommand<int> _onAttackFinished = new();
         private ReactiveCommand<int> _onAttack = new();
         private ReactiveCommand _onDie = new();
-        
+
+        public void FinishAttackEvent(int attackIndex) =>
+            _onAttackFinished.Execute(attackIndex);
         public void AttackEvent(int attackIndex) =>
             _onAttack.Execute(attackIndex);
         public void DieEvent() =>
