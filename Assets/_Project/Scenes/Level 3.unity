@@ -372,7 +372,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.53333336}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -434,13 +434,13 @@ MonoBehaviour:
   _ps: {fileID: 1609925221}
   _orb: {fileID: 1609925224}
   _maskExpandedAlpha: 0.25
-  _glowFlashColor: {r: 0, g: 0, b: 0, a: 0}
+  _glowFlashColor: {r: 1, g: 1, b: 1, a: 0.3137255}
   _target: {fileID: 1609925220}
-  _initialMaskScale: 3
-  _finalMaskScale: 30
+  _initialMaskScale: 2
+  _finalMaskScale: 15
   _scaleTime: 2
-  _glowFadeTime: 2
-  _expandDelay: 1
+  _glowFadeTime: 1
+  _expandDelay: 3
   _winDelay: 1
   _maskRotationSpeed: {x: 0, y: 0, z: 30}
   _initialSaturationlevel: 2
@@ -3249,6 +3249,22 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.019607844
       objectReference: {fileID: 0}
+    - target: {fileID: 1939931261253091640, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939931261253091640, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6407815
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939931261253091640, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.49411762
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939931261253091640, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b3556425ed9796246af73608edd50aa7, type: 2}
     - target: {fileID: 3012781059588601826, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -3264,6 +3280,26 @@ PrefabInstance:
     - target: {fileID: 4490835438359558792, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
       propertyPath: m_Name
       value: Orb Pivot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513653283220496569, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675591978580263223, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716101538658825056, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716101538658825056, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716101538658825056, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8196501666257542618, guid: b30fe57e6a269ca4d829cfafe65adfc4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3511,7 +3547,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: def38cd409d92ff489e001e10e0496e9, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 68bf72179750b9645ab68985c7273391, type: 2}
 --- !u!4 &1724846220
 Transform:
   m_ObjectHideFlags: 0
