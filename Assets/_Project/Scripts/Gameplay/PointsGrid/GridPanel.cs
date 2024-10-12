@@ -84,17 +84,17 @@ namespace Audio.Gameplay.PointsGrid
                 .AddTo(_disposables);
             GridPoint.OnExit.Subscribe(OnExitPoint)
                 .AddTo(_disposables);
-            _wave.WaveIsInProgress.Skip(1).Subscribe(w =>
+            _wave.ShowWavePanels.Skip(1).Subscribe(w =>
             {
                 if (w)
+                {
+                    _tween = transform.DOLocalMoveX(_secondX, _duration);
+                }
+                else
                 {
                     ClearGrid();
                     _tween = transform.DOLocalMoveX(_firstX, _duration)
                         .OnComplete(ClearGrid);
-                }
-                else
-                {
-                    _tween = transform.DOLocalMoveX(_secondX, _duration);
                 }
             }).AddTo(_disposables);
         }

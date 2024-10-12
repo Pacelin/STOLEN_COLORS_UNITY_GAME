@@ -48,12 +48,12 @@ namespace Audio.Gameplay.PointsGrid
             _tween = DOTween.Sequence()
                 .AppendInterval(_delay)
                 .Append(transform.DOLocalMoveX(_openedX, _duration));
-            _wave.WaveIsInProgress.Skip(1).Subscribe(b =>
+            _wave.ShowWavePanels.Skip(1).Subscribe(b =>
             {
                 if (b)
-                    _tween = transform.DOLocalMoveX(_closedX, _duration);
-                else
                     _tween = transform.DOLocalMoveX(_openedX, _duration);
+                else
+                    _tween = transform.DOLocalMoveX(_closedX, _duration);
             }).AddTo(_disposables);
             
             UpdateModifiers(_allies.ConstantModifiers);
