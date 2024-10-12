@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8416059106585569056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c58a645cf18f570429a8bad873475dab, type: 3}
-  m_Name: TestRendererFeature
-  m_EditorClassIdentifier: 
 --- !u!114 &-5548546010810402943
 MonoBehaviour:
   m_ObjectHideFlags: 0
