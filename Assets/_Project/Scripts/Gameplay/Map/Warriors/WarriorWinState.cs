@@ -25,7 +25,7 @@ namespace Gameplay.Map
             if (_warrior.Agent.remainingDistance < distance)
             {
                 _warrior.Animation.SetIdle();
-                _view.ExpandPrism();
+                _view.ExpandPrismDelay();
             }
         }
 
