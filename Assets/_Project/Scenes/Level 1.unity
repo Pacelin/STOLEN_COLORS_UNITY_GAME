@@ -337,7 +337,7 @@ MonoBehaviour:
   _scaleTime: 2
   _glowFadeTime: 2
   _expandDelay: 1
-  _winDelay: 2
+  _winDelay: 1
   _maskRotationSpeed: {x: 0, y: 0, z: 30}
   _initialSaturationlevel: 0
   _nextLevelBuildIndex: 2

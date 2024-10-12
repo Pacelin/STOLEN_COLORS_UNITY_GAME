@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eeff24813be41c7a34f6d0a003c1f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _duration: 0.2
+  _duration: 0.4
   _yAnimationCurve:
     serializedVersion: 2
     m_Curve:
@@ -59,14 +59,68 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.023312885
     - serializedVersion: 3
-      time: 0.50001246
-      value: 2.2932665
+      time: 0.19789702
+      value: 3.0089192
+      inSlope: -0.0026038275
+      outSlope: -0.0026038275
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.7598492
+    - serializedVersion: 3
+      time: 0.295366
+      value: 2.5079308
       inSlope: -0.05032277
       outSlope: -0.05032277
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.40554205
+      value: 2.9906502
+      inSlope: 0.053535525
+      outSlope: 0.053535525
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5096526
+      value: 2.5064094
+      inSlope: -0.025291456
+      outSlope: -0.025291456
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.8970773
+    - serializedVersion: 3
+      time: 0.5979382
+      value: 2.9938078
+      inSlope: -0.0101640485
+      outSlope: -0.0101640485
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.28090942
+      outWeight: 0.2957934
+    - serializedVersion: 3
+      time: 0.7096608
+      value: 2.5051336
+      inSlope: -0.08160234
+      outSlope: -0.08160234
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.41969168
+    - serializedVersion: 3
+      time: 0.80577075
+      value: 2.9890628
+      inSlope: 0.025530124
+      outSlope: 0.025530124
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.68022454
     - serializedVersion: 3
       time: 1
       value: 0

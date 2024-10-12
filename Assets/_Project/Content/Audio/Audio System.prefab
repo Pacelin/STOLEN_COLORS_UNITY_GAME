@@ -334,24 +334,24 @@ MonoBehaviour:
       Value:
       - Clip: {fileID: 8300000, guid: c48f845be1f77974ab874929308a11fd, type: 3}
         Category: 0
-        VolumeMultiplier: 0.1
+        VolumeMultiplier: 0.05
       - Clip: {fileID: 8300000, guid: d5d25c630f0dc794599b56e1a9f5765a, type: 3}
         Category: 0
-        VolumeMultiplier: 0.1
+        VolumeMultiplier: 0.05
       - Clip: {fileID: 8300000, guid: 8e67e7101b3902345b20da7f30a586bb, type: 3}
         Category: 0
-        VolumeMultiplier: 0.1
+        VolumeMultiplier: 0.05
       - Clip: {fileID: 8300000, guid: 9ce1c789833734b4083b607c0e724585, type: 3}
         Category: 0
-        VolumeMultiplier: 0.1
+        VolumeMultiplier: 0.05
       - Clip: {fileID: 8300000, guid: 9d152bc819b960f489c237114bac18ef, type: 3}
         Category: 0
-        VolumeMultiplier: 0.1
+        VolumeMultiplier: 0.05
     - Key: 3
       Value:
       - Clip: {fileID: 8300000, guid: bb223fbc0efc57a4da663e321a4b747e, type: 3}
         Category: 0
-        VolumeMultiplier: 0.1
+        VolumeMultiplier: 0.2
       - Clip: {fileID: 8300000, guid: 617416cce34aaa94babd2c9ed4e654ab, type: 3}
         Category: 0
         VolumeMultiplier: 0.2
@@ -419,7 +419,7 @@ MonoBehaviour:
       Value:
         Clip: {fileID: 8300000, guid: 82deabb74102c1941aacd2b6af59cdb9, type: 3}
         Category: 1
-        VolumeMultiplier: 0.2
+        VolumeMultiplier: 0.1
     - Key: 3
       Value:
         Clip: {fileID: 8300000, guid: 42979b388db81fe4b995072a5a1f998e, type: 3}

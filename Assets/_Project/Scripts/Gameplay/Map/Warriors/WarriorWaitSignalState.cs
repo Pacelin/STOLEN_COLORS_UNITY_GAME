@@ -1,19 +1,21 @@
-﻿namespace Gameplay.Map
+﻿using UnityEngine;
+
+namespace Gameplay.Map
 {
     public class WarriorWaitSignalState : WarriorState
     {
         public override void Enter()
         {
-            _warrior.Agent.stoppingDistance = 0.05f;
+            _warrior.Agent.stoppingDistance = 0;
             _warrior.Agent.SetDestination(_warrior.SnapPosition);
             _warrior.Animation.SetWalk();
-            if (!_warrior.Agent.hasPath)
+            if (_warrior.Agent.remainingDistance < 0.05f)
                 _warrior.Animation.SetIdle();
         }
 
         public override void Update()
         {
-            if (!_warrior.Agent.hasPath)
+            if (_warrior.Agent.remainingDistance < 0.05f)
                 _warrior.Animation.SetIdle();
         }
 

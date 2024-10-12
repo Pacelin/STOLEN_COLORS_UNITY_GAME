@@ -1510,7 +1510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67557ce782394352955d7f7ae2ca951c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 6.5
   _timeText: {fileID: 796981121}
 --- !u!223 &600148728
 Canvas:
@@ -1891,7 +1890,7 @@ MonoBehaviour:
   _cameraTransform: {fileID: 741100199}
   _start: {fileID: 1309236225}
   _goal: {fileID: 755318709}
-  _initialState: 1
+  _initialState: 2
   _cameraOffset: {x: 0, y: 10, z: -8}
   _moveTowardsEase: 33
   _goalMoveDuration: 1.5

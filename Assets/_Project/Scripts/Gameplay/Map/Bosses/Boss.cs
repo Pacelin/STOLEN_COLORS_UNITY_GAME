@@ -53,7 +53,7 @@ namespace Gameplay.Map.Bosses
                 .Subscribe(_ =>
                 {
                     _counter -= Time.deltaTime;
-                    if (_counter < 0)
+                    if (_counter < 0 && _warriors.Allies.Count > 0)
                     {
                         _bossAnimation.SetAttack(_currentAttack, 
                             _attackPoints[_currentAttack].AnimationTime / 

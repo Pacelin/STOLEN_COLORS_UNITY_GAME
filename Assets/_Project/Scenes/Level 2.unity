@@ -548,10 +548,10 @@ MonoBehaviour:
   _target: {fileID: 292859790}
   _initialMaskScale: 3
   _finalMaskScale: 50
-  _scaleTime: 12
+  _scaleTime: 2
   _glowFadeTime: 2
   _expandDelay: 1
-  _winDelay: 2
+  _winDelay: 1
   _maskRotationSpeed: {x: 0, y: 0, z: 30}
   _initialSaturationlevel: 1
   _nextLevelBuildIndex: 3
@@ -1078,7 +1078,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67557ce782394352955d7f7ae2ca951c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 6.5
   _timeText: {fileID: 363640657}
 --- !u!223 &296012925
 Canvas:
@@ -1991,10 +1990,10 @@ MonoBehaviour:
   _cameraTransform: {fileID: 741100199}
   _start: {fileID: 2141341526}
   _goal: {fileID: 385704188}
-  _initialState: 1
+  _initialState: 2
   _cameraOffset: {x: 0, y: 10, z: -8.2}
-  _moveTowardsEase: 33
-  _goalMoveDuration: 1.5
+  _moveTowardsEase: 10
+  _goalMoveDuration: 3
   _goalStayDuration: 1.5
   _interpolationMultiplier: 2
 --- !u!4 &781464141 stripped
