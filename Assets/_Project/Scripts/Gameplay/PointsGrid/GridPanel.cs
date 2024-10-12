@@ -156,8 +156,10 @@ namespace Audio.Gameplay.PointsGrid
             if (_connections.Count >= _maxConnections)
                 return;
             _errorTween?.Kill(true);
-            if (_lastClickedGridPoint == null && point.Model.CanConnectThrough)
+            if (_lastClickedGridPoint == null)
             {
+                if (!point.Model.CanConnectThrough)
+                    return;
                 _lastClickedGridPoint = point;
                 _mouseConnection = Instantiate(_connectionPrefab, transform);
                 _mouseConnection.Line.maskInteraction = SpriteMaskInteraction.None;
