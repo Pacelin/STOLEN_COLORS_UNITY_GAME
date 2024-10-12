@@ -75,7 +75,8 @@ public class CameraController : MonoBehaviour
                 Append(_camera.DOMoveX(_goal.position.x, _goalMoveTime)).
                 AppendInterval(_cameraGoalStopDelay).
                 Append(_camera.DOMoveX(_start.position.x + _castleOffset.x, _goalMoveTime)).
-                AppendCallback(() => SetUpdate(true));
+                AppendCallback(() => SetUpdate(true)).
+                SetEase(Ease.InFlash);
     }
 
     private Vector3 GetTargetPosition()

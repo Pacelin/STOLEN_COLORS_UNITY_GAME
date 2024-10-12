@@ -1544,8 +1544,8 @@ MonoBehaviour:
   _camera: {fileID: 741100199}
   _start: {fileID: 4218579554836504560}
   _goal: {fileID: 2135204673}
-  _goalMoveTime: 3
-  _cameraGoalStopDelay: 3
+  _goalMoveTime: 2
+  _cameraGoalStopDelay: 2
   _cameraOffset: {x: 0, y: 10, z: -8.2}
   _castleOffset: {x: 0, y: 0, z: 0}
   _creatureOffset: {x: 0, y: 0, z: 0}

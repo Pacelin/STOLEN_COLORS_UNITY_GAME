@@ -3,7 +3,7 @@ using UnityEngine;
 public class TutorialPanels : MonoBehaviour
 {
     [SerializeField]
-    private TutorialEntry[] _entries;
+    private TutorialEntryBase[] _entries;
 
     [SerializeField]
     private CameraController _cameraController;
