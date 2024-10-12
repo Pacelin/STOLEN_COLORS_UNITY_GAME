@@ -1891,8 +1891,8 @@ MonoBehaviour:
   _goal: {fileID: 755318709}
   _initialState: 2
   _cameraOffset: {x: 0, y: 10, z: -8}
-  _moveTowardsEase: 33
-  _goalMoveDuration: 1.5
+  _moveTowardsEase: 10
+  _goalMoveDuration: 3
   _goalStayDuration: 1.5
   _interpolationMultiplier: 2
 --- !u!4 &755318709 stripped
