@@ -1301,13 +1301,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 741100199}
-  _start: {fileID: 1075021381}
+  _start: {fileID: 4218579554836504560}
   _goal: {fileID: 2135204673}
-  _initialMoveSpeed: 25
+  _goalMoveTime: 3
   _cameraGoalStopDelay: 3
-  _lerpSpeed: 1
-  _cameraOffset: {x: 0, y: 10, z: -8}
+  _cameraOffset: {x: 0, y: 0, z: 0}
   _castleOffset: {x: 1, y: 0, z: 0}
+  _creatureOffset: {x: 1, y: 0, z: 0}
+  _showLevelGoal: 1
 --- !u!1 &826511065
 GameObject:
   m_ObjectHideFlags: 0
