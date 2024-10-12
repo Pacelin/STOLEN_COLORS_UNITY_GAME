@@ -1023,7 +1023,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 8b8166e41ddfb7941bb457efd7a882af, type: 2}
     - target: {fileID: 4480575257676228572, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: _gridsCount
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5819748244673789860, guid: 3de2386d4027bea4b9afdd86b601cab7, type: 3}
       propertyPath: m_Name
