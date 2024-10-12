@@ -104,6 +104,7 @@ public class CameraController : MonoBehaviour
             .Append(MoveTowards(_goal, _goalMoveDuration))
             .AppendInterval(_goalStayDuration)
             .Append(MoveTowards(_castles.GetCurrentCastle(EBattleSide.Ally).transform, _goalMoveDuration))
+            .AppendCallback(() => _wave.SetHidePanels(false))
             .AppendCallback(SetAutoState);
     }
 
