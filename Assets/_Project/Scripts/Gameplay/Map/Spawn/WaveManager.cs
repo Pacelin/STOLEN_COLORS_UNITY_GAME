@@ -1,5 +1,4 @@
-﻿using System;
-using UniRx;
+﻿using UniRx;
 
 namespace Gameplay.Map.Spawn
 {
@@ -24,7 +23,7 @@ namespace Gameplay.Map.Spawn
             _warriors = warriors;
             _castles = castles;
             _waveIsInProgress = new(false);
-            _hideWavePanels = new ReactiveProperty<bool>(false);
+            _hideWavePanels = new ReactiveProperty<bool>(true);
         }
 
         public void SetHidePanels(bool hide) => _hideWavePanels.Value = hide;
