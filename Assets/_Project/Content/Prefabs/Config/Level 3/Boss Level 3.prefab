@@ -247,11 +247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 577991748242589252, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: _cooldown
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 577991748242589252, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: _attackDuration
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: _damageEffect
