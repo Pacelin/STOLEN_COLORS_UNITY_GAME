@@ -1779,16 +1779,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4dd77c4140a364a8f5ace450576f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 741100199}
+  _cameraTransform: {fileID: 741100199}
   _start: {fileID: 4218579554836504560}
   _goal: {fileID: 2135204673}
-  _goalMoveTime: 2
-  _cameraGoalStopDelay: 2
+  _initialState: 3
   _cameraOffset: {x: 0, y: 10, z: -8.2}
-  _castleOffset: {x: 0, y: 0, z: 0}
-  _creatureOffset: {x: 0, y: 0, z: 0}
-  _showLevelGoal: 0
-  _lerpSpeed: 2
+  _moveTowardsEase: 33
+  _goalMoveDuration: 1.5
+  _goalStayDuration: 1.5
+  _interpolationMultiplier: 2
 --- !u!224 &769376811 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2580683530044815952, guid: cb215e574adf1b44495e77da5e5c8ed3, type: 3}

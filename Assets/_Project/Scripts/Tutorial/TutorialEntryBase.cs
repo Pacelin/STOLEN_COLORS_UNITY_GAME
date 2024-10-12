@@ -22,15 +22,11 @@ public class TutorialEntryBase : MonoBehaviour
     
     protected virtual void OnEnable()
     {
-        Debug.Log(_waveManager);
-        Debug.Log(!_showPanelsOnBegin);
         _waveManager.SetHidePanels(!_showPanelsOnBegin);
     }
 
     protected virtual void OnDisable()
     {
-        Debug.Log(_waveManager);
-        Debug.Log(!_showPanelsOnEnd);
         _waveManager.SetHidePanels(!_showPanelsOnEnd);
     }
 }

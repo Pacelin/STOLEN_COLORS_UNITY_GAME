@@ -35,6 +35,7 @@ public class TutorialPanels : MonoBehaviour
 
     private void Complete()
     {
+        _cameraController.SetAutoState();
         Destroy(gameObject);
     }
 }
