@@ -25,20 +25,9 @@ MonoBehaviour:
         SoldiersCount: 0
         TanksCount: 0
       Count: 1
-    - Class: 2
-      Modifiers:
-        AttackSpeedMultiplier: 2.13
-        MagesAttackRange: 0
-        DamageMultiplier: 3.88
-        HealthMultiplier: 3.45
-        WalkSpeed: 0.05
-        MagesCount: 0
-        SoldiersCount: 0
-        TanksCount: 0
-      Count: 1
     - Class: 3
       Modifiers:
-        AttackSpeedMultiplier: 2.69
+        AttackSpeedMultiplier: 2.22
         MagesAttackRange: 0
         DamageMultiplier: 1.16
         HealthMultiplier: 2.63
