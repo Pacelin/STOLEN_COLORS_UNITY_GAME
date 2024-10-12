@@ -3,16 +3,13 @@ using UnityEngine;
 public class TutorialPanels : MonoBehaviour
 {
     [SerializeField]
-    private TutorialEntry[] _entries;
+    private TutorialEntryBase[] _entries;
 
     [SerializeField]
     private CameraController _cameraController;
     
     private int _currentEntryIndex = -1;
     
-    [SerializeField]
-    private Behaviour[] _enableOnComplete;
-
     private void Start()
     {
         NextEntry();
@@ -38,8 +35,7 @@ public class TutorialPanels : MonoBehaviour
 
     private void Complete()
     {
-        foreach (Behaviour behaviour in _enableOnComplete)
-            behaviour.enabled = true;
+        _cameraController.SetAutoState();
         Destroy(gameObject);
     }
 }
