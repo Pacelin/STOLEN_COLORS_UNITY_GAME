@@ -18,6 +18,7 @@ namespace Gameplay.Map.Bosses
         [SerializeField] private BossAttackPoint[] _attackPoints;
 
         private int _currentAttack;
+        private int _nextAttack;
         private float _counter;
         private bool _activated;
         private CompositeDisposable _disposables;
@@ -34,13 +35,13 @@ namespace Gameplay.Map.Bosses
             _disposables = new();
             _bossAnimation.OnAttack
                 .Where(_ => _activated && Model.Alive.Value)
-                .Subscribe(index =>
+                .Subscribe(_ =>
                 {
                     _attackPoints[_currentAttack].SendDamage(_warriors.Allies.ToArray());
                 }).AddTo(_disposables);
             _bossAnimation.OnAttackFinished
                 .Where(_ => _activated && Model.Alive.Value)
-                .Subscribe(index =>
+                .Subscribe(_ =>
                 {
                     _currentAttack = Random.Range(0, _attackPoints.Length);
                     _counter = _attackPoints[_currentAttack].Cooldown;
@@ -54,7 +55,9 @@ namespace Gameplay.Map.Bosses
                     _counter -= Time.deltaTime;
                     if (_counter < 0)
                     {
-                        _bossAnimation.SetAttack(_currentAttack);
+                        _bossAnimation.SetAttack(_currentAttack, 
+                            _attackPoints[_currentAttack].AnimationTime / 
+                            _attackPoints[_currentAttack].AttackDuration);
                         _isAttacking = true;
                     }
                 })

@@ -3603,10 +3603,6 @@ PrefabInstance:
       propertyPath: _delay
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 447151222412041519, guid: a324b646a6e61554bb4e78f7c77429ee, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 5611549793237915166, guid: 249624321443ee54d8da0045643e9b86, type: 3}
     - target: {fileID: 1016866652018564033, guid: a324b646a6e61554bb4e78f7c77429ee, type: 3}
       propertyPath: m_Name
       value: Warriors_Stats

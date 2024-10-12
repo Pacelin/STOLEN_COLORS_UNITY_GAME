@@ -6,10 +6,14 @@ namespace Gameplay.Map.Bosses
     public class BossAttackPoint : MonoBehaviour
     {
         public float Cooldown => _cooldown;
+        public float AnimationTime => _animationTime;
+        public float AttackDuration => _attackDuration;
         
         [SerializeField] private float _cooldown;
         [SerializeField] private float _radius;
         [SerializeField] private float _damage;
+        [SerializeField] private float _animationTime;
+        [SerializeField] private float _attackDuration;
 
         private void OnDrawGizmosSelected()
         {

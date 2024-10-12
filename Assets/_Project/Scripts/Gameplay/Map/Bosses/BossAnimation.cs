@@ -13,6 +13,7 @@ namespace Gameplay.Map.Bosses
         private static readonly int ATTACK_INDEX = Animator.StringToHash("attack_index");
         private static readonly int ATTACK = Animator.StringToHash("attack");
         private static readonly int DIE = Animator.StringToHash("die");
+        private static readonly int ATTACK_SPEED = Animator.StringToHash("attack_speed");
         
         [SerializeField] private Animator _animator;
         
@@ -26,9 +27,10 @@ namespace Gameplay.Map.Bosses
             _onAttack.Execute(attackIndex);
         public void DieEvent() =>
             _onDie.Execute();
-
-        public void SetAttack(int index)
+        
+        public void SetAttack(int index, float attackSpeed)
         {
+            _animator.SetFloat(ATTACK_SPEED, attackSpeed);
             _animator.SetInteger(ATTACK_INDEX, index);
             _animator.SetTrigger(ATTACK);
         }
