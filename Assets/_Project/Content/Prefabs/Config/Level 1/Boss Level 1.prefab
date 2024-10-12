@@ -83,6 +83,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 577991748242589252, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 577991748242589252, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _attackDuration
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2323901197629447397, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: _damageEffect
       value: 
@@ -151,9 +159,29 @@ PrefabInstance:
       propertyPath: '_attacksRadiuses.Array.data[2]'
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4154511603381266088, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154511603381266088, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _attackDuration
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 4330352822543222233, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: m_Name
       value: Boss Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726695334050301106, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726695334050301106, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _cooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726695334050301106, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
+      propertyPath: _attackDuration
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5524472473275957454, guid: 8101a2c238829414594e713b44bfe92e, type: 3}
       propertyPath: m_LocalPosition.x

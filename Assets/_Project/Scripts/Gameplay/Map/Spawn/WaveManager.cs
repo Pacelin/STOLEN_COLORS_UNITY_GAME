@@ -5,12 +5,18 @@ namespace Gameplay.Map.Spawn
 {
     public class WaveManager
     {
+        public IReadOnlyReactiveProperty<bool> ShowWavePanels =>
+            _waveIsInProgress.Merge(_hideWavePanels)
+                .Select(_ => !_waveIsInProgress.Value && !_hideWavePanels.Value)
+                .DistinctUntilChanged()
+                .ToReactiveProperty();
         public IReadOnlyReactiveProperty<bool> WaveIsInProgress => _waveIsInProgress;
 
         private readonly WarriorsSpawner _warriorsSpawner;
         private readonly WarriorsCollection _warriors;
         private readonly CastlesCollection _castles;
         private readonly ReactiveProperty<bool> _waveIsInProgress;
+        private readonly ReactiveProperty<bool> _hideWavePanels;
 
         public WaveManager(WarriorsSpawner warriorsSpawner, CastlesCollection castles, WarriorsCollection warriors)
         {
@@ -18,8 +24,11 @@ namespace Gameplay.Map.Spawn
             _warriors = warriors;
             _castles = castles;
             _waveIsInProgress = new(false);
+            _hideWavePanels = new ReactiveProperty<bool>(false);
         }
 
+        public void SetHidePanels(bool hide) => _hideWavePanels.Value = hide;
+        
         public void PrepareEnemiesWave() => _warriorsSpawner.PrepareEnemiesWave();
         
         public void StartWave()
