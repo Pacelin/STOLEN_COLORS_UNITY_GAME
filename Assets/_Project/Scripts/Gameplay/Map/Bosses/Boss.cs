@@ -15,9 +15,7 @@ namespace Gameplay.Map.Bosses
         public bool IsActivated => _activated;
 
         [SerializeField] private BossAnimation _bossAnimation;
-        [SerializeField] private float[] _attacksCooldown;
-        [SerializeField] private float[] _attacksRadiuses;
-        [SerializeField] private float[] _attacksDamages;
+        [SerializeField] private BossAttackPoint[] _attackPoints;
 
         private int _currentAttack;
         private int _nextAttack;
@@ -31,7 +29,7 @@ namespace Gameplay.Map.Bosses
         {
             Model.OnDie.Subscribe(_ => GameObject.Destroy(this.gameObject))
                 .AddTo(this);
-            _currentAttack = Random.Range(0, _attacksCooldown.Length);
+            _currentAttack = Random.Range(0, _attackPoints.Length);
             _activated = false;
         }
 
@@ -42,9 +40,7 @@ namespace Gameplay.Map.Bosses
                 .Where(_ => _activated && Model.Alive.Value)
                 .Subscribe(index =>
                 {
-                    var attackedWarriors = GetAttackedWarriors(index);
-                    foreach (var attackedWarrior in attackedWarriors)
-                        attackedWarrior.TakeDamage(_attacksDamages[index]);
+                    _attackPoints[_currentAttack].SendDamage(_warriors.Allies.ToArray());
                     _currentAttack = _nextAttack;
                 }).AddTo(_disposables);
             
@@ -53,11 +49,11 @@ namespace Gameplay.Map.Bosses
                 .Subscribe(_ =>
                 {
                     _counter -= Time.deltaTime;
-                    if (_counter < 0 && GetAttackedWarriors(_currentAttack).Length >= 1)
+                    if (_counter < 0)
                     {
                         _bossAnimation.SetAttack(_currentAttack);
-                        _nextAttack = Random.Range(0, _attacksCooldown.Length);
-                        _counter = _attacksCooldown[_nextAttack];
+                        _nextAttack = Random.Range(0, _attackPoints.Length);
+                        _counter = _attackPoints[_nextAttack].Cooldown;
                     }
                 })
                 .AddTo(_disposables);
@@ -73,19 +69,6 @@ namespace Gameplay.Map.Bosses
             _disposables.Dispose();
         }
 
-        private Warrior[] GetAttackedWarriors(int index)
-        {
-            if (_warriors.Allies.Count == 0)
-                return Array.Empty<Warrior>();
-            var ordered = _warriors.Allies.OrderBy(w =>
-                Vector3.Distance(transform.position, w.Position)).ToArray();
-            if (Vector3.Distance(transform.position, ordered[0].Position) > _attacksRadiuses[index])
-                return new Warrior[] { ordered[0] };
-            return ordered.Where(w =>
-                    Vector3.Distance(transform.position, w.Position) <= _attacksRadiuses[index])
-                .ToArray();
-        }
-
         private void Activate()
         {
             _onActivate.Execute();
@@ -98,13 +81,6 @@ namespace Gameplay.Map.Bosses
                 return;
             Activate();
             base.TakeDamage(damage);
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.red;
-            foreach (var radius in _attacksRadiuses)
-                Gizmos.DrawWireSphere(transform.position, radius);
         }
     }
 }
