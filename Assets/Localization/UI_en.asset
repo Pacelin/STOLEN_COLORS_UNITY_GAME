@@ -130,6 +130,14 @@ MonoBehaviour:
     m_Localized: Credits
     m_Metadata:
       m_Items: []
+  - m_Id: 2227151816085504
+    m_Localized: Stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2227257726455808
+    m_Localized: Next enemies
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

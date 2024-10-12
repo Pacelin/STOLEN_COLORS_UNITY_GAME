@@ -261,9 +261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor
-    Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor
-    Sit Amet Lorem Ipsum Dolor Sit Amet
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 587d505ba64f9a04fae0a2a970ceba42, type: 2}
   m_sharedMaterial: {fileID: 4898774212053773493, guid: 587d505ba64f9a04fae0a2a970ceba42, type: 2}
@@ -290,7 +288,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.25
+  m_fontSize: 0.3
   m_fontSizeBase: 0.3
   m_fontWeight: 400
   m_enableAutoSizing: 1
