@@ -2589,10 +2589,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.26757812, y: 0.274}
+  m_Size: {x: 1.37, y: 1.40288}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1820834452
@@ -2604,7 +2604,7 @@ Transform:
   m_GameObject: {fileID: 1820834449}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 27.32889, y: -7, z: 10.700002}
+  m_LocalPosition: {x: -0.22, y: 0.5, z: 2.779}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

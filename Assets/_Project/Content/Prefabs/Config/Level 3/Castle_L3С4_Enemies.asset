@@ -16,57 +16,57 @@ MonoBehaviour:
   - Composition:
     - Class: 1
       Modifiers:
-        AttackSpeedMultiplier: 0.5
+        AttackSpeedMultiplier: 1.29
         MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 8
-        WalkSpeed: 0
-        MagesCount: 0
-        SoldiersCount: 0
-        TanksCount: 0
-      Count: 2
-    - Class: 2
-      Modifiers:
-        AttackSpeedMultiplier: 2
-        MagesAttackRange: 0
-        DamageMultiplier: 1.5
-        HealthMultiplier: 3
-        WalkSpeed: 1
+        DamageMultiplier: 1.28
+        HealthMultiplier: 7.69
+        WalkSpeed: 0.23
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
       Count: 1
-    - Class: 3
+    - Class: 2
       Modifiers:
-        AttackSpeedMultiplier: 7
-        MagesAttackRange: 4
-        DamageMultiplier: 1.5
-        HealthMultiplier: 1
-        WalkSpeed: 0
+        AttackSpeedMultiplier: 1.55
+        MagesAttackRange: 0
+        DamageMultiplier: 3.44
+        HealthMultiplier: 2.92
+        WalkSpeed: 0.09
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
       Count: 3
+    - Class: 3
+      Modifiers:
+        AttackSpeedMultiplier: 1.86
+        MagesAttackRange: 0
+        DamageMultiplier: 1.14
+        HealthMultiplier: 2.34
+        WalkSpeed: 0.02
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 2
   _reinforcementWaves:
   - Composition:
     - Class: 1
       Modifiers:
-        AttackSpeedMultiplier: 1
+        AttackSpeedMultiplier: 1.29
         MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 2
-        WalkSpeed: 0
+        DamageMultiplier: 1.28
+        HealthMultiplier: 7.69
+        WalkSpeed: 0.23
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
       Count: 1
-    - Class: 3
+    - Class: 2
       Modifiers:
-        AttackSpeedMultiplier: 3
+        AttackSpeedMultiplier: 1.55
         MagesAttackRange: 0
-        DamageMultiplier: 2
-        HealthMultiplier: 2
-        WalkSpeed: 0
+        DamageMultiplier: 3.44
+        HealthMultiplier: 2.92
+        WalkSpeed: 0.09
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
