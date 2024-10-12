@@ -18,7 +18,7 @@ MonoBehaviour:
       Modifiers:
         AttackSpeedMultiplier: 5
         MagesAttackRange: 0
-        DamageMultiplier: 1
+        DamageMultiplier: 2
         HealthMultiplier: 3
         WalkSpeed: 3
         MagesCount: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
         MagesAttackRange: 0
         DamageMultiplier: 1
         HealthMultiplier: 3
-        WalkSpeed: 7
+        WalkSpeed: 3
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
