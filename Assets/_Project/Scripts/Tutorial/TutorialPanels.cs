@@ -12,7 +12,6 @@ public class TutorialPanels : MonoBehaviour
     
     private void Start()
     {
-        _cameraController.SetUpdate(true);
         NextEntry();
     }
 

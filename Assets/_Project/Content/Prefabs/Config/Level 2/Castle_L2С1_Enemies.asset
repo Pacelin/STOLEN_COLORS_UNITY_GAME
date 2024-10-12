@@ -16,22 +16,33 @@ MonoBehaviour:
   - Composition:
     - Class: 1
       Modifiers:
-        AttackSpeedMultiplier: 1
+        AttackSpeedMultiplier: 1.19
         MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 2
-        WalkSpeed: 0
+        DamageMultiplier: 1.11
+        HealthMultiplier: 3.72
+        WalkSpeed: 0.04
+        MagesCount: 0
+        SoldiersCount: 0
+        TanksCount: 0
+      Count: 1
+    - Class: 2
+      Modifiers:
+        AttackSpeedMultiplier: 2.13
+        MagesAttackRange: 0
+        DamageMultiplier: 3.88
+        HealthMultiplier: 3.45
+        WalkSpeed: 0.05
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
       Count: 1
     - Class: 3
       Modifiers:
-        AttackSpeedMultiplier: 2
+        AttackSpeedMultiplier: 2.69
         MagesAttackRange: 0
-        DamageMultiplier: 1
-        HealthMultiplier: 1
-        WalkSpeed: 0
+        DamageMultiplier: 1.16
+        HealthMultiplier: 2.63
+        WalkSpeed: 0.01
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0

@@ -46,7 +46,7 @@ MonoBehaviour:
         MagesCount: 0
         SoldiersCount: 0
         TanksCount: 0
-      Count: 2
+      Count: 1
   _reinforcementWaves:
   - Composition:
     - Class: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
         AttackSpeedMultiplier: 1.14
         MagesAttackRange: 0
         DamageMultiplier: 1.08
-        HealthMultiplier: 3.06
+        HealthMultiplier: 1.53
         WalkSpeed: 0.04
         MagesCount: 0
         SoldiersCount: 0

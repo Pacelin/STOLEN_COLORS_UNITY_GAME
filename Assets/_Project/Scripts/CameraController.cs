@@ -10,173 +10,121 @@ using Zenject;
 
 public class CameraController : MonoBehaviour
 {
-    [Inject]
-    private WarriorsCollection _warriors;
-    [Inject]
-    private CastlesCollection _castles;
-    [Inject]
-    private WaveManager _waveManager;
-
-    [SerializeField]
-    private Transform _camera;
-    [SerializeField]
-    private Transform _start, _goal;
+    public enum State
+    {
+        None,
+        Auto,
+        ShowGoal,
+        Manual
+    }
     
-    [SerializeField]
-    private float _goalMoveTime = 3f;
+    [Header("References")]
+    [SerializeField] private Transform _cameraTransform;
+    [SerializeField] private Transform _start;
+    [SerializeField] private Transform _goal;
 
-    [SerializeField]
-    private float _cameraGoalStopDelay = 3f;
+    [Header("Settings")]
+    [SerializeField] private State _initialState = State.Auto;
+    [SerializeField] private Vector3 _cameraOffset = new Vector3(0, 10, -8.2f);
 
+    [Header("Animation")] 
+    [SerializeField] private Ease _moveTowardsEase = Ease.InFlash;
+    [SerializeField] private float _goalMoveDuration = 1.5f;
+    [SerializeField] private float _goalStayDuration = 1.5f;
+    [SerializeField] private float _interpolationMultiplier = 2;
+
+    [Inject] private WarriorsCollection _warriors;
+    [Inject] private CastlesCollection _castles;
+    [Inject] private WaveManager _wave;
+
+    private State _state = State.None;
+    private IDisposable _stateDisposable;
     private Tween _tween;
 
-    [SerializeField]
-    private Vector3 _cameraOffset = new(0f, 10f, 0f), _castleOffset = new(5f, 0f, 0f), _creatureOffset = new(5f, 0f, 0f);
-
-    [SerializeField]
-    private bool _showLevelGoal;
-    
-    private Transform _currentTarget;
-    private Vector3 _currentTargetPosition;
-    private Vector3 _targetOffset;
-    
-    [SerializeField]
-    private float _lerpSpeed = 1f;
-
-    private bool _update = false;
-    
-    private CompositeDisposable _disposables = new();
-
-    private CompositeDisposable _warriorDieDisposable;
-    
     private void OnEnable()
     {
-        _waveManager.WaveIsInProgress.Subscribe(UpdateCurrentTarget).AddTo(_disposables);
-        
-        if (_showLevelGoal)
-            ShowLevelGoal();
+        _cameraTransform.position = GetCameraPositionAt(_start);
+        if (_initialState == State.Auto)
+            SetAutoState();
+        else if (_initialState == State.ShowGoal)
+            SetGoalState();
     }
 
     private void OnDisable()
     {
-        _disposables.Dispose();
-    }
-
-    private void LateUpdate()
-    {
-        if (_update)
-            MoveCamera();
-    }
-
-    private void ShowLevelGoal()
-    {
+        _stateDisposable?.Dispose();
         _tween?.Kill();
-        _tween = DOTween.Sequence().
-                Append(_camera.DOMoveX(_goal.position.x, _goalMoveTime)).
-                AppendInterval(_cameraGoalStopDelay).
-                Append(_camera.DOMoveX(_start.position.x + _castleOffset.x, _goalMoveTime)).
-                AppendCallback(() => SetUpdate(true)).
-                SetEase(Ease.InFlash);
     }
 
-    private Vector3 GetTargetPosition()
-    {
-        if (_currentTarget)
-            return _currentTarget.position + _targetOffset;
-        return _currentTargetPosition + _targetOffset;
-    }
-
-    public void SetUpdate(bool value) => _update = value;
+    public void SetTarget(Transform target) => SetManualState(target);
     
-    public void SetTarget(Transform target)
+    public void SetAutoState()
     {
-        _currentTarget = target;
-    }
-    
-    public void SetTarget(Vector3 targetPosition)
-    {
-        _currentTarget = null;
-        _currentTargetPosition = targetPosition;
-    }
-    
-    public void MoveToTarget(Transform target, float time)
-    {
-        _tween = DOTween.Sequence();
-    }
-
-    public void MoveToTarget(Vector3 targetPosition, float time)
-    {
+        if (_state == State.Auto)
+            return;
+        _state = State.Auto;
         _tween?.Kill();
-        _tween = DOTween.Sequence(_camera.DOMoveX(targetPosition.x, time));
+        _stateDisposable?.Dispose();
+
+        _stateDisposable = Observable.EveryLateUpdate()
+            .Subscribe(_ =>
+            {
+                if (_wave.WaveIsInProgress.Value)
+                {
+                    var warrior = _warriors.Allies
+                            .OrderByDescending(w => w.Position.x)
+                            .FirstOrDefault();
+                    if (warrior == null)
+                        warrior = _warriors.Enemies
+                            .OrderBy(w => w.Position.x)
+                            .FirstOrDefault();
+                    if (warrior != null)
+                        MoveInterpolate(warrior.transform);
+                }
+                else
+                {
+                    var castle = _castles.GetCurrentCastle(EBattleSide.Ally);
+                    if (castle == null)
+                        castle = _castles.GetCurrentCastle(EBattleSide.Enemy);
+                    if (castle != null)
+                        MoveInterpolate(castle.transform);
+                }
+            });
     }
 
-    public void SetTargetOffset(Vector3 targetOffset)
+    private void SetGoalState()
     {
-        _targetOffset = targetOffset;
-        _targetOffset.y = 0f;
-        _targetOffset.z = 0f;
+        if (_state == State.ShowGoal)
+            return;
+        _state = State.ShowGoal;
+        _tween?.Kill();
+        _stateDisposable?.Dispose();
+
+        _tween = DOTween.Sequence()
+            .Append(MoveTowards(_goal, _goalMoveDuration))
+            .AppendInterval(_goalStayDuration)
+            .Append(MoveTowards(_castles.GetCurrentCastle(EBattleSide.Ally).transform, _goalMoveDuration))
+            .AppendCallback(SetAutoState);
     }
-    
-    private void MoveCamera()
+
+    private void SetManualState(Transform target)
     {
-        var targetPosition = GetTargetPosition();
-
-        var x = Mathf.Lerp(transform.position.x, targetPosition.x, Time.smoothDeltaTime * _lerpSpeed);
-
-        Vector3 currentPosition = _camera.position;
-        currentPosition.x = x;
-        currentPosition.y = 0f;
-        currentPosition.z = 0f;
+        _state = State.Manual;
+        _tween?.Kill();
+        _stateDisposable?.Dispose();
         
-        _camera.position = currentPosition + _cameraOffset;
+        _stateDisposable = Observable.EveryLateUpdate()
+            .Subscribe(_ => MoveInterpolate(target));
     }
 
-    private void UpdateCurrentTarget(bool waveStart)
-    {
-        if (waveStart)
-            SetTargetAllyCreature();
-        else
-            SetTargetCastle();
-    }
+    private Tween MoveTowards(Transform target, float duration) =>
+        _cameraTransform.DOMoveX(target.position.x, duration)
+            .SetEase(_moveTowardsEase);
+    private void MoveInterpolate(Transform target) =>
+        _cameraTransform.position =
+            Vector3.Lerp(_cameraTransform.position, GetCameraPositionAt(target), 
+                Time.deltaTime * _interpolationMultiplier);
 
-    private void SetTargetCastle()
-    {
-        var castle = _castles.GetCurrentCastle(EBattleSide.Ally);
-
-        if (castle)
-        {
-            SetTarget(castle.transform);
-            SetTargetOffset(_castleOffset);
-        }
-        else
-        {
-            SetTarget(_start);
-            SetTargetOffset(Vector3.zero);
-        }
-    }
-    
-    private void SetTargetAllyCreature()
-    {
-        var warrior = _warriors.Allies.OrderByDescending(w => w.transform.position.x).FirstOrDefault();
-        if (warrior)
-        {
-            SetTarget(warrior.transform);
-            SetTargetOffset(_creatureOffset);
-            _targetOffset = _creatureOffset;
-
-            _warriorDieDisposable?.Dispose();
-            _warriorDieDisposable = new CompositeDisposable();
-            warrior.OnDie.Subscribe(_ => SetTargetAllyCreature()).AddTo(_warriorDieDisposable);
-            return;
-        }
-
-        var enemy = _warriors.Enemies.OrderBy(w => w.transform.position.x).FirstOrDefault();
-        if (enemy)
-        {
-            SetTarget(enemy.transform);
-            SetTargetOffset(-_creatureOffset);
-            return;
-        }
-        SetTargetCastle();
-    }
+    private Vector3 GetCameraPositionAt(Transform target) =>
+        new Vector3(target.position.x, _cameraOffset.y, _cameraOffset.z);
 }
