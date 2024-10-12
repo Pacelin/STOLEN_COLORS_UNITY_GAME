@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753475933289125134, guid: 1dac5cdbd716efd489f50408e3611a3e, type: 3}
       propertyPath: _baseData.Damage
-      value: 15
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 5753475933289125134, guid: 1dac5cdbd716efd489f50408e3611a3e, type: 3}
       propertyPath: _baseData.Health
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5753475933289125134, guid: 1dac5cdbd716efd489f50408e3611a3e, type: 3}
       propertyPath: _baseData.AttackSpeed

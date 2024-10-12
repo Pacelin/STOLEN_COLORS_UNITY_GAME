@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58a645cf18f570429a8bad873475dab, type: 3}
   m_Name: TestRendererFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
-  m_Material: {fileID: 2100000, guid: 2933e3706d9861047a662964d688726d, type: 2}
 --- !u!114 &-5548546010810402943
 MonoBehaviour:
   m_ObjectHideFlags: 0

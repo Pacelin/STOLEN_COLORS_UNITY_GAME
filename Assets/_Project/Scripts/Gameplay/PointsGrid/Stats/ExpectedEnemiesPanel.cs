@@ -15,19 +15,18 @@ namespace Audio.Gameplay.PointsGrid
         [SerializeField] private float _openedX;
         [SerializeField] private float _duration;
         [SerializeField] private float _delay;
-        [Space] 
-        [SerializeField] private GameObject _defaultState;
+        [Space] [SerializeField] private GameObject _defaultState;
         [SerializeField] private GameObject _bossState;
         [SerializeField] private TMP_Text _magesCount;
         [SerializeField] private TMP_Text _warriorsCount;
         [SerializeField] private TMP_Text _tanksCount;
-        
+
         [Inject] private WaveManager _wave;
         [Inject] private WarriorsSpawner _spawner;
-        
+
         private CompositeDisposable _disposables;
         private Tween _tween;
-        
+
         private void OnEnable()
         {
             _disposables = new();

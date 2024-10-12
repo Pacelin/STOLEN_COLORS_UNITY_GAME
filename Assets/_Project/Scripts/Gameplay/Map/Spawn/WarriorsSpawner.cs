@@ -22,7 +22,7 @@ namespace Gameplay.Map.Spawn
         private ReactiveCommand<Warrior> _onSpawnAlly;
         private ReactiveCommand<Warrior> _onSpawnEnemy;
         private CompositeDisposable _disposables;
-        private ReactiveProperty<WarriorsWave> _preparedEnemiesWave;
+        private ReactiveProperty<WarriorsWave> _preparedEnemiesWave = new();
         private bool _hasPreparedEnemiesWave;
 
         public WarriorsSpawner(DiContainer container, WarriorsConfig warriorsConfig, CastlesCollection castles)

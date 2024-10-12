@@ -2304,6 +2304,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1492625858}
     m_Modifications:
+    - target: {fileID: 1568623013448121814, guid: 428146f376fbac64bb1f416f6801c3b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313527097068038957, guid: 428146f376fbac64bb1f416f6801c3b4, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 741100198}
     - target: {fileID: 4781137075633317590, guid: 428146f376fbac64bb1f416f6801c3b4, type: 3}
       propertyPath: m_Pivot.x
       value: 1
