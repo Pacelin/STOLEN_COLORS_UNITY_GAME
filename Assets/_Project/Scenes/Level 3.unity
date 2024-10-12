@@ -1893,7 +1893,7 @@ MonoBehaviour:
   _cameraOffset: {x: 0, y: 10, z: -8}
   _moveTowardsEase: 33
   _goalMoveDuration: 1.5
-  _goalStayDuration: 111
+  _goalStayDuration: 1.5
   _interpolationMultiplier: 2
 --- !u!4 &755318709 stripped
 Transform:
