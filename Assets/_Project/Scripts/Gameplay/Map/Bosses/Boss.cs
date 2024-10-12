@@ -21,17 +21,16 @@ namespace Gameplay.Map.Bosses
         private float _counter;
         private bool _activated;
         private CompositeDisposable _disposables;
+        private bool _isAttacking;
         
         [Inject] private WarriorsCollection _warriors;
         
-        private void Start()
-        {
-            _currentAttack = Random.Range(0, _attackPoints.Length);
-            _activated = false;
-        }
-
         private void OnEnable()
         {
+            _isAttacking = false;
+            _currentAttack = Random.Range(0, _attackPoints.Length);
+            _activated = false;
+            
             _disposables = new();
             _bossAnimation.OnAttack
                 .Where(_ => _activated && Model.Alive.Value)
@@ -45,17 +44,18 @@ namespace Gameplay.Map.Bosses
                 {
                     _currentAttack = Random.Range(0, _attackPoints.Length);
                     _counter = _attackPoints[_currentAttack].Cooldown;
+                    _isAttacking = false;
                 }).AddTo(_disposables);
             
             Observable.EveryUpdate()
-                .Where(_ => _activated && Model.Alive.Value)
+                .Where(_ => !_isAttacking && _activated && Model.Alive.Value)
                 .Subscribe(_ =>
                 {
                     _counter -= Time.deltaTime;
                     if (_counter < 0)
                     {
                         _bossAnimation.SetAttack(_currentAttack);
-                        _counter = float.MaxValue;
+                        _isAttacking = true;
                     }
                 })
                 .AddTo(_disposables);
