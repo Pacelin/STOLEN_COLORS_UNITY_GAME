@@ -38,4 +38,4 @@ MonoBehaviour:
         SoldiersCount: 0
         TanksCount: 0
       Count: 1
-  _waveCooldown: 5
+  _waveCooldown: 3
