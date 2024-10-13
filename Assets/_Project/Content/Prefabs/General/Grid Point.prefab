@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 2145373846684140772}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -321,6 +321,9 @@ MonoBehaviour:
       Value: {fileID: 320651317548357620}
     - Key: 3
       Value: {fileID: 7657259841654498588}
+  _weight: 0
+  _additionalWeight: 0
+  _isEmptyPoint: 0
 --- !u!114 &6513896889377129369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,8 +337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canConnectThrough: 1
-  _actions:
-  - rid: -2
+  _action:
+    rid: -2
   references:
     version: 2
     RefIds:
