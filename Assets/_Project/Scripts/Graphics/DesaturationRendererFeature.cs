@@ -77,7 +77,7 @@ public sealed class DesaturationRendererFeature : ScriptableRendererFeature
         // BeforeRenderingTransparents - in cases you want your effect to be visible behind transparent objects
         // BeforeRenderingPostProcessing - in cases where your effect is supposed to run before the URP post-processing stack
         // AfterRenderingPostProcessing - in cases where your effect is supposed to run after the URP post-processing stack, but before FXAA, upscaling or color grading
-        m_FullScreenPass.renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
+        m_FullScreenPass.renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing;
 
         // You can specify if your effect needs scene depth, normals, motion vectors or a downscaled opaque color as input
         //
@@ -96,7 +96,7 @@ public sealed class DesaturationRendererFeature : ScriptableRendererFeature
         //     LOAD_TEXTURE2D_X_LOD(_MotionVectorTexture, pixelCoords, 0).xy
         //
         // N.B. when using the FullScreenPass Shader Graph target you should simply use the "URP Sample Buffer" node which will handle the above for you
-        m_FullScreenPass.ConfigureInput(ScriptableRenderPassInput.None);
+        m_FullScreenPass.ConfigureInput(ScriptableRenderPassInput.Depth);
 
         renderer.EnqueuePass(m_FullScreenPass);
     }
@@ -126,7 +126,7 @@ public sealed class DesaturationRendererFeature : ScriptableRendererFeature
         private static readonly bool kCopyActiveColor = true;
 
         // This constant is meant to showcase how you can add dept-stencil support to your main pass
-        private static readonly bool kBindDepthStencilAttachment = false;
+        private static readonly bool kBindDepthStencilAttachment = true;
 
         // Creating some shader properties in advance as this is slightly more efficient than referencing them by string
         private static readonly int kBlitTexturePropertyId = Shader.PropertyToID("_BlitTexture");
@@ -330,8 +330,8 @@ public sealed class DesaturationRendererFeature : ScriptableRendererFeature
 
                 // This branch is currently not taken, but if your main pass needed the depth and/or stencil buffer to be bound this is how you would do it
                 if(kBindDepthStencilAttachment)
-                    builder.SetRenderAttachmentDepth(resourcesData.activeDepthTexture, AccessFlags.Write);
-
+                    builder.SetRenderAttachmentDepth(resourcesData.activeDepthTexture, AccessFlags.Discard | AccessFlags.ReadWrite);
+                
                 builder.SetRenderFunc((MainPassData data, RasterGraphContext context) => ExecuteMainPass(data, context));
             }
         }

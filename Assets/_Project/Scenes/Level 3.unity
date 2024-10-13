@@ -2397,6 +2397,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!114 &972026358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3552,7 +3553,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 68bf72179750b9645ab68985c7273391, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 568df8bb6d80e40449e4fda4e476914c, type: 2}
 --- !u!4 &1724846220
 Transform:
   m_ObjectHideFlags: 0
