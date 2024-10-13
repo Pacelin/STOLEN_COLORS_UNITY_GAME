@@ -11,7 +11,7 @@ namespace Audio
 
         private void Awake()
         {
-            Cursor.SetCursor(_cursor, new Vector2(3, 0), CursorMode.ForceSoftware);
+            Cursor.SetCursor(_cursor, new Vector2(6, 0), CursorMode.ForceSoftware);
             Time.timeScale = 1f;
             _audio.PlayMusic(_ost, true).Forget();
         }
