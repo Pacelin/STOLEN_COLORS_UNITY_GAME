@@ -1525,6 +1525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ost: 2
+  _cursor: {fileID: 2800000, guid: 8a294871aee3cf54a92dc2109c15cbac, type: 3}
 --- !u!4 &434717202
 Transform:
   m_ObjectHideFlags: 0

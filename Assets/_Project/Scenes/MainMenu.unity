@@ -2116,6 +2116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ost: 0
+  _cursor: {fileID: 2800000, guid: 8a294871aee3cf54a92dc2109c15cbac, type: 3}
 --- !u!4 &1855045619
 Transform:
   m_ObjectHideFlags: 0
