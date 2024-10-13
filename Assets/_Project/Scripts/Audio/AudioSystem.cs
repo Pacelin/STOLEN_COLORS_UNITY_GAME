@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using AYellowpaper.SerializedCollections;
@@ -81,37 +82,42 @@ namespace Audio
             source.PlayOneShot(soundEntry.Clip, soundEntry.VolumeMultiplier);
         }
 
-        public async UniTaskVoid PlayMusic(EMusicKey key, bool loop)
+        public void PlayMusic(EMusicKey key, bool loop) =>
+            StartCoroutine(PlayMusicInternal(key, loop));
+        
+        public void Dispose() =>
+            DOTween.Kill(this);
+
+        private IEnumerator PlayMusicInternal(EMusicKey key, bool loop)
         {
             _cts?.Cancel();
             _cts = new CancellationTokenSource();
             var token = _cts.Token;
-            
             var musicEntry = _music[key];
             var source = _audioSources[musicEntry.Category];
             if (source.isPlaying)
             {
-                await FadeOffSource(source, token);
+                yield return FadeOffSource(source, token);
                 source.Stop();
                 if (token.IsCancellationRequested)
-                    return;
+                    yield break;
             }
-
             source.volume = 0;
             source.clip = musicEntry.Clip;
             source.loop = loop;
             source.Play();
-            await FadeOnSource(source, musicEntry.VolumeMultiplier, token);
+            yield return FadeOnSource(source, musicEntry.VolumeMultiplier, token);
         }
         
-        private async UniTask FadeOffSource(AudioSource audioSource, CancellationToken token) =>
-            await audioSource.DOFade(0, _fadeOffDuration).SetEase(_fadeOffEase).SetTarget(this)
-                .WithCancellation(token);
-        private async UniTask FadeOnSource(AudioSource audioSource, float volume, CancellationToken token) =>
-            await audioSource.DOFade(volume, _fadeOnDuration).SetEase(_fadeOnEase).SetTarget(this)
-                .WithCancellation(token);
-
-        public void Dispose() =>
-            DOTween.Kill(this);
+        private IEnumerator FadeOffSource(AudioSource audioSource, CancellationToken token)
+        {
+            yield return audioSource.DOFade(0, _fadeOffDuration).SetEase(_fadeOffEase).SetTarget(this)
+                .WithCancellation(token).ToCoroutine();
+        }
+        private IEnumerator FadeOnSource(AudioSource audioSource, float volume, CancellationToken token)
+        {
+            yield return audioSource.DOFade(volume, _fadeOnDuration).SetEase(_fadeOnEase).SetTarget(this)
+                .WithCancellation(token).ToCoroutine();
+        }
     }
 }

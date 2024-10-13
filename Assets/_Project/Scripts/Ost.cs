@@ -13,7 +13,7 @@ namespace Audio
         {
             Cursor.SetCursor(_cursor, new Vector2(6, 0), CursorMode.ForceSoftware);
             Time.timeScale = 1f;
-            _audio.PlayMusic(_ost, true).Forget();
+            _audio.PlayMusic(_ost, true);
         }
     }
 }
