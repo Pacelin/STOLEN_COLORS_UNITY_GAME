@@ -445,30 +445,30 @@ MonoBehaviour:
     _serializedList:
     - Key: 0
       Value:
-        IsStreaming: 1
+        IsStreaming: 0
         AudioPath: menu_ost.mp3
         Clip: {fileID: 8300000, guid: aa24c1f3f73a855419fcc661843646e8, type: 3}
         Category: 1
         VolumeMultiplier: 0.5
     - Key: 1
       Value:
-        IsStreaming: 1
+        IsStreaming: 0
         AudioPath: ost_battle_1.mp3
-        Clip: {fileID: 8300000, guid: 8275dd8125df5994a8e06986fa94fefe, type: 3}
+        Clip: {fileID: 8300000, guid: f15afae5bcd4f9d4f8bc3781321c19eb, type: 3}
         Category: 1
         VolumeMultiplier: 0.4
     - Key: 2
       Value:
-        IsStreaming: 1
+        IsStreaming: 0
         AudioPath: ost_battle_2.mp3
-        Clip: {fileID: 8300000, guid: 82deabb74102c1941aacd2b6af59cdb9, type: 3}
+        Clip: {fileID: 8300000, guid: 180633e5941be17418053862545ea12f, type: 3}
         Category: 1
         VolumeMultiplier: 0.1
     - Key: 3
       Value:
-        IsStreaming: 1
+        IsStreaming: 0
         AudioPath: ost_battle_3.mp3
-        Clip: {fileID: 8300000, guid: 42979b388db81fe4b995072a5a1f998e, type: 3}
+        Clip: {fileID: 8300000, guid: 0f174ab385a651c4c808b38ea8fb488a, type: 3}
         Category: 1
         VolumeMultiplier: 0.2
   _fadeOffDuration: 1
